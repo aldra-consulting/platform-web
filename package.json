@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/package",
   "name": "@aldra-consulting/platform-web",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "An invite-only platform for independent contractors.",
   "repository": {
     "type": "git",
