@@ -1,0 +1,18 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 64px;
+  width: 100%;
+  padding: 12px 20px;
+  background: white;
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 10%);
+  z-index: 10;
+}
+
+[data-slot="logo"] {
+  height: 70%;
+}
