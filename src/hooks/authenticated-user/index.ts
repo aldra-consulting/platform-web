@@ -1,4 +1,5 @@
 import {
+  $,
   type QRL,
   useStore,
   useVisibleTask$,
@@ -31,8 +32,19 @@ export const useAuthenticatedUser = (onMissingUser?: QRL<() => void>) => {
       })
   );
 
+  const signOut = $(() =>
+    auth()
+      .signOut()
+      .catch(() => {})
+      .finally(() => {
+        user.name = undefined;
+        user.isLoading = undefined;
+      })
+  );
+
   return {
     user,
     isAuthenticated,
+    signOut,
   } as const;
 };
