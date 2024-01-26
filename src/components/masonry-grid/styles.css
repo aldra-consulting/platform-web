@@ -1,0 +1,9 @@
+div {
+  min-width: 100%;
+  max-width: 100%;
+}
+
+div > :global(*) {
+  width: calc((100% - (var(--columns, 1) - 1) * var(--gutter, 0)) / var(--columns, 1));
+}
+
