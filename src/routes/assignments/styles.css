@@ -1,4 +1,3 @@
-[data-slot="content"] {
-  margin-top: 64px;
-  padding: 20px
+[data-slot="assignment-body"] > p {
+  line-height: 1.5;
 }
