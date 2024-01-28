@@ -1,0 +1,17 @@
+section {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 10%);
+  overflow: hidden;
+}
+
+section > *:first-child {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+section > *:last-child {
+  border-bottom-left-radius: 8px;
+}
