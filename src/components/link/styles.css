@@ -1,0 +1,41 @@
+a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
+[data-slot="content"] [data-slot="underlined"] {
+  display: inline-flex;
+  padding-bottom: 1px;
+  border-bottom: 1px solid transparent;
+  color: inherit;
+}
+
+[data-slot="content"]:hover > [data-slot="underlined"] {
+  border-bottom-color: inherit !important;
+}
+
+[data-slot="content"][data-color="neutral"] {
+  color: #2d3741 !important;
+}
+
+[data-slot="content"][data-color="blue"] {
+  color: #439ef8 !important;
+}
+
+[data-slot="content"][data-color="red"] {
+  color: #ff524f !important;
+}
+
+[data-slot="content"][data-color="yellow"] {
+  color: #cd983a !important;
+}
+
+[data-slot="content"][data-color="green"] {
+  color: #4fc970 !important;
+}
+
+[data-slot="content"][data-color="inherit"] {
+  color: currentcolor !important;
+}
