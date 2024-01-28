@@ -1,0 +1,10 @@
+[data-active="true"]:hover {
+  color: currentcolor;
+  cursor: default;
+}
+
+[data-active="false"],
+[data-active="false"] :global(*) {
+  color: #76818d !important;
+  cursor: pointer;
+}
