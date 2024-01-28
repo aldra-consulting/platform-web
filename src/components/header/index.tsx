@@ -16,6 +16,7 @@ export default component$<Props>(({ ...props }) => {
     <header {...props}>
       <div data-slot='logo'>
         <Slot name='logo' />
+        <p>Plattform</p>
       </div>
       <div data-slot='avatar'>
         <Slot name='avatar' />

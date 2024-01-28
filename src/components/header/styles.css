@@ -14,5 +14,16 @@ header {
 }
 
 [data-slot="logo"] {
+  display: flex;
+  align-items: center;
   height: 70%;
+}
+
+[data-slot="logo"] > p {
+  margin-left: 12px;
+  padding-left: 12px;
+  border-left: 1px solid #c9d4e1;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
