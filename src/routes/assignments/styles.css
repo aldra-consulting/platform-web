@@ -1,3 +1,11 @@
-[data-slot="assignment-body"] > p {
-  line-height: 1.5;
+[data-slot="no-assignments"] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+[data-slot="no-assignments"] > p {
+  font-size: 24px;
+  color: #76818d;
 }
