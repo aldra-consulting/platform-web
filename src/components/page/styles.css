@@ -1,6 +1,15 @@
+main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 [data-slot="content"] {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   margin-top: 109px;
-  padding: 20px
+  padding: 20px;
 }
 
 [data-slot="breadcrumbs"] {
