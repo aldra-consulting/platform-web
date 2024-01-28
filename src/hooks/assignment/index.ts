@@ -7,9 +7,9 @@ export const useAssignment = (id: string) => {
     try {
       return Promise.resolve({
         id: `assignment-${id}`,
-        assignor: {
-          id: `assignor-${id}`,
-          name: `Assignor ${id}`,
+        client: {
+          id: `client-${id}`,
+          name: `Client ${id}`,
         },
         role: `Role ${id}`,
       });

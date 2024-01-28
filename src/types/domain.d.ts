@@ -1,10 +1,10 @@
-export interface Assignor {
+export interface Client {
   id: string;
   name: string;
 }
 
 export interface Assignment {
   id: string;
-  assignor: Assignor;
+  client: Client;
   role: string;
 }

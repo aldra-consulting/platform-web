@@ -8,81 +8,81 @@ export const useAssignments = () => {
       return Promise.resolve([
         {
           id: 'assignment-1',
-          assignor: {
-            id: 'assignor-1',
-            name: 'Assignor 1',
+          client: {
+            id: 'client-1',
+            name: 'Client 1',
           },
           role: 'Role 1',
         },
         {
           id: 'assignment-2',
-          assignor: {
-            id: 'assignor-2',
-            name: 'Assignor 2',
+          client: {
+            id: 'client-2',
+            name: 'Client 2',
           },
           role: 'Role 2',
         },
         {
           id: 'assignment-3',
-          assignor: {
-            id: 'assignor-3',
-            name: 'Assignor 3',
+          client: {
+            id: 'client-3',
+            name: 'Client 3',
           },
           role: 'Role 3',
         },
         {
           id: 'assignment-4',
-          assignor: {
-            id: 'assignor-4',
-            name: 'Assignor 4',
+          client: {
+            id: 'client-4',
+            name: 'Client 4',
           },
           role: 'Role 4',
         },
         {
           id: 'assignment-5',
-          assignor: {
-            id: 'assignor-5',
-            name: 'Assignor 5',
+          client: {
+            id: 'client-5',
+            name: 'Client 5',
           },
           role: 'Role 5',
         },
         {
           id: 'assignment-6',
-          assignor: {
-            id: 'assignor-6',
-            name: 'Assignor 6',
+          client: {
+            id: 'client-6',
+            name: 'Client 6',
           },
           role: 'Role 6',
         },
         {
           id: 'assignment-7',
-          assignor: {
-            id: 'assignor-7',
-            name: 'Assignor 7',
+          client: {
+            id: 'client-7',
+            name: 'Client 7',
           },
           role: 'Role 7',
         },
         {
           id: 'assignment-8',
-          assignor: {
-            id: 'assignor-8',
-            name: 'Assignor 8',
+          client: {
+            id: 'client-8',
+            name: 'Client 8',
           },
           role: 'Role 8',
         },
         {
           id: 'assignment-9',
-          assignor: {
-            id: 'assignor-9',
-            name: 'Assignor 9',
+          client: {
+            id: 'client-9',
+            name: 'Client 9',
           },
           role: 'Role 9',
         },
         {
           id: 'assignment-10',
-          assignor: {
-            id: 'assignor-10',
-            name: 'Assignor 10',
+          client: {
+            id: 'client-10',
+            name: 'Client 10',
           },
           role: 'Role 10',
         },

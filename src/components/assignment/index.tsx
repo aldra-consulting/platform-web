@@ -19,7 +19,7 @@ export default component$<Props>(
     assignment: {
       id,
       role,
-      assignor: { name: assignorName },
+      client: { name: clientName },
     },
     ...props
   }) => {
@@ -31,7 +31,7 @@ export default component$<Props>(
           <div>
             <Card.Header.Title q:slot='title'>{role}</Card.Header.Title>
             <Card.Header.Subtitle q:slot='subtitle'>
-              {assignorName}
+              {clientName}
             </Card.Header.Subtitle>
           </div>
         </Card.Header>
