@@ -6,7 +6,7 @@ import {
 
 import { type Assignment } from '@project/types';
 
-import Card from '../card';
+import Card from '../../../../components/card';
 
 import styles from './styles.css?inline';
 

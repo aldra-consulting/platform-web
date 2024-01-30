@@ -1,13 +1,13 @@
 import { Resource, component$, useStylesScoped$ } from '@builder.io/qwik';
 import { type DocumentHead } from '@builder.io/qwik-city';
 
-import Assignment from '@project/components/assignment';
 import Breadcrumbs from '@project/components/breadcrumbs';
 import Link from '@project/components/link';
 import MasonryGrid from '@project/components/masonry-grid';
 import Page from '@project/components/page';
 import { useAssignments } from '@project/hooks';
 
+import Assignment from './components/assignment';
 import styles from './styles.css?inline';
 
 export default component$(() => {
