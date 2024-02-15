@@ -1,7 +1,7 @@
 import { UserManager } from 'oidc-client-ts';
 
 import env from '@project/env';
-import AuthService from '@project/services/auth';
+import { AuthService } from '@project/services';
 
 export const auth = () =>
   new AuthService(
