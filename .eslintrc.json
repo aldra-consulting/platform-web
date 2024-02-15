@@ -84,7 +84,8 @@
         ],
         "react/button-has-type": "off",
         "react/no-unknown-property": "off",
-        "qwik/no-use-visible-task": "off"
+        "qwik/no-use-visible-task": "off",
+        "qwik/jsx-img": "off"
       }
     },
     {
