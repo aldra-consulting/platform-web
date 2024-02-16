@@ -1,6 +1,7 @@
 import { $, component$, useStylesScoped$, Resource } from '@builder.io/qwik';
 import { type DocumentHead } from '@builder.io/qwik-city';
 
+import Animated from '@project/components/animated';
 import Breadcrumbs from '@project/components/breadcrumbs';
 import Link from '@project/components/link';
 import MasonryGrid from '@project/components/masonry-grid';
@@ -56,9 +57,17 @@ export default component$(() => {
                 },
               ]}
             >
-              {assignments.map((assignment) => (
+              {assignments.map((assignment, index) => (
                 <AssignmentProvider key={assignment.id} assignment={assignment}>
-                  <Assignment />
+                  <div>
+                    <Animated
+                      animation='fade-in-up'
+                      duration={{ value: 0.5, unit: 's' }}
+                      delay={{ value: index / 10, unit: 's' }}
+                    >
+                      <Assignment />
+                    </Animated>
+                  </div>
                 </AssignmentProvider>
               ))}
             </MasonryGrid>
