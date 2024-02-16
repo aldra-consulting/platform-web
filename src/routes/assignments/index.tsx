@@ -1,4 +1,4 @@
-import { Resource, component$, useStylesScoped$ } from '@builder.io/qwik';
+import { $, component$, useStylesScoped$, Resource } from '@builder.io/qwik';
 import { type DocumentHead } from '@builder.io/qwik-city';
 
 import Breadcrumbs from '@project/components/breadcrumbs';
@@ -6,6 +6,8 @@ import Link from '@project/components/link';
 import MasonryGrid from '@project/components/masonry-grid';
 import Page from '@project/components/page';
 import { useAssignments } from '@project/hooks';
+import { AssignmentProvider } from '@project/providers';
+import { AssignmentService } from '@project/services';
 
 import Assignment from './components/assignment';
 import styles from './styles.css?inline';
@@ -13,7 +15,7 @@ import styles from './styles.css?inline';
 export default component$(() => {
   useStylesScoped$(styles);
 
-  const { resource } = useAssignments();
+  const { resource } = useAssignments($(() => new AssignmentService().list()));
 
   return (
     <Page>
@@ -55,7 +57,9 @@ export default component$(() => {
               ]}
             >
               {assignments.map((assignment) => (
-                <Assignment key={assignment.id} assignment={assignment} />
+                <AssignmentProvider key={assignment.id} assignment={assignment}>
+                  <Assignment assignment={assignment} />
+                </AssignmentProvider>
               ))}
             </MasonryGrid>
           ) : (
