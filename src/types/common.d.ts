@@ -18,3 +18,8 @@ export interface Identifiable<ID extends Hashable = string> {
 export interface Nameable<Container = string> {
   name: Container;
 }
+
+interface Dimension<Value, Unit> {
+  value: Value;
+  unit: Unit;
+}
