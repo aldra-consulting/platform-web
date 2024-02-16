@@ -1,0 +1,39 @@
+[data-root] {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 4px;
+  color: white;
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 10%);
+  font-weight: 500;
+}
+
+[data-compact] {
+  padding: 8px 12px;
+}
+
+[data-severity="success"] {
+  background: #4fc970;
+}
+
+[data-severity="info"] {
+  background: #439ef8;
+}
+
+[data-severity="warning"] {
+  background: #cd983a;
+}
+
+[data-severity="error"] {
+  background: #ff524f;
+}
+
+i {
+  display: flex;
+  align-items: center;
+}
+
+i > :global(svg > path) {
+  fill: white;
+}
