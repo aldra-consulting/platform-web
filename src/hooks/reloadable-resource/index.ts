@@ -1,8 +1,15 @@
-import { type QRL, useSignal, useResource$ } from '@builder.io/qwik';
+import {
+  useSignal,
+  useResource$,
+  type QRL,
+  type ValueOrPromise,
+} from '@builder.io/qwik';
 
 import { useReloadable } from '../reloadable';
 
-export const useReloadableResource = <T>(reloadable: QRL<() => T>) => {
+export const useReloadableResource = <T>(
+  reloadable: QRL<() => ValueOrPromise<T>>
+) => {
   const { cue, reload } = useReloadable();
 
   const isLoading = useSignal<boolean>(false);
