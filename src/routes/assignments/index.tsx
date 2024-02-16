@@ -58,7 +58,7 @@ export default component$(() => {
             >
               {assignments.map((assignment) => (
                 <AssignmentProvider key={assignment.id} assignment={assignment}>
-                  <Assignment assignment={assignment} />
+                  <Assignment />
                 </AssignmentProvider>
               ))}
             </MasonryGrid>
