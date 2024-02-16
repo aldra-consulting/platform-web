@@ -1,0 +1,98 @@
+[data-root] {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border: none;
+  font-weight: 700;
+  letter-spacing: inherit;
+  text-transform: uppercase;
+  line-height: 1;
+  outline: none;
+  user-select: none;
+  white-space: nowrap;
+  transform: translateZ(0);
+}
+
+[data-variant="contained"] {
+  color: white;
+}
+
+[data-variant="outlined"] {
+  border: 2px solid transparent;
+  background: none;
+}
+
+[data-size="small"] {
+  height: 24px;
+  font-size: 12px;
+}
+
+[data-size="medium"] {
+  height: 34px;
+  font-size: 14px;
+}
+
+[data-variant="contained"][data-size="small"] {
+  padding: 6px 10px;
+  border-radius: 12px;
+}
+
+[data-variant="contained"][data-size="medium"] {
+  padding: 10px 14px;
+  border-radius: 17px;
+}
+
+[data-variant="contained"][data-color="neutral"] {
+  background: #2d3741;
+}
+
+[data-variant="contained"][data-color="blue"] {
+  background: #439ef8;
+}
+
+[data-variant="contained"][data-color="red"] {
+  background: #ff524f;
+}
+
+[data-variant="contained"][data-color="yellow"] {
+  background: #cd983a;
+}
+
+[data-variant="contained"][data-color="green"] {
+  background: #4fc970;
+}
+
+[data-variant="outlined"][data-size="small"] {
+  padding: 4px 8px;
+  border-radius: 12px;
+}
+
+[data-variant="outlined"][data-size="medium"] {
+  padding: 8px 12px;
+  border-radius: 17px;
+}
+
+[data-variant="outlined"][data-color="neutral"] {
+  color: #2d3741;
+  border-color: #2d374180;
+}
+
+[data-variant="outlined"][data-color="blue"] {
+  color: #439ef8;
+  border-color: #439ef880;
+}
+
+[data-variant="outlined"][data-color="red"] {
+  color: #ff524f;
+  border-color: #ff524f80;
+}
+
+[data-variant="outlined"][data-color="yellow"] {
+  color: #cd983a;
+  border-color: #cd983a80;
+}
+
+[data-variant="outlined"][data-color="green"] {
+  color: #4fc970;
+  border-color: #4fc97080;
+}
