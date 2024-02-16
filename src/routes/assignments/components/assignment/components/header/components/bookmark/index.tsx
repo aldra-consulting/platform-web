@@ -6,15 +6,21 @@ import Loader from '@project/components/loader';
 import StarIcon from '@project/components/star-icon';
 import StarOutlineIcon from '@project/components/star-outline-icon';
 import { AssignmentContext } from '@project/context';
-import { useReloadableResource } from '@project/hooks';
+import { useIsFirstRender, useReloadableResource } from '@project/hooks';
 
 export default component$(() => {
   const context = useContext(AssignmentContext);
 
   const { bookmark } = context.assignment;
 
+  const isFirstRender = useIsFirstRender();
+
   const { resource, isLoading, reload } = useReloadableResource(
-    $(() => context.toggleBookmark())
+    $(async () => {
+      if (!isFirstRender.value) {
+        await context.toggleBookmark();
+      }
+    })
   );
 
   return (
