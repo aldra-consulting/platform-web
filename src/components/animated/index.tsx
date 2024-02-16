@@ -4,6 +4,17 @@ import styles from './styles.css?inline';
 
 interface Props {
   animation: 'fade-in-up' | 'zoom-pop-in';
+  duration?:
+    | '0.1s'
+    | '0.2s'
+    | '0.3s'
+    | '0.4s'
+    | '0.5s'
+    | '0.6s'
+    | '0.7s'
+    | '0.8s'
+    | '0.9s'
+    | '1s';
   delay?:
     | '0.1s'
     | '0.2s'
@@ -37,11 +48,11 @@ interface Props {
     | '3s';
 }
 
-export default component$<Props>(({ animation, delay }) => {
+export default component$<Props>(({ animation, duration, delay }) => {
   useStylesScoped$(styles);
 
   return (
-    <div data-animation={animation} data-delay={delay}>
+    <div data-animation={animation} data-duration={duration} data-delay={delay}>
       <Slot />
     </div>
   );
