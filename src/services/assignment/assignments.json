@@ -1,0 +1,29 @@
+[
+  {
+    "id": "assignment-1",
+    "client": {
+      "id": "client-1",
+      "name": "Client 1"
+    },
+    "role": "Role 1",
+    "status": "active"
+  },
+  {
+    "id": "assignment-2",
+    "client": {
+      "id": "client-2",
+      "name": "Client 2"
+    },
+    "role": "Role 2",
+    "status": "concluded"
+  },
+  {
+    "id": "assignment-3",
+    "client": {
+      "id": "client-3",
+      "name": "Client 3"
+    },
+    "role": "Role 3",
+    "status": "cancelled"
+  }
+]
