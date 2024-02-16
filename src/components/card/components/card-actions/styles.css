@@ -5,6 +5,10 @@ div {
   gap: 8px
 }
 
+div:first-child {
+  border: none;
+}
+
 [data-alignment="left"] {
   justify-content: flex-start;
 }

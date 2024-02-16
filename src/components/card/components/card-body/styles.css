@@ -3,3 +3,7 @@ div {
   border-top: 1px solid #c9d4e180;
   background: #f4f5f780;
 }
+
+div:first-child {
+  border: none;
+}
