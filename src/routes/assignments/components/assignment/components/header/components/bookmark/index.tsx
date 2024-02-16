@@ -35,7 +35,11 @@ export default component$(() => {
           onClick$={reload}
           disabled={isLoading.value}
         >
-          <Animated animation='zoom-pop-in' duration='0.3s' q:slot='start-icon'>
+          <Animated
+            animation='zoom-pop-in'
+            duration={{ value: 0.3, unit: 's' }}
+            q:slot='start-icon'
+          >
             {bookmark ? (
               <StarIcon style={{ scale: 1.3 }} />
             ) : (
