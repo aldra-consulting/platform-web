@@ -23,3 +23,7 @@ interface Dimension<Value, Unit> {
   value: Value;
   unit: Unit;
 }
+
+export interface Converter<Source, Target> {
+  convert(source: Source): Target;
+}
