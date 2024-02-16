@@ -1,6 +1,6 @@
-import { type Entity, type Nullable } from '@project/types';
+import { type Service, type Entity, type Nullable } from '@project/types';
 
-export default class AssignmentService {
+export default class AssignmentService implements Service.Assignment {
   toggleBookmark = async (
     id: Entity.Assignment['id']
   ): Promise<Nullable<Entity.Bookmark>> => {
