@@ -6,18 +6,24 @@ import {
 
 import styles from './styles.css?inline';
 
-interface Props extends HTMLAttributes<HTMLElement> {}
+interface Props extends HTMLAttributes<HTMLElement> {
+  image?: string;
+}
 
-export default component$<Props>(({ title, ...props }) => {
+export default component$<Props>(({ title, image, ...props }) => {
   useStylesScoped$(styles);
 
   return (
     <abbr title={title} {...props}>
-      {title
-        ?.match(/\b(\w)/g)
-        ?.join('')
-        .toUpperCase()
-        .substring(0, 2)}
+      {image ? (
+        <img src={image} alt={title} height={40} width={40} />
+      ) : (
+        title
+          ?.match(/\b(\w)/g)
+          ?.join('')
+          .toUpperCase()
+          .substring(0, 2)
+      )}
     </abbr>
   );
 });

@@ -20,3 +20,8 @@ abbr[title] {
 abbr:hover {
   background: #007dd3;
 }
+
+img {
+  height: 100%;
+  width: 100%;
+}
