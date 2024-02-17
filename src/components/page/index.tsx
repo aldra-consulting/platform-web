@@ -29,7 +29,7 @@ export default component$<Props>(({ ...props }) => {
     <main {...props}>
       <Header>
         <Logo theme={Theme.LIGHT} height='100%' q:slot='logo' />
-        <Avatar title={user.name} onClick$={signOut} q:slot='avatar' />
+        <Avatar title={user?.name} onClick$={signOut} q:slot='avatar' />
       </Header>
       <div data-slot='breadcrumbs'>
         <Slot name='breadcrumbs' />

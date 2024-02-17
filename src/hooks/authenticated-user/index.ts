@@ -6,13 +6,19 @@ import {
   useComputed$,
 } from '@builder.io/qwik';
 
+import { type Entity } from '@project/types';
 import { auth } from '@project/utils/auth';
 
+import { UserConverter } from './utils';
+
 export const useAuthenticatedUser = (onMissingUser?: QRL<() => void>) => {
-  const user = useStore<{ name?: string; isLoading?: boolean }>({});
+  const store = useStore<{
+    user?: Entity.User;
+    isLoading?: boolean;
+  }>({});
 
   const isAuthenticated = useComputed$(
-    () => user.isLoading === false && user.name
+    () => store.isLoading === false && store.user?.id
   );
 
   useVisibleTask$(() =>
@@ -24,11 +30,13 @@ export const useAuthenticatedUser = (onMissingUser?: QRL<() => void>) => {
 
         return null;
       })
-      .then((loggedInUser) => {
-        user.name = loggedInUser?.profile.name;
+      .then((user) => {
+        if (user) {
+          store.user = new UserConverter().convert(user);
+        }
       })
       .finally(() => {
-        user.isLoading = false;
+        store.isLoading = false;
       })
   );
 
@@ -37,13 +45,13 @@ export const useAuthenticatedUser = (onMissingUser?: QRL<() => void>) => {
       .signOut()
       .catch(() => {})
       .finally(() => {
-        user.name = undefined;
-        user.isLoading = undefined;
+        store.user = undefined;
+        store.isLoading = undefined;
       })
   );
 
   return {
-    user,
+    user: store.user,
     isAuthenticated,
     signOut,
   } as const;
