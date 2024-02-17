@@ -25,5 +25,41 @@
     },
     "role": "Role 3",
     "status": "cancelled"
+  },
+  {
+    "id": "assignment-4",
+    "client": {
+      "id": "client-4",
+      "name": "Client 4"
+    },
+    "role": "Role 4",
+    "status": "cancelled"
+  },
+  {
+    "id": "assignment-5",
+    "client": {
+      "id": "client-5",
+      "name": "Client 5"
+    },
+    "role": "Role 5",
+    "status": "cancelled"
+  },
+  {
+    "id": "assignment-6",
+    "client": {
+      "id": "client-6",
+      "name": "Client 6"
+    },
+    "role": "Role 6",
+    "status": "cancelled"
+  },
+  {
+    "id": "assignment-7",
+    "client": {
+      "id": "client-7",
+      "name": "Client 7"
+    },
+    "role": "Role 7",
+    "status": "cancelled"
   }
 ]
