@@ -1,3 +1,11 @@
-* + * {
-  margin-top: 16px;
+[data-root] {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+[data-slot="roles"] {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }

@@ -1,25 +1,25 @@
-import { component$, useStylesScoped$ } from '@builder.io/qwik';
+import { component$, useContext, useStylesScoped$ } from '@builder.io/qwik';
 
-import Alert from '@project/components/alert';
+import { AssignmentContext } from '@project/context';
 
+import Role from './components/role';
 import styles from './styles.css?inline';
 
 export default component$(() => {
   useStylesScoped$(styles);
 
+  const {
+    assignment: { brief, roles },
+  } = useContext(AssignmentContext);
+
   return (
-    <>
-      <div data-slot='status'>
-        <Alert severity='info' compact>
-          Vi leter aktivt etter nye kandidater
-        </Alert>
+    <div data-root>
+      {brief ? <p>{brief}</p> : null}
+      <div data-slot='roles'>
+        {roles.map((role) => (
+          <Role key={role.id} role={role} />
+        ))}
       </div>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
-        consequuntur quidem cum rerum reprehenderit numquam assumenda, qui
-        similique aut ad, eius, quae debitis in est aperiam. A est incidunt
-        assumenda.
-      </p>
-    </>
+    </div>
   );
 });
