@@ -7,3 +7,7 @@ div {
 div:first-child {
   border: none;
 }
+
+div:only-child {
+  background: white;
+}
