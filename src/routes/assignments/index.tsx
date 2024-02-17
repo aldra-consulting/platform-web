@@ -59,15 +59,13 @@ export default component$(() => {
             >
               {assignments.map((assignment, index) => (
                 <AssignmentProvider key={assignment.id} assignment={assignment}>
-                  <div>
-                    <Animated
-                      animation='fade-in-up'
-                      duration={{ value: 0.5, unit: 's' }}
-                      delay={{ value: index / 10, unit: 's' }}
-                    >
-                      <Assignment />
-                    </Animated>
-                  </div>
+                  <Animated
+                    animation='fade-in-up'
+                    duration={{ value: 0.5, unit: 's' }}
+                    delay={{ value: index / 10 + 0.3, unit: 's' }}
+                  >
+                    <Assignment />
+                  </Animated>
                 </AssignmentProvider>
               ))}
             </MasonryGrid>
