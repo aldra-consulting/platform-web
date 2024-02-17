@@ -11,6 +11,7 @@ export namespace Entity {
     client: Client;
     status: 'active' | 'concluded' | 'cancelled';
     brief?: string;
+    description?: string;
     bookmark?: Bookmark;
   }
 }

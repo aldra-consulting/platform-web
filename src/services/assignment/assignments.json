@@ -7,7 +7,8 @@
       "name": "Client 1"
     },
     "status": "active",
-    "brief": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda."
+    "brief": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda.",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda."
   },
   {
     "id": "assignment-2",
@@ -17,7 +18,8 @@
       "name": "Client 2"
     },
     "status": "concluded",
-    "brief": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda."
+    "brief": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda.",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda."
   },
   {
     "id": "assignment-3",
@@ -27,7 +29,8 @@
       "name": "Client 3"
     },
     "status": "cancelled",
-    "brief": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda."
+    "brief": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda.",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda."
   },
   {
     "id": "assignment-4",
@@ -37,7 +40,8 @@
       "name": "Client 4"
     },
     "status": "cancelled",
-    "brief": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda."
+    "brief": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda.",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda."
   },
   {
     "id": "assignment-5",
@@ -47,7 +51,8 @@
       "name": "Client 5"
     },
     "status": "cancelled",
-    "brief": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda."
+    "brief": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda.",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda."
   },
   {
     "id": "assignment-6",
@@ -57,7 +62,8 @@
       "name": "Client 6"
     },
     "status": "cancelled",
-    "brief": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda."
+    "brief": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda.",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda."
   },
   {
     "id": "assignment-7",
@@ -67,6 +73,7 @@
       "name": "Client 7"
     },
     "status": "cancelled",
-    "brief": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda."
+    "brief": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda.",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda."
   }
 ]
