@@ -13,8 +13,8 @@ export default component$(() => {
 
   const {
     assignment: {
+      name,
       client: { id: clientId, name: clientName },
-      role,
     },
   } = useContext(AssignmentContext);
 
@@ -22,7 +22,7 @@ export default component$(() => {
     <>
       <Card.Header.Title>
         <div data-slot='title'>
-          <span>{role}</span>
+          <span>{name}</span>
           <div data-slot='actions'>
             <Status />
             <Bookmark />

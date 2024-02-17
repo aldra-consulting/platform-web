@@ -7,9 +7,8 @@ export namespace Entity {
 
   export interface Bookmark extends Identifiable {}
 
-  export interface Assignment extends Identifiable {
+  export interface Assignment extends Identifiable, Nameable {
     client: Client;
-    role: string;
     status: 'active' | 'concluded' | 'cancelled';
     bookmark?: Bookmark;
   }
