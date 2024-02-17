@@ -10,6 +10,7 @@ export namespace Entity {
   export interface Assignment extends Identifiable, Nameable {
     client: Client;
     status: 'active' | 'concluded' | 'cancelled';
+    brief?: string;
     bookmark?: Bookmark;
   }
 }
