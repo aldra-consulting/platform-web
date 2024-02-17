@@ -6,6 +6,21 @@
       "id": "client-1",
       "name": "Client 1"
     },
+    "roles": [
+      {
+        "id": "role-1",
+        "name": "Rolle 1",
+        "status": "filled",
+        "applicant": {
+          "id": "c275b4f4-00e1-70d5-2407-c411af7ff905"
+        }
+      },
+      {
+        "id": "role-2",
+        "name": "Rolle 2",
+        "status": "open"
+      }
+    ],
     "status": "active",
     "brief": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda.",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda."
@@ -17,6 +32,18 @@
       "id": "client-2",
       "name": "Client 2"
     },
+    "roles": [
+      {
+        "id": "role-1",
+        "name": "Rolle 1",
+        "status": "filled"
+      },
+      {
+        "id": "role-2",
+        "name": "Rolle 2",
+        "status": "filled"
+      }
+    ],
     "status": "concluded",
     "brief": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda.",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda."
@@ -28,6 +55,18 @@
       "id": "client-3",
       "name": "Client 3"
     },
+    "roles": [
+      {
+        "id": "role-1",
+        "name": "Rolle 1",
+        "status": "review"
+      },
+      {
+        "id": "role-2",
+        "name": "Rolle 2",
+        "status": "filled"
+      }
+    ],
     "status": "cancelled",
     "brief": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda.",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda."
@@ -39,6 +78,13 @@
       "id": "client-4",
       "name": "Client 4"
     },
+    "roles": [
+      {
+        "id": "role-1",
+        "name": "Rolle 1",
+        "status": "open"
+      }
+    ],
     "status": "cancelled",
     "brief": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda.",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda."
@@ -50,6 +96,13 @@
       "id": "client-5",
       "name": "Client 5"
     },
+    "roles": [
+      {
+        "id": "role-1",
+        "name": "Rolle 1",
+        "status": "open"
+      }
+    ],
     "status": "cancelled",
     "brief": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda.",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda."
@@ -61,6 +114,13 @@
       "id": "client-6",
       "name": "Client 6"
     },
+    "roles": [
+      {
+        "id": "role-1",
+        "name": "Rolle 1",
+        "status": "open"
+      }
+    ],
     "status": "cancelled",
     "brief": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda.",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda."
@@ -72,6 +132,13 @@
       "id": "client-7",
       "name": "Client 7"
     },
+    "roles": [
+      {
+        "id": "role-1",
+        "name": "Rolle 1",
+        "status": "open"
+      }
+    ],
     "status": "cancelled",
     "brief": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda.",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda."
