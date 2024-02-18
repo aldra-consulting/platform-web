@@ -1,4 +1,4 @@
-import { Resource, component$, useStylesScoped$ } from '@builder.io/qwik';
+import { $, component$, Resource } from '@builder.io/qwik';
 import {
   useLocation,
   type DocumentHead,
@@ -9,48 +9,54 @@ import Breadcrumbs from '@project/components/breadcrumbs';
 import Link from '@project/components/link';
 import Page from '@project/components/page';
 import { useAssignment } from '@project/hooks';
+import { AssignmentProvider } from '@project/providers';
+import { AssignmentService } from '@project/services';
 
-import styles from './styles.css?inline';
+import Assignment from './components/assignment';
 
 export default component$(() => {
-  useStylesScoped$(styles);
-
   const { params } = useLocation();
 
-  const { resource } = useAssignment(params.id ?? '');
+  const { resource } = useAssignment(
+    $(() => new AssignmentService().get(params.id ?? ''))
+  );
 
   return (
-    <Page>
-      <Breadcrumbs q:slot='breadcrumbs'>
-        <Breadcrumbs.Breadcrumb>
-          <Link href='https://www.aldra.no' color='neutral'>
-            Aldra
-          </Link>
-        </Breadcrumbs.Breadcrumb>
-        <Breadcrumbs.Separator>/</Breadcrumbs.Separator>
-        <Breadcrumbs.Breadcrumb>
-          <Link href='/' color='neutral'>
-            Plattform
-          </Link>
-        </Breadcrumbs.Breadcrumb>
-        <Breadcrumbs.Separator>/</Breadcrumbs.Separator>
-        <Breadcrumbs.Breadcrumb>
-          <Link href='/assignments' color='neutral'>
-            Oppdrag
-          </Link>
-        </Breadcrumbs.Breadcrumb>
-        <Breadcrumbs.Separator>/</Breadcrumbs.Separator>
-        <Breadcrumbs.Breadcrumb active>
-          Oppdrag ({params.id})
-        </Breadcrumbs.Breadcrumb>
-      </Breadcrumbs>
-      <Resource
-        value={resource}
-        onResolved={(assignment) =>
-          assignment ? <h1>ASSIGNMENT: {assignment.id}</h1> : null
-        }
-      />
-    </Page>
+    <Resource
+      value={resource}
+      onResolved={(assignment) =>
+        assignment ? (
+          <Page>
+            <Breadcrumbs q:slot='breadcrumbs'>
+              <Breadcrumbs.Breadcrumb>
+                <Link href='https://www.aldra.no' color='neutral'>
+                  Aldra
+                </Link>
+              </Breadcrumbs.Breadcrumb>
+              <Breadcrumbs.Separator>/</Breadcrumbs.Separator>
+              <Breadcrumbs.Breadcrumb>
+                <Link href='/' color='neutral'>
+                  Plattform
+                </Link>
+              </Breadcrumbs.Breadcrumb>
+              <Breadcrumbs.Separator>/</Breadcrumbs.Separator>
+              <Breadcrumbs.Breadcrumb>
+                <Link href='/assignments' color='neutral'>
+                  Oppdrag
+                </Link>
+              </Breadcrumbs.Breadcrumb>
+              <Breadcrumbs.Separator>/</Breadcrumbs.Separator>
+              <Breadcrumbs.Breadcrumb active>
+                {assignment.name}
+              </Breadcrumbs.Breadcrumb>
+            </Breadcrumbs>
+            <AssignmentProvider assignment={assignment}>
+              <Assignment />
+            </AssignmentProvider>
+          </Page>
+        ) : null
+      }
+    />
   );
 });
 
