@@ -15,13 +15,16 @@ export default component$(() => {
 
   const signIn = $(() => auth().signIn());
 
-  const { user, signOut } = useAuthenticatedUser(signIn);
+  const {
+    store: { user },
+    signOut,
+  } = useAuthenticatedUser(signIn);
 
   return (
     <main id='page'>
       <Header>
         <Logo theme={Theme.LIGHT} height='100%' q:slot='logo' />
-        <Avatar title={user.name} onClick$={signOut} q:slot='avatar' />
+        <Avatar title={user?.name} onClick$={signOut} q:slot='avatar' />
       </Header>
       <Logo theme={Theme.LIGHT} height={70} />
       <h1>Aldra Platform kommer snart! 🚀</h1>

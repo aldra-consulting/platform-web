@@ -23,7 +23,10 @@ export default component$<Props>(({ ...props }) => {
 
   const signIn = $(() => auth().signIn());
 
-  const { user, signOut } = useAuthenticatedUser(signIn);
+  const {
+    store: { user },
+    signOut,
+  } = useAuthenticatedUser(signIn);
 
   return (
     <main {...props}>

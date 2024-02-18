@@ -11,6 +11,7 @@ import { auth } from '@project/utils/auth';
 
 import { UserConverter } from './utils';
 
+// TODO: refactor
 export const useAuthenticatedUser = (onMissingUser?: QRL<() => void>) => {
   const store = useStore<{
     user?: Entity.User;
@@ -51,7 +52,7 @@ export const useAuthenticatedUser = (onMissingUser?: QRL<() => void>) => {
   );
 
   return {
-    user: store.user,
+    store,
     isAuthenticated,
     signOut,
   } as const;

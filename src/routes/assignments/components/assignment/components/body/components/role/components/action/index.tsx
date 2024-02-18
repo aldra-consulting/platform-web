@@ -10,7 +10,9 @@ import {
 } from '@project/hooks';
 
 export default component$(() => {
-  const { user } = useAuthenticatedUser();
+  const {
+    store: { user },
+  } = useAuthenticatedUser();
 
   const context = useContext(RoleContext);
 

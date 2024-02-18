@@ -5,7 +5,9 @@ import { AssignmentContext, RoleContext } from '@project/context';
 import { useAuthenticatedUser } from '@project/hooks';
 
 export default component$(() => {
-  const { user } = useAuthenticatedUser();
+  const {
+    store: { user },
+  } = useAuthenticatedUser();
 
   const { isActive } = useContext(AssignmentContext);
 
