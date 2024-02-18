@@ -21,6 +21,7 @@ export default component$<Props>(({ assignment }) => {
     AssignmentContext,
     useStore<AssignmentStore>({
       assignment,
+      isActive: assignment.status === 'active',
       toggleBookmark: $(async function run(this: AssignmentStore) {
         try {
           this.assignment.bookmark =

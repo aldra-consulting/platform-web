@@ -13,15 +13,13 @@ interface Props {
 export default component$<Props>(({ status, applicant }) => {
   const { user } = useAuthenticatedUser();
 
-  const { assignment } = useContext(AssignmentContext);
-
-  const isAssignmentActive = assignment.status === 'active';
+  const { isActive } = useContext(AssignmentContext);
 
   const isUserAnApplicant = applicant && applicant.id === user?.id;
 
   switch (status) {
     case 'open':
-      return isAssignmentActive ? null : (
+      return isActive ? null : (
         <Chip size='small' color='neutral' variant='outlined'>
           Ingen kandidater
         </Chip>

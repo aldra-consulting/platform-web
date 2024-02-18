@@ -15,9 +15,7 @@ interface Props {
 export default component$<Props>(({ role: { name, status, applicant } }) => {
   useStylesScoped$(styles);
 
-  const { assignment } = useContext(AssignmentContext);
-
-  const isAssignmentActive = assignment.status === 'active';
+  const { isActive } = useContext(AssignmentContext);
 
   return (
     <Card>
@@ -25,9 +23,7 @@ export default component$<Props>(({ role: { name, status, applicant } }) => {
         <div data-slot='role'>
           <p>{name}</p>
           <Status status={status} applicant={applicant} />
-          {isAssignmentActive ? (
-            <Action status={status} applicant={applicant} />
-          ) : null}
+          {isActive ? <Action status={status} applicant={applicant} /> : null}
         </div>
       </Card.Body>
     </Card>
