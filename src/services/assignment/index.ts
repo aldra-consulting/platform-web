@@ -13,6 +13,21 @@ export default class AssignmentService implements Service.Assignment {
   };
 
   // TODO: change implementation
+  get = async (
+    id: Entity.Assignment['id']
+  ): Promise<Nullable<Entity.Assignment>> => {
+    try {
+      return await Promise.resolve(
+        (assignments as Entity.Assignment[]).find(
+          (assignment) => assignment.id === id
+        )
+      );
+    } catch (error) {
+      throw new Error('Unable to find assignment', { cause: error });
+    }
+  };
+
+  // TODO: change implementation
   toggleBookmark = async (
     id: Entity.Assignment['id']
   ): Promise<Nullable<Entity.Bookmark>> => {

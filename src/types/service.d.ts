@@ -5,6 +5,8 @@ export namespace Service {
   export interface Assignment {
     list: () => Promise<Entity.Assignment[]>;
 
+    get: (id: Entity.Applicant['id']) => Promise<Nullable<Entity.Assignment>>;
+
     toggleBookmark: (
       id: Entity.Assignment['id']
     ) => Promise<Nullable<Entity.Bookmark>>;
