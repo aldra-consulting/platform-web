@@ -30,6 +30,18 @@
         "name": "Norsk",
         "level": "B2"
       }
+    ],
+    "awardCriteria": [
+      {
+        "id": "quality",
+        "name": "Kvalitet",
+        "weight": 60
+      },
+      {
+        "id": "price",
+        "name": "Pris",
+        "weight": 40
+      }
     ]
   },
   {

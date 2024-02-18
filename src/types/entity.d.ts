@@ -13,6 +13,12 @@ export namespace Entity {
     level: 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2';
   }
 
+  export interface AwardCriterion
+    extends Identifiable<'quality' | 'price'>,
+      Nameable {
+    weight: number;
+  }
+
   export interface Role extends Identifiable, Nameable {
     status: 'open' | 'review' | 'filled';
     applicant?: Applicant;
@@ -25,6 +31,7 @@ export namespace Entity {
     brief?: string;
     description?: string;
     languages?: Language[];
+    awardCriteria?: AwardCriterion[];
     bookmark?: Bookmark;
   }
 }
