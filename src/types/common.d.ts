@@ -27,3 +27,5 @@ interface Dimension<Value, Unit> {
 export interface Converter<Source, Target> {
   convert(source: Source): Target;
 }
+
+export type LanguageCode = 'no' | 'en';
