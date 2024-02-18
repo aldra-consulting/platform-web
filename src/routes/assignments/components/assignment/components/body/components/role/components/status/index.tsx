@@ -1,20 +1,17 @@
 import { component$, useContext } from '@builder.io/qwik';
 
 import Chip from '@project/components/chip';
-import { AssignmentContext } from '@project/context';
+import { AssignmentContext, RoleContext } from '@project/context';
 import { useAuthenticatedUser } from '@project/hooks';
-import { type Entity } from '@project/types';
 
-interface Props {
-  status: Entity.Role['status'];
-  applicant: Entity.Role['applicant'];
-}
-
-export default component$<Props>(({ status, applicant }) => {
+export default component$(() => {
   const { user } = useAuthenticatedUser();
 
   const { isActive } = useContext(AssignmentContext);
 
+  const {
+    role: { status, applicant },
+  } = useContext(RoleContext);
   const isUserAnApplicant = applicant && applicant.id === user?.id;
 
   switch (status) {
