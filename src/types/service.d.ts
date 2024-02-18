@@ -9,4 +9,10 @@ export namespace Service {
       id: Entity.Assignment['id']
     ) => Promise<Nullable<Entity.Bookmark>>;
   }
+
+  export interface Role {
+    apply: (id: Entity.Role['id']) => Promise<void>;
+
+    withdraw: (id: Entity.Role['id']) => Promise<void>;
+  }
 }
