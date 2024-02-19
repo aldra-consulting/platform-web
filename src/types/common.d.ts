@@ -19,6 +19,12 @@ export interface Nameable<Container = string> {
   name: Container;
 }
 
+export interface Labelled<Container = string> {
+  label: Container;
+}
+
+export type Flatten<Type> = Type extends (infer Item)[] ? Item : Type;
+
 interface Dimension<Value, Unit> {
   value: Value;
   unit: Unit;
@@ -26,6 +32,14 @@ interface Dimension<Value, Unit> {
 
 export interface Converter<Source, Target> {
   convert(source: Source): Target;
+}
+
+export interface Parser<Source extends string, Target> {
+  parse(value: Source): Target;
+}
+
+export interface Formatter<Source, Target = string> {
+  format(value: Source): Target;
 }
 
 export type LanguageCode = 'no' | 'en';
