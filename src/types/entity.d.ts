@@ -51,6 +51,12 @@ export namespace Entity {
     weight?: number;
   }
 
+  export interface Representative extends Identifiable, Nameable {
+    phone?: string;
+    email?: string;
+    imageUrl?: string;
+  }
+
   export interface Role extends Identifiable, Nameable {
     status: 'open' | 'review' | 'filled';
     description?: string;
@@ -78,5 +84,6 @@ export namespace Entity {
     languages?: Language[];
     awardCriteria?: AwardCriterion[];
     bookmark?: Bookmark;
+    representative?: Representative;
   }
 }

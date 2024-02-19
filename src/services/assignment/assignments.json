@@ -140,7 +140,14 @@
         "name": "Pris",
         "weight": 40
       }
-    ]
+    ],
+    "representative": {
+      "id": "c275b4f4-00e1-70d5-2407-c411af7ff905",
+      "name": "Alexander Zakharov",
+      "phone": "+47 93 66 06 18",
+      "email": "alexander.zakharov@aldra.no",
+      "imageUrl": "http://localhost:8004"
+    }
   },
   {
     "id": "assignment-2",
