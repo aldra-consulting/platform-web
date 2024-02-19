@@ -9,6 +9,21 @@ export namespace Entity {
 
   export interface Applicant extends Identifiable {}
 
+  export interface Detail<Type extends string, Value> extends Nameable {
+    type: Type;
+    value: Value;
+  }
+
+  export type DeadlineDetail = Detail<'deadline', 'string'>;
+
+  export type CommencementDetail = Detail<'commencement', 'string'>;
+
+  export type DurationDetail = Detail<'duration', 'string'>;
+
+  export type ScopeDetail = Detail<'scope', 'string'>;
+
+  export type LocationDetail = Detail<'location', 'string'>;
+
   export interface Language extends Identifiable<LanguageCode>, Nameable {
     level: 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2';
   }
@@ -50,6 +65,13 @@ export namespace Entity {
     roles: Role[];
     brief?: string;
     description?: string;
+    details?: (
+      | DeadlineDetail
+      | CommencementDetail
+      | DurationDetail
+      | ScopeDetail
+      | LocationDetail
+    )[];
     languages?: Language[];
     awardCriteria?: AwardCriterion[];
     bookmark?: Bookmark;

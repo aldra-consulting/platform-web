@@ -52,6 +52,33 @@
     "status": "active",
     "brief": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda.",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda.",
+    "details": [
+      {
+        "type": "deadline",
+        "name": "Frist",
+        "value": "2024-02-18T14:23:17.160Z"
+      },
+      {
+        "type": "commencement",
+        "name": "Oppstart",
+        "value": "Snarest mulig i januar 2024"
+      },
+      {
+        "type": "duration",
+        "name": "Varighet",
+        "value": "30 måneder med 6+6 måneders opsjon"
+      },
+      {
+        "type": "scope",
+        "name": "Omfang",
+        "value": 100
+      },
+      {
+        "type": "location",
+        "name": "Arbeidssted",
+        "value": "Digitaliseringsdirektoratet sine lokaler i Oslo (Økern Portal)"
+      }
+    ],
     "languages": [
       {
         "id": "no",
