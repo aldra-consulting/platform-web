@@ -1,0 +1,39 @@
+[data-root] {
+  display: flex;
+  align-items: center;
+}
+
+p {
+  border-right: 1px solid #c9d4e1;
+}
+
+p:first-of-type {
+  min-width: 80px;
+  padding-right: 16px;
+  font-weight: 600;
+}
+
+
+p:nth-of-type(2) {
+  margin: 0;
+  padding: 0 16px;
+}
+
+span {
+  height: 16px;
+  width: 100%;
+  margin: 0 !important;
+  margin-left: 16px !important;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #c9d4e1;
+}
+
+span::before {
+  display: block;
+  content: '';
+  height: 100%;
+  width: calc(var(--weight, 0) * 100%);
+  border-radius: 8px;
+  background: #71c1ff;
+}

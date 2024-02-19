@@ -1,0 +1,15 @@
+[data-root]{
+  display: flex;
+  align-items: center;
+}
+
+p {
+  min-width: 120px;
+  padding-right: 16px;
+  font-weight: 600;
+  border-right: 1px solid #c9d4e1;
+}
+
+span {
+  padding: 0 16px;
+}

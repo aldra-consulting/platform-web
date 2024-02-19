@@ -1,0 +1,11 @@
+h4 {
+  font-weight: 500;
+}
+
+
+[data-slot="skills"] {
+  display: flex;
+  flex-flow: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}

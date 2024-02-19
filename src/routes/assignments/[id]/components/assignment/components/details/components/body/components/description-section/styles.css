@@ -1,0 +1,20 @@
+[data-slot="description"] {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+[data-slot="description"] :global(p) {
+  line-height: 1.25;
+}
+
+[data-slot="description"] :global(ul) {
+  padding-left: 28px;
+  list-style: disc;
+  line-height: 1.5;
+}
+
+[data-slot="description"] :global(ul > li::marker) {
+  font-size: large;
+  color: #505b66;
+}

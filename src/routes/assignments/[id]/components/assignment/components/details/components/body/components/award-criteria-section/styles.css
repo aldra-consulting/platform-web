@@ -1,0 +1,5 @@
+[data-slot="award-criteria"] {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

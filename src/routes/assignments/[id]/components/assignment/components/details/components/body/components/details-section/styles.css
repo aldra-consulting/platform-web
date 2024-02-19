@@ -1,0 +1,5 @@
+[data-slot="details"] {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

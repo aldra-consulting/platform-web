@@ -1,0 +1,17 @@
+[data-slot="header"] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+[data-slot="header"] > p {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+[data-slot="body"] {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
