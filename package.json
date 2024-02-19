@@ -51,7 +51,9 @@
   },
   "dependencies": {
     "bricks.js": "^1.8.0",
-    "oidc-client-ts": "^2.4.0"
+    "oidc-client-ts": "^2.4.0",
+    "sanitize-html": "^2.11.0",
+    "showdown": "^2.1.0"
   },
   "devDependencies": {
     "@aldra-consulting/eslint-config-typescript-react": "^1.0.1",
@@ -69,6 +71,8 @@
     "@types/node": "^20.11.7",
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
+    "@types/sanitize-html": "^2.11.0",
+    "@types/showdown": "^2.0.6",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.56.0",
