@@ -21,6 +21,7 @@ export namespace Entity {
 
   export interface Role extends Identifiable, Nameable {
     status: 'open' | 'review' | 'filled';
+    description?: string;
     applicant?: Applicant;
   }
 
