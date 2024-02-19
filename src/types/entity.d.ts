@@ -19,9 +19,28 @@ export namespace Entity {
     weight: number;
   }
 
+  export interface QualificationRequirement extends Identifiable {
+    description: string;
+  }
+
+  export interface MustQualificationRequirement
+    extends QualificationRequirement {
+    level: 'MUST';
+  }
+
+  export interface ShouldQualificationRequirement
+    extends QualificationRequirement {
+    level: 'SHOULD';
+    weight?: number;
+  }
+
   export interface Role extends Identifiable, Nameable {
     status: 'open' | 'review' | 'filled';
     description?: string;
+    qualificationRequirements: (
+      | MustQualificationRequirement
+      | ShouldQualificationRequirement
+    )[];
     applicant?: Applicant;
   }
 

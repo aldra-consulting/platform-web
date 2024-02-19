@@ -12,6 +12,31 @@
         "name": "Rolle 1",
         "status": "filled",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda.",
+        "qualificationRequirements": [
+          {
+            "id": "qr-1",
+            "level": "MUST",
+            "description": "Minimum 4 års dokumentert erfaring som prosessleder/controller"
+          },
+          {
+            "id": "qr-2",
+            "level": "SHOULD",
+            "description": "Dokumentert erfaring med økonomisk oppfølging av prosjekter, inkludert kostnadskontroll, budsjettoppfølging og risikovurdering",
+            "weight": 57
+          },
+          {
+            "id": "qr-3",
+            "level": "SHOULD",
+            "description": "Dokumentert erfaring med planlegging og rapportering i større teknologiske prosjekter/program",
+            "weight": 29
+          },
+          {
+            "id": "qr-4",
+            "level": "SHOULD",
+            "description": "Dokumentert erfaring fra prosjekt/programarbeid i offentlig sektor og samarbeid på tvers av virksomheter",
+            "weight": 14
+          }
+        ],
         "applicant": {
           "id": "c275b4f4-00e1-70d5-2407-c411af7ff905"
         }
@@ -20,7 +45,8 @@
         "id": "role-2",
         "name": "Rolle 2",
         "status": "open",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda."
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda.",
+        "qualificationRequirements": []
       }
     ],
     "status": "active",
@@ -57,12 +83,14 @@
       {
         "id": "role-1",
         "name": "Rolle 1",
-        "status": "filled"
+        "status": "filled",
+        "qualificationRequirements": []
       },
       {
         "id": "role-2",
         "name": "Rolle 2",
-        "status": "filled"
+        "status": "filled",
+        "qualificationRequirements": []
       }
     ],
     "status": "concluded",
@@ -80,12 +108,14 @@
       {
         "id": "role-1",
         "name": "Rolle 1",
-        "status": "review"
+        "status": "review",
+        "qualificationRequirements": []
       },
       {
         "id": "role-2",
         "name": "Rolle 2",
-        "status": "filled"
+        "status": "filled",
+        "qualificationRequirements": []
       }
     ],
     "status": "active",
@@ -103,7 +133,8 @@
       {
         "id": "role-1",
         "name": "Rolle 1",
-        "status": "open"
+        "status": "open",
+        "qualificationRequirements": []
       }
     ],
     "status": "cancelled",
@@ -121,7 +152,8 @@
       {
         "id": "role-1",
         "name": "Rolle 1",
-        "status": "open"
+        "status": "open",
+        "qualificationRequirements": []
       }
     ],
     "status": "cancelled",
@@ -139,7 +171,8 @@
       {
         "id": "role-1",
         "name": "Rolle 1",
-        "status": "open"
+        "status": "open",
+        "qualificationRequirements": []
       }
     ],
     "status": "cancelled",
@@ -157,7 +190,8 @@
       {
         "id": "role-1",
         "name": "Rolle 1",
-        "status": "open"
+        "status": "open",
+        "qualificationRequirements": []
       }
     ],
     "status": "cancelled",
