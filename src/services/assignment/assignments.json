@@ -37,6 +37,48 @@
             "weight": 14
           }
         ],
+        "skills": [
+          {
+            "id": "skill-1",
+            "name": "Skill 1"
+          },
+          {
+            "id": "skill-2",
+            "name": "Skill 2"
+          },
+          {
+            "id": "skill-3",
+            "name": "Skill 3"
+          },
+          {
+            "id": "skill-4",
+            "name": "Skill 4"
+          },
+          {
+            "id": "skill-5",
+            "name": "Skill 5"
+          },
+          {
+            "id": "skill-6",
+            "name": "Skill 6"
+          },
+          {
+            "id": "skill-7",
+            "name": "Skill 7"
+          },
+          {
+            "id": "skill-8",
+            "name": "Skill 8"
+          },
+          {
+            "id": "skill-9",
+            "name": "Skill 9"
+          },
+          {
+            "id": "skill-10",
+            "name": "Skill 10"
+          }
+        ],
         "applicant": {
           "id": "c275b4f4-00e1-70d5-2407-c411af7ff905"
         }
@@ -46,7 +88,8 @@
         "name": "Rolle 2",
         "status": "open",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda.",
-        "qualificationRequirements": []
+        "qualificationRequirements": [],
+        "skills": []
       }
     ],
     "status": "active",
@@ -111,13 +154,15 @@
         "id": "role-1",
         "name": "Rolle 1",
         "status": "filled",
-        "qualificationRequirements": []
+        "qualificationRequirements": [],
+        "skills": []
       },
       {
         "id": "role-2",
         "name": "Rolle 2",
         "status": "filled",
-        "qualificationRequirements": []
+        "qualificationRequirements": [],
+        "skills": []
       }
     ],
     "status": "concluded",
@@ -136,13 +181,15 @@
         "id": "role-1",
         "name": "Rolle 1",
         "status": "review",
-        "qualificationRequirements": []
+        "qualificationRequirements": [],
+        "skills": []
       },
       {
         "id": "role-2",
         "name": "Rolle 2",
         "status": "filled",
-        "qualificationRequirements": []
+        "qualificationRequirements": [],
+        "skills": []
       }
     ],
     "status": "active",
@@ -161,7 +208,8 @@
         "id": "role-1",
         "name": "Rolle 1",
         "status": "open",
-        "qualificationRequirements": []
+        "qualificationRequirements": [],
+        "skills": []
       }
     ],
     "status": "cancelled",
@@ -180,7 +228,8 @@
         "id": "role-1",
         "name": "Rolle 1",
         "status": "open",
-        "qualificationRequirements": []
+        "qualificationRequirements": [],
+        "skills": []
       }
     ],
     "status": "cancelled",
@@ -199,7 +248,8 @@
         "id": "role-1",
         "name": "Rolle 1",
         "status": "open",
-        "qualificationRequirements": []
+        "qualificationRequirements": [],
+        "skills": []
       }
     ],
     "status": "cancelled",
@@ -218,7 +268,8 @@
         "id": "role-1",
         "name": "Rolle 1",
         "status": "open",
-        "qualificationRequirements": []
+        "qualificationRequirements": [],
+        "skills": []
       }
     ],
     "status": "cancelled",

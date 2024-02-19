@@ -9,6 +9,8 @@ export namespace Entity {
 
   export interface Applicant extends Identifiable {}
 
+  export interface Skill extends Identifiable, Nameable {}
+
   export interface Detail<Type extends string, Value> extends Nameable {
     type: Type;
     value: Value;
@@ -56,6 +58,7 @@ export namespace Entity {
       | MustQualificationRequirement
       | ShouldQualificationRequirement
     )[];
+    skills?: Skill[];
     applicant?: Applicant;
   }
 
