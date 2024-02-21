@@ -18,7 +18,7 @@ export default component$(() => {
   const { params } = useLocation();
 
   const { resource } = useClient(
-    $(() => new ClientService().get(params.id ?? ''))
+    $(() => new ClientService().get(params.clientId ?? ''))
   );
 
   return (
@@ -61,7 +61,9 @@ export default component$(() => {
 });
 
 export const onStaticGenerate: StaticGenerateHandler = async () => ({
-  params: (await new ClientService().list()).map(({ id }) => ({ id })),
+  params: (await new ClientService().list()).map(({ id: clientId }) => ({
+    clientId,
+  })),
 });
 
 export const head: DocumentHead = {
