@@ -19,7 +19,7 @@ export default component$<Props>(({ requirement }) => {
           <Card.Body q:slot='body'>
             <div data-root>
               <span data-slot='level' data-level='must'>
-                MUST
+                MÅ
               </span>
               <p data-slot='description'>{requirement.description}</p>
             </div>
@@ -32,7 +32,7 @@ export default component$<Props>(({ requirement }) => {
           <Card.Body q:slot='body'>
             <div data-root>
               <span data-slot='level' data-level='should'>
-                SHOULD
+                BØR
               </span>
               <p data-slot='description'>{requirement.description}</p>
               {requirement.weight ? (
