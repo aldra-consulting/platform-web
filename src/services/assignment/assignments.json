@@ -3,8 +3,8 @@
     "id": "assignment-1",
     "name": "Oppdrag 1",
     "client": {
-      "id": "client-1",
-      "name": "Client 1"
+      "id": "c27cf68d-a8c6-436d-a8e9-5563e305b071",
+      "name": "Brønnøysundregistrene"
     },
     "roles": [
       {
@@ -153,8 +153,8 @@
     "id": "assignment-2",
     "name": "Oppdrag 2",
     "client": {
-      "id": "client-2",
-      "name": "Client 2"
+      "id": "c27cf68d-a8c6-436d-a8e9-5563e305b071",
+      "name": "Brønnøysundregistrene"
     },
     "roles": [
       {
@@ -180,8 +180,8 @@
     "id": "assignment-3",
     "name": "Oppdrag 3",
     "client": {
-      "id": "client-3",
-      "name": "Client 3"
+      "id": "c27cf68d-a8c6-436d-a8e9-5563e305b071",
+      "name": "Brønnøysundregistrene"
     },
     "roles": [
       {
@@ -207,8 +207,8 @@
     "id": "assignment-4",
     "name": "Oppdrag 4",
     "client": {
-      "id": "client-4",
-      "name": "Client 4"
+      "id": "c27cf68d-a8c6-436d-a8e9-5563e305b071",
+      "name": "Brønnøysundregistrene"
     },
     "roles": [
       {
