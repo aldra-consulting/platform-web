@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/aldra-consulting/platform-web/compare/1.2.0...1.2.1) (2024-02-21)
+
+
+### Bug Fixes
+
+* prevent prefetching ([a3ca8bf](https://github.com/aldra-consulting/platform-web/commit/a3ca8bf807b68de4939dda5dd3f3e150e0a7bcd1))
+
 # [1.2.0](https://github.com/aldra-consulting/platform-web/compare/1.1.0...1.2.0) (2024-02-21)
 
 
