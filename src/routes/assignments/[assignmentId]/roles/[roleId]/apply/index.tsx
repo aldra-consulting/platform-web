@@ -1,10 +1,14 @@
 import { component$, useContext } from '@builder.io/qwik';
-import { type DocumentHead } from '@builder.io/qwik-city';
+import {
+  type StaticGenerateHandler,
+  type DocumentHead,
+} from '@builder.io/qwik-city';
 
 import Breadcrumbs from '@project/components/breadcrumbs';
 import Link from '@project/components/link';
 import Page from '@project/components/page';
 import { AssignmentContext, RoleContext } from '@project/context';
+import { AssignmentService } from '@project/services';
 
 export default component$(() => {
   const { assignment } = useContext(AssignmentContext);
@@ -48,6 +52,13 @@ export default component$(() => {
       <pre>{JSON.stringify(role, null, 2)}</pre>
     </Page>
   );
+});
+
+export const onStaticGenerate: StaticGenerateHandler = async () => ({
+  params: (await new AssignmentService().list()).flatMap(
+    ({ id: assignmentId, roles }) =>
+      roles.map(({ id: roleId }) => ({ assignmentId, roleId }))
+  ),
 });
 
 export const head: DocumentHead = {
