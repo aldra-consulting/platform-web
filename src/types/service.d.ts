@@ -17,4 +17,10 @@ export namespace Service {
 
     withdraw: (id: Entity.Role['id']) => Promise<void>;
   }
+
+  export interface Client {
+    list: () => Promise<Entity.Client[]>;
+
+    get: (id: Entity.Client['id']) => Promise<Nullable<Entity.Client>>;
+  }
 }
