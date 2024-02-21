@@ -19,7 +19,7 @@ export default component$(() => {
     <Card>
       <Card.Body q:slot='body'>
         <div data-root>
-          <Link href={`/assignments/${id}`} color='blue'>
+          <Link href={`/assignments/${id}`} color='blue' prefetch={false}>
             {name}
           </Link>
           <Status />
