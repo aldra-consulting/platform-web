@@ -14,6 +14,7 @@ export default extendConfig(baseConfig, () => ({
     staticAdapter({
       origin: 'https://www.platform.aldra.no',
       emit404Pages: false,
+      exclude: ['/*/components/*'],
     }),
   ],
 }));
