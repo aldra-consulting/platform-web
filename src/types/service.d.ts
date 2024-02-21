@@ -7,6 +7,8 @@ export namespace Service {
 
     get: (id: Entity.Applicant['id']) => Promise<Nullable<Entity.Assignment>>;
 
+    findByIdOrThrow: (id: Entity.Applicant['id']) => Promise<Entity.Assignment>;
+
     toggleBookmark: (
       id: Entity.Assignment['id']
     ) => Promise<Nullable<Entity.Bookmark>>;

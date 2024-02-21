@@ -1,6 +1,7 @@
 import { type Service, type Entity, type Nullable } from '@project/types';
 
 import assignments from './assignments.json';
+import { AssignmentNotFoundError } from './errors';
 
 export default class AssignmentService implements Service.Assignment {
   // TODO: change implementation
@@ -25,6 +26,21 @@ export default class AssignmentService implements Service.Assignment {
     } catch (error) {
       throw new Error('Unable to find assignment', { cause: error });
     }
+  };
+
+  // TODO: change implementation
+  findByIdOrThrow = async (
+    id: Entity.Assignment['id']
+  ): Promise<Entity.Assignment> => {
+    const assignment = (assignments as Entity.Assignment[]).find(
+      ({ id: assignmentId }) => assignmentId === id
+    );
+
+    if (!assignment) {
+      throw new AssignmentNotFoundError(id);
+    }
+
+    return Promise.resolve(assignment);
   };
 
   // TODO: change implementation
