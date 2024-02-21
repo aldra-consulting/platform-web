@@ -10,7 +10,7 @@ export default component$(() => {
   const { params } = useLocation();
 
   const { resource } = useAssignment(
-    $(() => new AssignmentService().findByIdOrThrow(params.id ?? ''))
+    $(() => new AssignmentService().findByIdOrThrow(params.assignmentId ?? ''))
   );
 
   return (

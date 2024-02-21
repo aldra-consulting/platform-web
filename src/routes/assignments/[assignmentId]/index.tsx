@@ -49,7 +49,9 @@ export default component$(() => {
 });
 
 export const onStaticGenerate: StaticGenerateHandler = async () => ({
-  params: (await new AssignmentService().list()).map(({ id }) => ({ id })),
+  params: (await new AssignmentService().list()).map(
+    ({ id: assignmentId }) => ({ assignmentId })
+  ),
 });
 
 export const head: DocumentHead = {
