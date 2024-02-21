@@ -61,20 +61,7 @@ export default component$(() => {
 });
 
 export const onStaticGenerate: StaticGenerateHandler = async () => ({
-  params: (
-    await Promise.resolve([
-      'c27cf68d-a8c6-436d-a8e9-5563e305b071',
-      'client-2',
-      'client-3',
-      'client-4',
-      'client-5',
-      'client-6',
-      'client-7',
-      'client-8',
-      'client-9',
-      'client-10',
-    ])
-  ).map((id) => ({ id })),
+  params: (await new ClientService().list()).map(({ id }) => ({ id })),
 });
 
 export const head: DocumentHead = {
