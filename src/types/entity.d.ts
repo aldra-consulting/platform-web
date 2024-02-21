@@ -3,7 +3,9 @@ import { type Identifiable, type Nameable, type LanguageCode } from './common';
 export namespace Entity {
   export interface User extends Identifiable, Nameable {}
 
-  export interface Client extends Identifiable, Nameable {}
+  export interface Client extends Identifiable, Nameable {
+    description?: string;
+  }
 
   export interface Bookmark extends Identifiable {}
 
