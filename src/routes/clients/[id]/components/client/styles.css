@@ -1,0 +1,16 @@
+[data-root] {
+  display: flex;
+  align-items: flex-start;
+  height: fit-content;
+  margin: 0 auto;
+}
+
+main {
+  width: 800px;
+}
+
+[data-slot="body"] {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
