@@ -8,13 +8,14 @@ import Breadcrumbs from '@project/components/breadcrumbs';
 import Link from '@project/components/link';
 import Page from '@project/components/page';
 import { AssignmentContext } from '@project/context';
-import { AssignmentProvider } from '@project/providers';
 import { AssignmentService } from '@project/services';
 
 import Assignment from './components/assignment';
 
 export default component$(() => {
-  const { assignment } = useContext(AssignmentContext);
+  const {
+    assignment: { name },
+  } = useContext(AssignmentContext);
 
   return (
     <Page>
@@ -37,13 +38,9 @@ export default component$(() => {
           </Link>
         </Breadcrumbs.Breadcrumb>
         <Breadcrumbs.Separator>/</Breadcrumbs.Separator>
-        <Breadcrumbs.Breadcrumb active>
-          {assignment.name}
-        </Breadcrumbs.Breadcrumb>
+        <Breadcrumbs.Breadcrumb active>{name}</Breadcrumbs.Breadcrumb>
       </Breadcrumbs>
-      <AssignmentProvider assignment={assignment}>
-        <Assignment />
-      </AssignmentProvider>
+      <Assignment />
     </Page>
   );
 });
