@@ -5,8 +5,6 @@ import {
   type StaticGenerateHandler,
 } from '@builder.io/qwik-city';
 
-import Breadcrumbs from '@project/components/breadcrumbs';
-import Link from '@project/components/link';
 import Page from '@project/components/page';
 import Redirect from '@project/components/redirect';
 import { useAssignment } from '@project/hooks';
@@ -14,6 +12,7 @@ import { AssignmentProvider } from '@project/providers';
 import { AssignmentService } from '@project/services';
 
 import Assignment from './components/assignment';
+import Breadcrumbs from './components/breadcrumbs';
 
 export default component$(() => {
   const { params } = useLocation();
@@ -30,29 +29,7 @@ export default component$(() => {
       onResolved={(assignment) => (
         <AssignmentProvider assignment={assignment}>
           <Page>
-            <Breadcrumbs q:slot='breadcrumbs'>
-              <Breadcrumbs.Breadcrumb>
-                <Link href='https://www.aldra.no' color='neutral'>
-                  Aldra
-                </Link>
-              </Breadcrumbs.Breadcrumb>
-              <Breadcrumbs.Separator>/</Breadcrumbs.Separator>
-              <Breadcrumbs.Breadcrumb>
-                <Link href='/' color='neutral'>
-                  Plattform
-                </Link>
-              </Breadcrumbs.Breadcrumb>
-              <Breadcrumbs.Separator>/</Breadcrumbs.Separator>
-              <Breadcrumbs.Breadcrumb>
-                <Link href='/assignments' color='neutral'>
-                  Oppdrag
-                </Link>
-              </Breadcrumbs.Breadcrumb>
-              <Breadcrumbs.Separator>/</Breadcrumbs.Separator>
-              <Breadcrumbs.Breadcrumb active>
-                {assignment.name}
-              </Breadcrumbs.Breadcrumb>
-            </Breadcrumbs>
+            <Breadcrumbs q:slot='breadcrumbs' />
             <Assignment />
           </Page>
         </AssignmentProvider>
