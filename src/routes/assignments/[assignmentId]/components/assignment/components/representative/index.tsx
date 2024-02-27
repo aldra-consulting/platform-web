@@ -1,11 +1,11 @@
-import { component$, useContext, useStylesScoped$ } from '@builder.io/qwik';
+import { component$, useStylesScoped$ } from '@builder.io/qwik';
 
 import Avatar from '@project/components/avatar';
 import Card from '@project/components/card';
 import EmailIcon from '@project/components/email-icon';
 import Link from '@project/components/link';
 import PhoneIcon from '@project/components/phone-icon';
-import { AssignmentContext } from '@project/context';
+import { useAssignmentContext } from '@project/hooks';
 
 import styles from './styles.css?inline';
 
@@ -14,7 +14,7 @@ export default component$(() => {
 
   const {
     assignment: { representative },
-  } = useContext(AssignmentContext);
+  } = useAssignmentContext();
 
   return representative ? (
     <Card>

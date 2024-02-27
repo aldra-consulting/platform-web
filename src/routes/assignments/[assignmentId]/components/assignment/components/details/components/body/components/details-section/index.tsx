@@ -1,7 +1,7 @@
-import { component$, useContext, useStylesScoped$ } from '@builder.io/qwik';
+import { component$, useStylesScoped$ } from '@builder.io/qwik';
 
 import Card from '@project/components/card';
-import { AssignmentContext } from '@project/context';
+import { useAssignmentContext } from '@project/hooks';
 
 import Section from '../section';
 
@@ -13,7 +13,7 @@ export default component$(() => {
 
   const {
     assignment: { details = [] },
-  } = useContext(AssignmentContext);
+  } = useAssignmentContext();
 
   return details.length > 0 ? (
     <Section>

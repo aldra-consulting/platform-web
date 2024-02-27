@@ -1,16 +1,19 @@
-import { $, component$, useContext, Resource } from '@builder.io/qwik';
+import { $, component$, Resource } from '@builder.io/qwik';
 
 import Animated from '@project/components/animated';
 import Button from '@project/components/button';
 import Loader from '@project/components/loader';
 import StarIcon from '@project/components/star-icon';
 import StarOutlineIcon from '@project/components/star-outline-icon';
-import { AssignmentContext } from '@project/context';
-import { useIsFirstRender, useReloadableResource } from '@project/hooks';
+import {
+  useAssignmentContext,
+  useIsFirstRender,
+  useReloadableResource,
+} from '@project/hooks';
 import { NumberUtil, CSSUtil } from '@project/utils';
 
 export default component$(() => {
-  const context = useContext(AssignmentContext);
+  const context = useAssignmentContext();
 
   const { bookmark } = context.assignment;
 

@@ -1,8 +1,8 @@
-import { component$, useContext, useStylesScoped$ } from '@builder.io/qwik';
+import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import sanitize from 'sanitize-html';
 import Showdown from 'showdown';
 
-import { AssignmentContext } from '@project/context';
+import { useAssignmentContext } from '@project/hooks';
 
 import Section from '../section';
 
@@ -13,7 +13,7 @@ export default component$(() => {
 
   const {
     assignment: { description },
-  } = useContext(AssignmentContext);
+  } = useAssignmentContext();
 
   return description ? (
     <Section>

@@ -7,11 +7,12 @@ import {
 import Breadcrumbs from '@project/components/breadcrumbs';
 import Link from '@project/components/link';
 import Page from '@project/components/page';
-import { AssignmentContext, RoleContext } from '@project/context';
+import { RoleContext } from '@project/context';
+import { useAssignmentContext } from '@project/hooks';
 import { AssignmentService } from '@project/services';
 
 export default component$(() => {
-  const { assignment } = useContext(AssignmentContext);
+  const { assignment } = useAssignmentContext();
   const { role } = useContext(RoleContext);
 
   return (

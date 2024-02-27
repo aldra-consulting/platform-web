@@ -1,6 +1,6 @@
-import { component$, useStylesScoped$, useContext } from '@builder.io/qwik';
+import { component$, useStylesScoped$ } from '@builder.io/qwik';
 
-import { AssignmentContext } from '@project/context';
+import { useAssignmentContext } from '@project/hooks';
 
 import Card from '../../../../components/card';
 
@@ -11,7 +11,7 @@ import styles from './styles.css?inline';
 export default component$(() => {
   useStylesScoped$(styles);
 
-  const { assignment } = useContext(AssignmentContext);
+  const { assignment } = useAssignmentContext();
 
   return (
     <Card>

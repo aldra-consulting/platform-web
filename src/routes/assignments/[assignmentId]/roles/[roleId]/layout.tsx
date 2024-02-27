@@ -1,14 +1,14 @@
-import { component$, Slot, useContext } from '@builder.io/qwik';
+import { component$, Slot } from '@builder.io/qwik';
 import { useLocation } from '@builder.io/qwik-city';
 
 import Redirect from '@project/components/redirect';
-import { AssignmentContext } from '@project/context';
+import { useAssignmentContext } from '@project/hooks';
 import { RoleProvider } from '@project/providers';
 
 export default component$(() => {
   const { params } = useLocation();
 
-  const { assignment } = useContext(AssignmentContext);
+  const { assignment } = useAssignmentContext();
 
   const role = assignment.roles.find(({ id }) => id === params.roleId);
 

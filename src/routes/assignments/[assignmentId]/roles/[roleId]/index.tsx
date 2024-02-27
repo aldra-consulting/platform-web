@@ -5,11 +5,12 @@ import {
 } from '@builder.io/qwik-city';
 
 import Redirect from '@project/components/redirect';
-import { AssignmentContext, RoleContext } from '@project/context';
+import { RoleContext } from '@project/context';
+import { useAssignmentContext } from '@project/hooks';
 import { AssignmentService } from '@project/services';
 
 export default component$(() => {
-  const { assignment } = useContext(AssignmentContext);
+  const { assignment } = useAssignmentContext();
   const { role } = useContext(RoleContext);
 
   return (

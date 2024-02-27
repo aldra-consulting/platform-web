@@ -1,6 +1,6 @@
-import { component$, useContext, useStylesScoped$ } from '@builder.io/qwik';
+import { component$, useStylesScoped$ } from '@builder.io/qwik';
 
-import { AssignmentContext } from '@project/context';
+import { useAssignmentContext } from '@project/hooks';
 import { RoleProvider } from '@project/providers';
 
 import Section from '../section';
@@ -13,7 +13,7 @@ export default component$(() => {
 
   const {
     assignment: { roles = [] },
-  } = useContext(AssignmentContext);
+  } = useAssignmentContext();
 
   return roles.length > 0 ? (
     <Section>

@@ -1,7 +1,7 @@
-import { component$, useContext, useStylesScoped$ } from '@builder.io/qwik';
+import { component$, useStylesScoped$ } from '@builder.io/qwik';
 
 import Chip from '@project/components/chip';
-import { AssignmentContext } from '@project/context';
+import { useAssignmentContext } from '@project/hooks';
 
 import Section from '../section';
 
@@ -13,7 +13,7 @@ export default component$(() => {
 
   const {
     assignment: { languages = [] },
-  } = useContext(AssignmentContext);
+  } = useAssignmentContext();
 
   return languages.length > 0 ? (
     <Section>

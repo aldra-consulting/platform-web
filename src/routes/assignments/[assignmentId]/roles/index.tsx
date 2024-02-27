@@ -1,14 +1,14 @@
-import { component$, useContext } from '@builder.io/qwik';
+import { component$ } from '@builder.io/qwik';
 import { type StaticGenerateHandler } from '@builder.io/qwik-city';
 
 import Redirect from '@project/components/redirect';
-import { AssignmentContext } from '@project/context';
+import { useAssignmentContext } from '@project/hooks';
 import { AssignmentService } from '@project/services';
 
 export default component$(() => {
   const {
     assignment: { id },
-  } = useContext(AssignmentContext);
+  } = useAssignmentContext();
 
   return <Redirect to={`/assignments/${id}`} />;
 });

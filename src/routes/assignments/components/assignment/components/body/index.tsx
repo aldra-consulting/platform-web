@@ -1,6 +1,6 @@
-import { component$, useContext, useStylesScoped$ } from '@builder.io/qwik';
+import { component$, useStylesScoped$ } from '@builder.io/qwik';
 
-import { AssignmentContext } from '@project/context';
+import { useAssignmentContext } from '@project/hooks';
 import { RoleProvider } from '@project/providers';
 
 import Role from './components/role';
@@ -11,7 +11,7 @@ export default component$(() => {
 
   const {
     assignment: { brief, roles },
-  } = useContext(AssignmentContext);
+  } = useAssignmentContext();
 
   return (
     <div data-root>

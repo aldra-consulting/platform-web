@@ -1,4 +1,5 @@
 export * from './assignment';
+export * from './assignment-context';
 export * from './assignments';
 export * from './authenticated-user';
 export * from './client';

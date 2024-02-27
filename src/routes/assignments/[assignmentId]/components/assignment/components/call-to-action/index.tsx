@@ -1,7 +1,7 @@
-import { component$, useContext, useStylesScoped$ } from '@builder.io/qwik';
+import { component$, useStylesScoped$ } from '@builder.io/qwik';
 
 import Card from '@project/components/card';
-import { AssignmentContext } from '@project/context';
+import { useAssignmentContext } from '@project/hooks';
 import { RoleProvider } from '@project/providers';
 
 import Role from './components/role';
@@ -12,7 +12,7 @@ export default component$(() => {
 
   const {
     assignment: { roles },
-  } = useContext(AssignmentContext);
+  } = useAssignmentContext();
 
   return (
     <Card>

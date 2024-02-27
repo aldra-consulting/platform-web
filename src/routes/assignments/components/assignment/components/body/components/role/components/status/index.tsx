@@ -1,15 +1,15 @@
 import { component$, useContext } from '@builder.io/qwik';
 
 import Chip from '@project/components/chip';
-import { AssignmentContext, RoleContext } from '@project/context';
-import { useAuthenticatedUser } from '@project/hooks';
+import { RoleContext } from '@project/context';
+import { useAuthenticatedUser, useAssignmentContext } from '@project/hooks';
 
 export default component$(() => {
   const {
     store: { user },
   } = useAuthenticatedUser();
 
-  const { isActive } = useContext(AssignmentContext);
+  const { isActive } = useAssignmentContext();
 
   const {
     role: { status, applicant },

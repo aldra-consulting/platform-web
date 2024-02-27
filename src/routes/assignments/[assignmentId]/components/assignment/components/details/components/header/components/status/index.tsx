@@ -1,12 +1,12 @@
-import { component$, useContext } from '@builder.io/qwik';
+import { component$ } from '@builder.io/qwik';
 
 import Chip from '@project/components/chip';
-import { AssignmentContext } from '@project/context';
+import { useAssignmentContext } from '@project/hooks';
 
 export default component$(() => {
   const {
     assignment: { status },
-  } = useContext(AssignmentContext);
+  } = useAssignmentContext();
 
   switch (status) {
     case 'active':

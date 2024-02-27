@@ -4,15 +4,11 @@ import {
   useContextProvider,
   useStore,
   Slot,
-  useContext,
 } from '@builder.io/qwik';
 import { useNavigate } from '@builder.io/qwik-city';
 
-import {
-  AssignmentContext,
-  RoleContext,
-  type RoleStore,
-} from '@project/context';
+import { RoleContext, type RoleStore } from '@project/context';
+import { useAssignmentContext } from '@project/hooks';
 import { RoleService } from '@project/services';
 import { type Entity } from '@project/types';
 
@@ -25,7 +21,7 @@ const service = new RoleService();
 export default component$<Props>(({ role }) => {
   const navigate = useNavigate();
 
-  const { assignment } = useContext(AssignmentContext);
+  const { assignment } = useAssignmentContext();
 
   useContextProvider(
     RoleContext,

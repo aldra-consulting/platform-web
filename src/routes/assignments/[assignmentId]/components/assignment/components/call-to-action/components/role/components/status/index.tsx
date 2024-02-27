@@ -4,15 +4,15 @@ import ErrorIcon from '@project/components/error-icon';
 import InfoIcon from '@project/components/info-icon';
 import SuccessIcon from '@project/components/success-icon';
 import WarningIcon from '@project/components/warning-icon';
-import { AssignmentContext, RoleContext } from '@project/context';
-import { useAuthenticatedUser } from '@project/hooks';
+import { RoleContext } from '@project/context';
+import { useAuthenticatedUser, useAssignmentContext } from '@project/hooks';
 
 export default component$(() => {
   const {
     store: { user },
   } = useAuthenticatedUser();
 
-  const { isActive } = useContext(AssignmentContext);
+  const { isActive } = useAssignmentContext();
 
   const {
     role: { status, applicant },

@@ -1,8 +1,8 @@
-import { component$, useContext, useStylesScoped$ } from '@builder.io/qwik';
+import { component$, useStylesScoped$ } from '@builder.io/qwik';
 
 import Card from '@project/components/card';
 import Link from '@project/components/link';
-import { AssignmentContext } from '@project/context';
+import { useAssignmentContext } from '@project/hooks';
 
 import Bookmark from './components/bookmark';
 import Status from './components/status';
@@ -13,7 +13,7 @@ export default component$(() => {
 
   const {
     assignment: { id, name },
-  } = useContext(AssignmentContext);
+  } = useAssignmentContext();
 
   return (
     <Card>
