@@ -11,8 +11,6 @@ export type Hashable = NonNullable<Primitive>;
 
 export type Nullable<T = never> = T | null | undefined;
 
-type NonNegativeNumber = number & { __nonNegativeNumber: never };
-
 export interface Identifiable<ID extends Hashable = string> {
   id: ID;
 }
