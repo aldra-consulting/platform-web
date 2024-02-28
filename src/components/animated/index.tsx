@@ -2,7 +2,7 @@ import { component$, useStylesScoped$, Slot } from '@builder.io/qwik';
 
 import styles from './styles.css?inline';
 import { type Time } from './types';
-import { TimeToStringConverter } from './utils';
+import { CssTimeToStringConverter } from './utils';
 
 interface Props {
   animation: 'fade-in-up' | 'zoom-pop-in';
@@ -10,7 +10,7 @@ interface Props {
   delay?: Time;
 }
 
-const converter = new TimeToStringConverter();
+const converter = new CssTimeToStringConverter();
 
 export default component$<Props>(({ animation, duration, delay }) => {
   useStylesScoped$(styles);
