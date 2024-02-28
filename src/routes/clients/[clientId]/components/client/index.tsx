@@ -3,6 +3,7 @@ import { component$, useContext, useStylesScoped$ } from '@builder.io/qwik';
 import Animated from '@project/components/animated';
 import Card from '@project/components/card';
 import { ClientContext } from '@project/context';
+import { NumberUtil, CSSUtil } from '@project/utils';
 
 import AssignmentsSection from './components/assignments-section';
 import DescriptionSection from './components/description-section';
@@ -20,8 +21,8 @@ export default component$(() => {
       <main>
         <Animated
           animation='fade-in-up'
-          duration={{ value: 0.5, unit: 's' }}
-          delay={{ value: 0.3, unit: 's' }}
+          duration={CSSUtil.time.s(NumberUtil.positive(0.5))}
+          delay={CSSUtil.time.s(NumberUtil.positive(0.3))}
         >
           <Card>
             <Card.Header q:slot='header'>

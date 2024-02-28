@@ -1,7 +1,5 @@
-import { type Converter } from '@project/types';
+import { type CSS, type Converter } from '@project/types';
 
-import { type Time } from './types';
-
-export class CssTimeToStringConverter implements Converter<Time, string> {
-  convert = ({ value, unit }: Time): string => `${value}${unit}`;
+export class CssTimeToStringConverter implements Converter<CSS.Time, string> {
+  convert = ({ value, unit }: CSS.Time): string => `${value}${unit ?? ''}`;
 }

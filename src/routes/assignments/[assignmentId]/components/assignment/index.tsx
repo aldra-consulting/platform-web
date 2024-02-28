@@ -1,6 +1,7 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 
 import Animated from '@project/components/animated';
+import { NumberUtil, CSSUtil } from '@project/utils';
 
 import CallToAction from './components/call-to-action';
 import Details from './components/details';
@@ -15,8 +16,8 @@ export default component$(() => {
       <main>
         <Animated
           animation='fade-in-up'
-          duration={{ value: 0.5, unit: 's' }}
-          delay={{ value: 0.3, unit: 's' }}
+          duration={CSSUtil.time.s(NumberUtil.positive(0.5))}
+          delay={CSSUtil.time.s(NumberUtil.positive(0.3))}
         >
           <Details />
         </Animated>
@@ -24,15 +25,15 @@ export default component$(() => {
       <aside>
         <Animated
           animation='fade-in-up'
-          duration={{ value: 0.5, unit: 's' }}
-          delay={{ value: 0.3, unit: 's' }}
+          duration={CSSUtil.time.s(NumberUtil.positive(0.5))}
+          delay={CSSUtil.time.s(NumberUtil.positive(0.3))}
         >
           <CallToAction />
         </Animated>
         <Animated
           animation='fade-in-up'
-          duration={{ value: 0.5, unit: 's' }}
-          delay={{ value: 0.3, unit: 's' }}
+          duration={CSSUtil.time.s(NumberUtil.positive(0.5))}
+          delay={CSSUtil.time.s(NumberUtil.positive(0.3))}
         >
           <Representative />
         </Animated>

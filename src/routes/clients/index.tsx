@@ -9,6 +9,7 @@ import Page from '@project/components/page';
 import { useClients } from '@project/hooks';
 import { ClientProvider } from '@project/providers';
 import { ClientService } from '@project/services';
+import { NumberUtil, CSSUtil } from '@project/utils';
 
 import Client from './components/client';
 
@@ -58,8 +59,10 @@ export default component$(() => {
                 <ClientProvider key={client.id} client={client}>
                   <Animated
                     animation='fade-in-up'
-                    duration={{ value: 0.5, unit: 's' }}
-                    delay={{ value: index / 10 + 0.3, unit: 's' }}
+                    duration={CSSUtil.time.s(NumberUtil.positive(0.5))}
+                    delay={CSSUtil.time.s(
+                      NumberUtil.positive(index / 10 + 0.3)
+                    )}
                   >
                     <Client />
                   </Animated>

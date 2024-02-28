@@ -25,11 +25,6 @@ export interface Labelled<Container = string> {
 
 export type Flatten<Type> = Type extends (infer Item)[] ? Item : Type;
 
-interface Dimension<Value, Unit> {
-  value: Value;
-  unit: Unit;
-}
-
 export interface Converter<Source, Target> {
   convert(source: Source): Target;
 }

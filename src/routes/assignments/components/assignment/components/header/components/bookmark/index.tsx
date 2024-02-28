@@ -7,6 +7,7 @@ import StarIcon from '@project/components/star-icon';
 import StarOutlineIcon from '@project/components/star-outline-icon';
 import { AssignmentContext } from '@project/context';
 import { useIsFirstRender, useReloadableResource } from '@project/hooks';
+import { NumberUtil, CSSUtil } from '@project/utils';
 
 export default component$(() => {
   const context = useContext(AssignmentContext);
@@ -43,7 +44,7 @@ export default component$(() => {
         >
           <Animated
             animation='zoom-pop-in'
-            duration={{ value: 0.3, unit: 's' }}
+            duration={CSSUtil.time.s(NumberUtil.positive(0.3))}
             q:slot='start-icon'
           >
             {bookmark ? (

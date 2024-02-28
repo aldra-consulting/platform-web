@@ -11,6 +11,7 @@ import { ClientContext } from '@project/context';
 import { useAssignments } from '@project/hooks';
 import { AssignmentProvider } from '@project/providers';
 import { AssignmentService } from '@project/services';
+import { NumberUtil, CSSUtil } from '@project/utils';
 
 import Section from '../section';
 
@@ -52,8 +53,8 @@ export default component$(() => {
               <AssignmentProvider key={assignment.id} assignment={assignment}>
                 <Animated
                   animation='fade-in-up'
-                  duration={{ value: 0.5, unit: 's' }}
-                  delay={{ value: index / 10 + 0.5, unit: 's' }}
+                  duration={CSSUtil.time.s(NumberUtil.positive(0.5))}
+                  delay={CSSUtil.time.s(NumberUtil.positive(index / 10 + 0.5))}
                 >
                   <Assignment />
                 </Animated>

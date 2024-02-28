@@ -1,13 +1,14 @@
 import { component$, useStylesScoped$, Slot } from '@builder.io/qwik';
 
+import { type CSS } from '@project/types';
+
 import styles from './styles.css?inline';
-import { type Time } from './types';
 import { CssTimeToStringConverter } from './utils';
 
 interface Props {
   animation: 'fade-in-up' | 'zoom-pop-in';
-  duration?: Time;
-  delay?: Time;
+  duration?: CSS.Time;
+  delay?: CSS.Time;
 }
 
 const converter = new CssTimeToStringConverter();

@@ -9,6 +9,7 @@ import Page from '@project/components/page';
 import { useAssignments } from '@project/hooks';
 import { AssignmentProvider } from '@project/providers';
 import { AssignmentService } from '@project/services';
+import { NumberUtil, CSSUtil } from '@project/utils';
 
 import Assignment from './components/assignment';
 import styles from './styles.css?inline';
@@ -61,8 +62,10 @@ export default component$(() => {
                 <AssignmentProvider key={assignment.id} assignment={assignment}>
                   <Animated
                     animation='fade-in-up'
-                    duration={{ value: 0.5, unit: 's' }}
-                    delay={{ value: index / 10 + 0.3, unit: 's' }}
+                    duration={CSSUtil.time.s(NumberUtil.positive(0.5))}
+                    delay={CSSUtil.time.s(
+                      NumberUtil.positive(index / 10 + 0.3)
+                    )}
                   >
                     <Assignment />
                   </Animated>
