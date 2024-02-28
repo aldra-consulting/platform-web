@@ -85,7 +85,15 @@
         "react/button-has-type": "off",
         "react/no-unknown-property": "off",
         "qwik/no-use-visible-task": "off",
-        "qwik/jsx-img": "off"
+        "qwik/jsx-img": "off",
+        "no-extend-native": [
+          "error",
+          {
+            "exceptions": [
+              "Number"
+            ]
+          }
+        ]
       }
     },
     {
