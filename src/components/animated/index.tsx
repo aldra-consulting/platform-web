@@ -10,10 +10,10 @@ interface Props {
   delay?: Time;
 }
 
+const converter = new TimeToStringConverter();
+
 export default component$<Props>(({ animation, duration, delay }) => {
   useStylesScoped$(styles);
-
-  const converter = new TimeToStringConverter();
 
   return (
     <div
