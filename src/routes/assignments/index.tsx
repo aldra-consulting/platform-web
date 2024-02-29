@@ -2,8 +2,6 @@ import { $, component$, useStylesScoped$, Resource } from '@builder.io/qwik';
 import { type DocumentHead } from '@builder.io/qwik-city';
 
 import Animated from '@project/components/animated';
-import Breadcrumbs from '@project/components/breadcrumbs';
-import Link from '@project/components/link';
 import MasonryGrid from '@project/components/masonry-grid';
 import Page from '@project/components/page';
 import { useAssignments } from '@project/hooks';
@@ -12,6 +10,7 @@ import { AssignmentService } from '@project/services';
 import { NumberUtil, CSSUtil } from '@project/utils';
 
 import Assignment from './components/assignment';
+import Breadcrumbs from './components/breadcrumbs';
 import styles from './styles.css?inline';
 
 export default component$(() => {
@@ -21,21 +20,7 @@ export default component$(() => {
 
   return (
     <Page>
-      <Breadcrumbs q:slot='breadcrumbs'>
-        <Breadcrumbs.Breadcrumb>
-          <Link href='https://www.aldra.no' color='neutral'>
-            Aldra
-          </Link>
-        </Breadcrumbs.Breadcrumb>
-        <Breadcrumbs.Separator>/</Breadcrumbs.Separator>
-        <Breadcrumbs.Breadcrumb>
-          <Link href='/' color='neutral'>
-            Plattform
-          </Link>
-        </Breadcrumbs.Breadcrumb>
-        <Breadcrumbs.Separator>/</Breadcrumbs.Separator>
-        <Breadcrumbs.Breadcrumb active>Oppdrag</Breadcrumbs.Breadcrumb>
-      </Breadcrumbs>
+      <Breadcrumbs q:slot='breadcrumbs' />
       <Resource
         value={resource}
         onResolved={(assignments) =>
