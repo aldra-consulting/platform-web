@@ -1,21 +1,18 @@
-import { component$, useContext } from '@builder.io/qwik';
+import { component$ } from '@builder.io/qwik';
 import {
   type DocumentHead,
   type StaticGenerateHandler,
 } from '@builder.io/qwik-city';
 
 import Redirect from '@project/components/redirect';
-import { RoleContext } from '@project/context';
-import { useAssignmentContext } from '@project/hooks';
+import { useAssignmentId, useRoleId } from '@project/hooks';
 import { AssignmentService } from '@project/services';
 
 export default component$(() => {
-  const { assignment } = useAssignmentContext();
-  const { role } = useContext(RoleContext);
+  const assignmentId = useAssignmentId();
+  const roleId = useRoleId();
 
-  return (
-    <Redirect to={`/assignments/${assignment.id}/roles/${role.id}/apply`} />
-  );
+  return <Redirect to={`/assignments/${assignmentId}/roles/${roleId}/apply`} />;
 });
 
 export const onStaticGenerate: StaticGenerateHandler = async () => ({
