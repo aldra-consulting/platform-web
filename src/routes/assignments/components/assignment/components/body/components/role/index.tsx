@@ -1,8 +1,7 @@
-import { component$, useContext, useStylesScoped$ } from '@builder.io/qwik';
+import { component$, useStylesScoped$ } from '@builder.io/qwik';
 
 import Card from '@project/components/card';
-import { RoleContext } from '@project/context';
-import { useAssignmentContext } from '@project/hooks';
+import { useAssignmentContext, useRoleContext } from '@project/hooks';
 
 import Action from './components/action';
 import Status from './components/status';
@@ -12,7 +11,7 @@ export default component$(() => {
   useStylesScoped$(styles);
 
   const { isActive } = useAssignmentContext();
-  const { role } = useContext(RoleContext);
+  const { role } = useRoleContext();
 
   return (
     <Card>

@@ -1,16 +1,16 @@
-import { component$, useContext, useStylesScoped$ } from '@builder.io/qwik';
+import { component$, useStylesScoped$ } from '@builder.io/qwik';
 
 import Chip from '@project/components/chip';
-import { RoleContext } from '@project/context';
+import { useRoleContext } from '@project/hooks';
 
 import styles from './styles.css?inline';
 
 export default component$(() => {
   useStylesScoped$(styles);
 
-  const context = useContext(RoleContext);
-
-  const { skills = [] } = context.role;
+  const {
+    role: { skills = [] },
+  } = useRoleContext();
 
   return skills.length > 0 ? (
     <div data-root>

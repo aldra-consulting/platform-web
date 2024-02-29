@@ -1,6 +1,6 @@
-import { component$, useContext, useStylesScoped$ } from '@builder.io/qwik';
+import { component$, useStylesScoped$ } from '@builder.io/qwik';
 
-import { RoleContext } from '@project/context';
+import { useRoleContext } from '@project/hooks';
 
 import QualificationRequirement from './components/qualification-requirement';
 import styles from './styles.css?inline';
@@ -8,9 +8,9 @@ import styles from './styles.css?inline';
 export default component$(() => {
   useStylesScoped$(styles);
 
-  const context = useContext(RoleContext);
-
-  const { qualificationRequirements } = context.role;
+  const {
+    role: { qualificationRequirements },
+  } = useRoleContext();
 
   const mustRequirements = qualificationRequirements.filter(
     ({ level }) => level === 'MUST'

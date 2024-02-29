@@ -1,12 +1,12 @@
-import { $, Resource, component$, useContext } from '@builder.io/qwik';
+import { $, Resource, component$ } from '@builder.io/qwik';
 
 import Button from '@project/components/button';
 import Loader from '@project/components/loader';
-import { RoleContext } from '@project/context';
 import {
   useAuthenticatedUser,
   useIsFirstRender,
   useReloadableResource,
+  useRoleContext,
 } from '@project/hooks';
 
 export default component$(() => {
@@ -14,7 +14,7 @@ export default component$(() => {
     store: { user },
   } = useAuthenticatedUser();
 
-  const context = useContext(RoleContext);
+  const context = useRoleContext();
 
   const {
     role: { status, applicant },

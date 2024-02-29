@@ -1,11 +1,14 @@
-import { component$, useContext } from '@builder.io/qwik';
+import { component$ } from '@builder.io/qwik';
 
 import ErrorIcon from '@project/components/error-icon';
 import InfoIcon from '@project/components/info-icon';
 import SuccessIcon from '@project/components/success-icon';
 import WarningIcon from '@project/components/warning-icon';
-import { RoleContext } from '@project/context';
-import { useAuthenticatedUser, useAssignmentContext } from '@project/hooks';
+import {
+  useAuthenticatedUser,
+  useAssignmentContext,
+  useRoleContext,
+} from '@project/hooks';
 
 export default component$(() => {
   const {
@@ -16,7 +19,8 @@ export default component$(() => {
 
   const {
     role: { status, applicant },
-  } = useContext(RoleContext);
+  } = useRoleContext();
+
   const isUserAnApplicant = applicant && applicant.id === user?.id;
 
   switch (status) {
