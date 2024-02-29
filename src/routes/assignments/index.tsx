@@ -1,15 +1,11 @@
 import { $, component$, useStylesScoped$, Resource } from '@builder.io/qwik';
 import { type DocumentHead } from '@builder.io/qwik-city';
 
-import Animated from '@project/components/animated';
-import MasonryGrid from '@project/components/masonry-grid';
 import Page from '@project/components/page';
 import { useAssignments } from '@project/hooks';
-import { AssignmentProvider } from '@project/providers';
 import { AssignmentService } from '@project/services';
-import { NumberUtil, CSSUtil } from '@project/utils';
 
-import Assignment from './components/assignment';
+import Assignments from './components/assignments';
 import Breadcrumbs from './components/breadcrumbs';
 import styles from './styles.css?inline';
 
@@ -25,38 +21,7 @@ export default component$(() => {
         value={resource}
         onResolved={(assignments) =>
           assignments.length > 0 ? (
-            <MasonryGrid
-              sizes={[
-                {
-                  columns: 1,
-                  gutter: 16,
-                },
-                {
-                  mq: '1000px',
-                  columns: 2,
-                  gutter: 16,
-                },
-                {
-                  mq: '1450px',
-                  columns: 3,
-                  gutter: 16,
-                },
-              ]}
-            >
-              {assignments.map((assignment, index) => (
-                <AssignmentProvider key={assignment.id} assignment={assignment}>
-                  <Animated
-                    animation='fade-in-up'
-                    duration={CSSUtil.time.s(NumberUtil.positive(0.5))}
-                    delay={CSSUtil.time.s(
-                      NumberUtil.positive(index / 10 + 0.3)
-                    )}
-                  >
-                    <Assignment />
-                  </Animated>
-                </AssignmentProvider>
-              ))}
-            </MasonryGrid>
+            <Assignments assignments={assignments} />
           ) : (
             <div data-slot='no-assignments'>
               <p>Ingen oppdrag funnet</p>
