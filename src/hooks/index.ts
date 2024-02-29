@@ -10,3 +10,4 @@ export * from './defined-param';
 export * from './is-first-render';
 export * from './reloadable';
 export * from './reloadable-resource';
+export * from './role-id';
