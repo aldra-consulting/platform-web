@@ -7,7 +7,7 @@ import {
 import ClientResource from '@project/components/client-resource';
 import Page from '@project/components/page';
 import Redirect from '@project/components/redirect';
-import { useDefinedParam, useClientResource } from '@project/hooks';
+import { useAssignmentId, useClientResource } from '@project/hooks';
 import { AssignmentProvider } from '@project/providers';
 import { AssignmentService } from '@project/services';
 
@@ -15,10 +15,10 @@ import Assignment from './components/assignment';
 import Breadcrumbs from './components/breadcrumbs';
 
 export default component$(() => {
-  const assignmentId = useDefinedParam('assignmentId');
+  const id = useAssignmentId();
 
   const resource = useClientResource(
-    $(() => new AssignmentService().findByIdOrThrow(assignmentId))
+    $(() => new AssignmentService().findByIdOrThrow(id))
   );
 
   return (
