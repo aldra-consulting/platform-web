@@ -2,15 +2,13 @@ import { component$ } from '@builder.io/qwik';
 import { type StaticGenerateHandler } from '@builder.io/qwik-city';
 
 import Redirect from '@project/components/redirect';
-import { useAssignmentContext } from '@project/hooks';
+import { useDefinedParam } from '@project/hooks';
 import { AssignmentService } from '@project/services';
 
 export default component$(() => {
-  const {
-    assignment: { id },
-  } = useAssignmentContext();
+  const assignmentId = useDefinedParam('assignmentId');
 
-  return <Redirect to={`/assignments/${id}`} />;
+  return <Redirect to={`/assignments/${assignmentId}`} />;
 });
 
 export const onStaticGenerate: StaticGenerateHandler = async () => ({
