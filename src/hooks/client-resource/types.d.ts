@@ -1,6 +1,6 @@
-import { type QRL } from '@builder.io/qwik';
+import { type QRL, type Signal } from '@builder.io/qwik';
 
-import { type Supplier } from '@project/types';
+import { type Functional } from '@project/types';
 
 interface PendingClientResource {
   status: 'pending';
@@ -21,5 +21,9 @@ export type ClientResource<T> = (
   | ResolvedClientResource<T>
   | RejectedClientResource
 ) & {
-  task: QRL<Supplier<Promise<T>>>;
+  task: QRL<Functional.Supplier<Promise<T>>>;
 };
+
+export interface Options {
+  signal?: Signal;
+}

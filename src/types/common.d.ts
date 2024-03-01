@@ -38,5 +38,3 @@ export interface Formatter<Source, Target = string> {
 }
 
 export type LanguageCode = 'no' | 'en';
-
-export type Supplier<Value = unknown> = () => Value;

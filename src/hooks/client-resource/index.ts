@@ -1,21 +1,27 @@
 import { $, useVisibleTask$, useStore, type QRL } from '@builder.io/qwik';
 
-import { type Supplier } from '@project/types';
+import { type Functional } from '@project/types';
 
-import { type ClientResource } from './types';
+import { type ClientResource, type Options } from './types';
 
-export const useClientResource = <T>(supplier: QRL<Supplier<T>>) => {
+export const useClientResource = <T>(
+  supplier: QRL<Functional.Supplier<T>>,
+  options?: Options
+) => {
   const resource = useStore<ClientResource<T>>({
     status: 'pending',
-    task: $(
-      () =>
-        new Promise<T>((resolve, reject) => {
-          supplier().then(resolve).catch(reject);
-        })
-    ),
+    task: $(function run(this: ClientResource<T>) {
+      return new Promise<T>((resolve, reject) => {
+        this.status = 'pending';
+
+        supplier().then(resolve).catch(reject);
+      });
+    }),
   });
 
-  useVisibleTask$(() => {
+  useVisibleTask$(({ track }) => {
+    track(() => options?.signal?.value as unknown);
+
     Promise.resolve(resource.task())
       .then((value) => {
         resource.status = 'resolved';
@@ -39,7 +45,7 @@ export const useClientResource = <T>(supplier: QRL<Supplier<T>>) => {
       });
   });
 
-  return resource;
+  return resource as Readonly<ClientResource<T>>;
 };
 
-export { type ClientResource };
+export { type ClientResource, type Options as ClientResourceOptions };
