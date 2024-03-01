@@ -1,3 +1,35 @@
+# [1.3.0](https://github.com/aldra-consulting/platform-web/compare/1.2.1...1.3.0) (2024-03-01)
+
+
+### Bug Fixes
+
+* move data loading out of layout ([7018d54](https://github.com/aldra-consulting/platform-web/commit/7018d54618f212aa336a0fe87a8c6eb555c9e2b6))
+* remove unused service worker ([a0d6b85](https://github.com/aldra-consulting/platform-web/commit/a0d6b85fdc07574e3f606e8e9d39c13e58b0855d))
+* revert previous commit ([3074259](https://github.com/aldra-consulting/platform-web/commit/307425997f16b509eedfed3df29e40390049c104))
+* use available assignment ID ([01f935b](https://github.com/aldra-consulting/platform-web/commit/01f935be050705019d0121116a2f7501f2e8ebc6))
+* use available assignment ID and role ID ([3c94264](https://github.com/aldra-consulting/platform-web/commit/3c94264a2a91e0de52da0ec5e53fa8b00f0e2160))
+* use client task whenever appropriate ([48d93f5](https://github.com/aldra-consulting/platform-web/commit/48d93f5399a6143e13a166ffe9fa8622539df85d))
+* use correct types ([d1cb5af](https://github.com/aldra-consulting/platform-web/commit/d1cb5afa8356eedec4e98a44c8fcfcebb5ddb41a))
+
+
+### Features
+
+* add ClientResource component ([3e215be](https://github.com/aldra-consulting/platform-web/commit/3e215be045b094d6a7bd9856089b8222e304ce67))
+* add isDefined utility function ([422fbdc](https://github.com/aldra-consulting/platform-web/commit/422fbdcde880980b0856d86a5e336240bde4fd57))
+* add options to useClientResource hook ([e7792f4](https://github.com/aldra-consulting/platform-web/commit/e7792f48135d0e9a2378b52a0a090f0b847afcbb))
+* add useAssignmentContext hook ([3e2dfc0](https://github.com/aldra-consulting/platform-web/commit/3e2dfc03a22915cb75472a7eda36e9ef45749706))
+* add useAssignmentId hook ([8489aff](https://github.com/aldra-consulting/platform-web/commit/8489aff41346268c6221f2daf9bceb01380eb615))
+* add useClientResource hook ([854a443](https://github.com/aldra-consulting/platform-web/commit/854a443a6d2784f81b4fda26ee65b3050d4498b0))
+* add useClientTask hook and ClientTask component ([8b9685e](https://github.com/aldra-consulting/platform-web/commit/8b9685e337b7fd78f031586e4c457427b189febc))
+* add useDefinedParam hook ([c5e5629](https://github.com/aldra-consulting/platform-web/commit/c5e56299bfba2ba8ba6ae0b778d07082cbdc5fd2))
+* add useRoleContext hook ([d303962](https://github.com/aldra-consulting/platform-web/commit/d303962f7c8bed51c8b8e3fbdf5ecc0f019e175c))
+* add useRoleId hook ([f8a5573](https://github.com/aldra-consulting/platform-web/commit/f8a5573b3cc0091fab737afa8b5a29145b08aa8d))
+* change API of the Animated component ([987be56](https://github.com/aldra-consulting/platform-web/commit/987be56d8e17a8f09bcd5c94f5c9937a47dffbaa))
+* implement Skeleton component ([87a0863](https://github.com/aldra-consulting/platform-web/commit/87a0863aca0a227975414678075549757336d411))
+* use client resource to load assignment ([06c9c8f](https://github.com/aldra-consulting/platform-web/commit/06c9c8fdbd0bf8f60ccb397162d993262613eff4))
+* use client resource to load assignment and role ([4d37a91](https://github.com/aldra-consulting/platform-web/commit/4d37a911f2eac7e4129e5e729052962b64ab51ba))
+* use client resource to load assignments ([033c92f](https://github.com/aldra-consulting/platform-web/commit/033c92fe9eef245c8ccd710f00c50ae257e6c5fe))
+
 ## [1.2.1](https://github.com/aldra-consulting/platform-web/compare/1.2.0...1.2.1) (2024-02-21)
 
 
