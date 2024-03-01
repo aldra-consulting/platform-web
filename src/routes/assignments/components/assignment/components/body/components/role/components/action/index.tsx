@@ -1,12 +1,12 @@
-import { $, Resource, component$ } from '@builder.io/qwik';
+import { $, component$ } from '@builder.io/qwik';
 
 import Button from '@project/components/button';
+import ClientTask from '@project/components/client-task';
 import Loader from '@project/components/loader';
 import {
   useAuthenticatedUser,
-  useIsFirstRender,
-  useReloadableResource,
   useRoleContext,
+  useClientTask,
 } from '@project/hooks';
 
 export default component$(() => {
@@ -22,37 +22,26 @@ export default component$(() => {
 
   const isUserAnApplicant = applicant && applicant.id === user?.id;
 
-  const isFirstRender = useIsFirstRender();
-
-  const { resource: applyResource, reload: apply } = useReloadableResource(
-    $(async () => {
-      if (!isFirstRender.value) {
-        await context.apply();
-      }
-    })
+  const { task: applyTask, perform: apply } = useClientTask(
+    $(() => context.apply())
   );
 
-  const { resource: withdrawResource, reload: withdraw } =
-    useReloadableResource(
-      $(async () => {
-        if (!isFirstRender.value) {
-          await context.withdraw();
-        }
-      })
-    );
+  const { task: withdrawTask, perform: withdraw } = useClientTask(
+    $(() => context.withdraw())
+  );
 
   switch (status) {
     case 'open':
       return (
-        <Resource
-          value={applyResource}
+        <ClientTask
+          task={applyTask}
           onPending={() => (
             <Button size='small' colour='blue' disabled startIcon>
               <Loader q:slot='start-icon' />
               Søk nå
             </Button>
           )}
-          onResolved={() => (
+          onIdle={() => (
             <Button size='small' colour='blue' onClick$={apply}>
               Søk nå
             </Button>
@@ -61,15 +50,15 @@ export default component$(() => {
       );
     case 'review':
       return (
-        <Resource
-          value={applyResource}
+        <ClientTask
+          task={applyTask}
           onPending={() => (
             <Button size='small' colour='blue' disabled startIcon>
               <Loader q:slot='start-icon' />
               Søk likevel
             </Button>
           )}
-          onResolved={() => (
+          onIdle={() => (
             <Button size='small' colour='blue' onClick$={apply}>
               Søk likevel
             </Button>
@@ -78,30 +67,30 @@ export default component$(() => {
       );
     case 'filled':
       return !isUserAnApplicant ? (
-        <Resource
-          value={applyResource}
+        <ClientTask
+          task={applyTask}
           onPending={() => (
             <Button size='small' colour='blue' disabled startIcon>
               <Loader q:slot='start-icon' />
               Søk likevel
             </Button>
           )}
-          onResolved={() => (
+          onIdle={() => (
             <Button size='small' colour='blue' onClick$={apply}>
               Søk likevel
             </Button>
           )}
         />
       ) : (
-        <Resource
-          value={withdrawResource}
+        <ClientTask
+          task={withdrawTask}
           onPending={() => (
             <Button size='small' colour='red' disabled startIcon>
               <Loader q:slot='start-icon' />
               Trekk søknad
             </Button>
           )}
-          onResolved={() => (
+          onIdle={() => (
             <Button size='small' colour='red' onClick$={withdraw}>
               Trekk søknad
             </Button>
