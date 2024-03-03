@@ -7,9 +7,9 @@ export const useDefinedParam = <T extends string = string>(name: string): T => {
     params: { [name]: value },
   } = useLocation();
 
-  if (!isDefined(value)) {
-    throw Error(`URL parameter "${name}" is not defined`);
+  if (isDefined(value)) {
+    return value as T;
   }
 
-  return value as T;
+  throw Error(`URL parameter "${name}" is not defined`);
 };
