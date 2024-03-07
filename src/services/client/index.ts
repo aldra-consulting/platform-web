@@ -4,7 +4,7 @@ import EntityService from '../entity';
 
 import clients from './clients.json';
 
-export default class ClientService
+export default class ClientEntityService
   extends EntityService<Entity.Client>
   implements Service.Client
 {

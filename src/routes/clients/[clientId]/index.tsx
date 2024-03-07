@@ -9,14 +9,14 @@ import Link from '@project/components/link';
 import Page from '@project/components/page';
 import { useClient, useClientId } from '@project/hooks';
 import { ClientProvider } from '@project/providers';
-import { ClientService } from '@project/services';
+import { ClientEntityService } from '@project/services';
 
 import Client from './components/client';
 
 export default component$(() => {
   const id = useClientId();
 
-  const { resource } = useClient($(() => new ClientService().get(id)));
+  const { resource } = useClient($(() => new ClientEntityService().get(id)));
 
   return (
     <Resource
@@ -58,7 +58,7 @@ export default component$(() => {
 });
 
 export const onStaticGenerate: StaticGenerateHandler = async () => ({
-  params: (await new ClientService().list()).map(({ id: clientId }) => ({
+  params: (await new ClientEntityService().list()).map(({ id: clientId }) => ({
     clientId,
   })),
 });
