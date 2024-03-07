@@ -2,6 +2,10 @@ import { type Nullable } from './common';
 import { type Entity } from './entity';
 
 export namespace Service {
+  export interface ForEntity<T> {
+    findMany: () => Promise<T[]>;
+  }
+
   export interface Assignment {
     list: () => Promise<Entity.Assignment[]>;
 
