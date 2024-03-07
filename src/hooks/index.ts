@@ -4,6 +4,7 @@ export * from './assignment-id';
 export * from './assignments';
 export * from './authenticated-user';
 export * from './client';
+export * from './client-id';
 export * from './client-resource';
 export * from './client-task';
 export * from './clients';
