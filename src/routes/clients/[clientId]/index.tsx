@@ -1,6 +1,5 @@
 import { $, component$, Resource } from '@builder.io/qwik';
 import {
-  useLocation,
   type DocumentHead,
   type StaticGenerateHandler,
 } from '@builder.io/qwik-city';
@@ -8,18 +7,16 @@ import {
 import Breadcrumbs from '@project/components/breadcrumbs';
 import Link from '@project/components/link';
 import Page from '@project/components/page';
-import { useClient } from '@project/hooks';
+import { useClient, useClientId } from '@project/hooks';
 import { ClientProvider } from '@project/providers';
 import { ClientService } from '@project/services';
 
 import Client from './components/client';
 
 export default component$(() => {
-  const { params } = useLocation();
+  const id = useClientId();
 
-  const { resource } = useClient(
-    $(() => new ClientService().get(params.clientId ?? ''))
-  );
+  const { resource } = useClient($(() => new ClientService().get(id)));
 
   return (
     <Resource
