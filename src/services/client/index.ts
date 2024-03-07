@@ -1,8 +1,26 @@
 import { type Service, type Entity, type Nullable } from '@project/types';
 
+import EntityService from '../entity';
+
 import clients from './clients.json';
 
-export default class ClientService implements Service.Client {
+export default class ClientService
+  extends EntityService<Entity.Client>
+  implements Service.Client
+{
+  protected entity = 'client' as const;
+
+  // TODO: change implementation
+  findMany = async (): Promise<Entity.Client[]> => {
+    try {
+      return Promise.resolve(clients as Entity.Client[]);
+    } catch (error) {
+      throw new Error(`Unable to list entities of type '${this.entity}'`, {
+        cause: error,
+      });
+    }
+  };
+
   // TODO: change implementation
   list = async (): Promise<Entity.Client[]> => {
     try {
