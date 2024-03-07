@@ -2,7 +2,7 @@ import { useLocation } from '@builder.io/qwik-city';
 
 import { isDefined } from '@project/utils';
 
-export const useDefinedParam = (name: string): string => {
+export const useDefinedParam = <T extends string = string>(name: string): T => {
   const {
     params: { [name]: value },
   } = useLocation();
@@ -11,5 +11,5 @@ export const useDefinedParam = (name: string): string => {
     throw Error(`URL parameter "${name}" is not defined`);
   }
 
-  return value;
+  return value as T;
 };
