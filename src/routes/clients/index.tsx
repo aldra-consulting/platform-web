@@ -14,7 +14,9 @@ import { NumberUtil, CSSUtil } from '@project/utils';
 import Client from './components/client';
 
 export default component$(() => {
-  const { resource } = useClients($(() => new ClientEntityService().list()));
+  const { resource } = useClients(
+    $(() => new ClientEntityService().findMany())
+  );
 
   return (
     <Page>

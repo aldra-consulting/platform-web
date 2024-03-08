@@ -58,9 +58,11 @@ export default component$(() => {
 });
 
 export const onStaticGenerate: StaticGenerateHandler = async () => ({
-  params: (await new ClientEntityService().list()).map(({ id: clientId }) => ({
-    clientId,
-  })),
+  params: (await new ClientEntityService().findMany()).map(
+    ({ id: clientId }) => ({
+      clientId,
+    })
+  ),
 });
 
 export const head: DocumentHead = {
