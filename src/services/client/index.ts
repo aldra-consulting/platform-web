@@ -22,15 +22,6 @@ export default class ClientEntityService
   };
 
   // TODO: change implementation
-  list = async (): Promise<Entity.Client[]> => {
-    try {
-      return await Promise.resolve(clients as Entity.Client[]);
-    } catch (error) {
-      throw new Error('Unable to list clients', { cause: error });
-    }
-  };
-
-  // TODO: change implementation
   get = async (id: Entity.Client['id']): Promise<Nullable<Entity.Client>> => {
     try {
       return await Promise.resolve(

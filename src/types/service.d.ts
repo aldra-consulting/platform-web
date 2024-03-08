@@ -27,8 +27,6 @@ export namespace Service {
   }
 
   export interface Client {
-    list: () => Promise<Entity.Client[]>;
-
     get: (id: Entity.Client['id']) => Promise<Nullable<Entity.Client>>;
   }
 }
