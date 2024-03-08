@@ -50,6 +50,7 @@
     "typescript:compile": "tsc"
   },
   "dependencies": {
+    "@sanity/client": "^6.15.1",
     "bricks.js": "^1.8.0",
     "oidc-client-ts": "^2.4.0",
     "sanitize-html": "^2.11.0",
