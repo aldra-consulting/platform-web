@@ -6,34 +6,42 @@
   },
   {
     "id": "client-2",
-    "name": "Oppdragsgiver 2"
+    "name": "Oppdragsgiver 2",
+    "description": ""
   },
   {
     "id": "client-3",
-    "name": "Oppdragsgiver 3"
+    "name": "Oppdragsgiver 3",
+    "description": ""
   },
   {
     "id": "client-4",
-    "name": "Oppdragsgiver 4"
+    "name": "Oppdragsgiver 4",
+    "description": ""
   },
   {
     "id": "client-5",
-    "name": "Oppdragsgiver 5"
+    "name": "Oppdragsgiver 5",
+    "description": ""
   },
   {
     "id": "client-6",
-    "name": "Oppdragsgiver 6"
+    "name": "Oppdragsgiver 6",
+    "description": ""
   },
   {
     "id": "client-7",
-    "name": "Oppdragsgiver 7"
+    "name": "Oppdragsgiver 7",
+    "description": ""
   },
   {
     "id": "client-8",
-    "name": "Oppdragsgiver 8"
+    "name": "Oppdragsgiver 8",
+    "description": ""
   },
   {
     "id": "client-9",
-    "name": "Oppdragsgiver 9"
+    "name": "Oppdragsgiver 9",
+    "description": ""
   }
 ]

@@ -2,6 +2,7 @@ import {
   type Identifiable,
   type Nameable,
   type Labelled,
+  type Described,
   type LanguageCode,
 } from './common';
 import { type ID } from './id';
@@ -9,9 +10,11 @@ import { type ID } from './id';
 export namespace Entity {
   export interface User extends Identifiable, Nameable {}
 
-  export interface Client extends Identifiable<ID.Client>, Nameable, Labelled {
-    description?: string;
-  }
+  export interface Client
+    extends Identifiable<ID.Client>,
+      Nameable,
+      Labelled,
+      Described {}
 
   export interface Bookmark extends Identifiable {}
 
