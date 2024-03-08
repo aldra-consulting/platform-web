@@ -23,6 +23,10 @@ export interface Labelled<Container = string> {
   label: Container;
 }
 
+export interface Described<Container = string> {
+  description: Container;
+}
+
 export type Flatten<Type> = Type extends (infer Item)[] ? Item : Type;
 
 export interface Converter<Source, Target> {
