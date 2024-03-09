@@ -11,3 +11,15 @@
 export function isDefined<T>(value: T): value is NonNullable<T> {
   return value !== null && value !== undefined;
 }
+
+export const globalObject = () => {
+  if (isDefined(globalThis.window)) {
+    return globalThis.window;
+  }
+
+  if (isDefined(globalThis.process)) {
+    return globalThis.process;
+  }
+
+  return undefined;
+};
