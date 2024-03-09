@@ -1,6 +1,7 @@
 export * from './common';
 export * from './css';
 export * from './entity';
+export * from './environment';
 export * from './functional';
 export * from './id';
 export * from './nominal';
