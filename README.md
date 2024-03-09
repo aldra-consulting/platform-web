@@ -26,6 +26,9 @@ An invite-only platform for independent contractors.
   - `https://www.id.alra.no` (must be used in production)
 - `OIDC_CLIENT_ID` - OIDC client ID
 - `OIDC_SCOPES` - OIDC scopes
+- `SANITY_STUDIO_PROJECT_ID` - Sanity Studio project ID
+- `SANITY_STUDIO_DATASET` - Sanity Studio dataset
+- `SANITY_API_VERSION` - Sanity API version
 
 ## Contributing
 
