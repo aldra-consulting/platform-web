@@ -5,10 +5,13 @@ import { qwikCity } from '@builder.io/qwik-city/vite';
 import { defineConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
-export default defineConfig(() => ({
+import { environment } from './vite/plugins';
+
+export default defineConfig(({ mode }) => ({
   base: '/',
   server: { port: 8004 },
   plugins: [
+    environment({ mode }),
     qwikCity({ trailingSlash: false }),
     qwikVite({
       client: {

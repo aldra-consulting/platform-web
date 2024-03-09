@@ -22,7 +22,8 @@
   },
   "include": [
     "src",
-    "adapters"
+    "adapters",
+    "vite"
   ],
   "files": [
     "vite.config.ts",
