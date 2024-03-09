@@ -82,6 +82,7 @@
             "enforceForClassFields": false
           }
         ],
+        "@typescript-eslint/unbound-method": "off",
         "react/button-has-type": "off",
         "react/no-unknown-property": "off",
         "qwik/no-use-visible-task": "off",
