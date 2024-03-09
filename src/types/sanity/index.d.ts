@@ -1,3 +1,5 @@
+import { type ID } from '../id';
+
 export namespace Sanity {
   interface Document<Identifier extends string = string, Type> {
     _id: Identifier;
@@ -12,5 +14,10 @@ export namespace Sanity {
     value: Value;
   }
 
-  export namespace Document {}
+  export namespace Document {
+    export interface Client extends Document<ID.Client, 'client'> {
+      label: Translated[];
+      description: Translated[];
+    }
+  }
 }
