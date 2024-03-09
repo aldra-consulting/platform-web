@@ -1,5 +1,6 @@
 import { type Environment } from '@project/types';
-import { globalObject, checkEnvironmentVariables } from '@project/utils';
+import { globalObject } from '@project/utils/common';
+import { checkEnvironmentVariables } from '@project/utils/environment';
 
 export default () => {
   const {
