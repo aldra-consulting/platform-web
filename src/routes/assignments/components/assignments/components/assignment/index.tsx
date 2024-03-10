@@ -2,7 +2,7 @@ import { component$, useStylesScoped$ } from '@builder.io/qwik';
 
 import { useAssignmentContext } from '@project/hooks';
 
-import Card from '../../../../components/card';
+import Card from '../../../../../../components/card';
 
 import Body from './components/body';
 import Header from './components/header';

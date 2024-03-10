@@ -6,7 +6,7 @@ import { AssignmentProvider } from '@project/providers';
 import { type Entity } from '@project/types';
 import { NumberUtil, CSSUtil } from '@project/utils';
 
-import Assignment from '../assignment';
+import Assignment from './components/assignment';
 
 export interface Props {
   assignments: Entity.Assignment[];
