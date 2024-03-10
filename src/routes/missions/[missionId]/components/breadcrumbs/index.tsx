@@ -6,7 +6,7 @@ import { useMissionContext } from '@project/hooks';
 
 export default component$(() => {
   const {
-    mission: { name },
+    mission: { label },
   } = useMissionContext();
 
   return (
@@ -29,7 +29,7 @@ export default component$(() => {
         </Link>
       </Breadcrumbs.Breadcrumb>
       <Breadcrumbs.Separator>/</Breadcrumbs.Separator>
-      <Breadcrumbs.Breadcrumb active>{name}</Breadcrumbs.Breadcrumb>
+      <Breadcrumbs.Breadcrumb active>{label}</Breadcrumbs.Breadcrumb>
     </Breadcrumbs>
   );
 });

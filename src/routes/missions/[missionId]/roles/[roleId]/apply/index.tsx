@@ -60,7 +60,7 @@ export default component$(() => {
               <Breadcrumbs.Separator>/</Breadcrumbs.Separator>
               <Breadcrumbs.Breadcrumb>
                 <Link href={`/missions/${mission.id}`} color='neutral'>
-                  {mission.name}
+                  {mission.label}
                 </Link>
               </Breadcrumbs.Breadcrumb>
               <Breadcrumbs.Separator>/</Breadcrumbs.Separator>

@@ -12,7 +12,7 @@ export default component$(() => {
   useStylesScoped$(styles);
 
   const {
-    mission: { id, name },
+    mission: { id, label },
   } = useMissionContext();
 
   return (
@@ -20,7 +20,7 @@ export default component$(() => {
       <Card.Body q:slot='body'>
         <div data-root>
           <Link href={`/missions/${id}`} color='blue'>
-            {name}
+            {label}
           </Link>
           <Status />
           <Bookmark />

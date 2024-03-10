@@ -1,7 +1,7 @@
 [
   {
     "id": "mission-1",
-    "name": "Oppdrag 1",
+    "label": "Oppdrag 1",
     "client": {
       "id": "c27cf68d-a8c6-436d-a8e9-5563e305b071",
       "label": "Brønnøysundregistrene"
@@ -151,7 +151,7 @@
   },
   {
     "id": "mission-2",
-    "name": "Oppdrag 2",
+    "label": "Oppdrag 2",
     "client": {
       "id": "c27cf68d-a8c6-436d-a8e9-5563e305b071",
       "label": "Brønnøysundregistrene"
@@ -178,7 +178,7 @@
   },
   {
     "id": "mission-3",
-    "name": "Oppdrag 3",
+    "label": "Oppdrag 3",
     "client": {
       "id": "c27cf68d-a8c6-436d-a8e9-5563e305b071",
       "label": "Brønnøysundregistrene"
@@ -205,7 +205,7 @@
   },
   {
     "id": "mission-4",
-    "name": "Oppdrag 4",
+    "label": "Oppdrag 4",
     "client": {
       "id": "c27cf68d-a8c6-436d-a8e9-5563e305b071",
       "label": "Brønnøysundregistrene"
@@ -225,7 +225,7 @@
   },
   {
     "id": "mission-5",
-    "name": "Oppdrag 5",
+    "label": "Oppdrag 5",
     "client": {
       "id": "client-5",
       "label": "Client 5"
@@ -245,7 +245,7 @@
   },
   {
     "id": "mission-6",
-    "name": "Oppdrag 6",
+    "label": "Oppdrag 6",
     "client": {
       "id": "client-6",
       "label": "Client 6"
@@ -265,7 +265,7 @@
   },
   {
     "id": "mission-7",
-    "name": "Oppdrag 7",
+    "label": "Oppdrag 7",
     "client": {
       "id": "client-7",
       "label": "Client 7"

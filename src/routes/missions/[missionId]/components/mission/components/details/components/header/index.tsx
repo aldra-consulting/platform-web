@@ -13,7 +13,7 @@ export default component$(() => {
 
   const {
     mission: {
-      name,
+      label,
       client: { id: clientId, label: clientLabel },
     },
   } = useMissionContext();
@@ -22,7 +22,7 @@ export default component$(() => {
     <>
       <Card.Header.Title>
         <div data-slot='title'>
-          <span>{name}</span>
+          <span>{label}</span>
           <div data-slot='actions'>
             <Status />
             <Bookmark />
