@@ -14,17 +14,6 @@ export default class MissionEnityService {
   };
 
   // TODO: change implementation
-  get = async (id: Entity.Mission['id']): Promise<Nullable<Entity.Mission>> => {
-    try {
-      return await Promise.resolve(
-        (missions as Entity.Mission[]).find((mission) => mission.id === id)
-      );
-    } catch (error) {
-      throw new Error('Unable to find mission', { cause: error });
-    }
-  };
-
-  // TODO: change implementation
   findByIdOrThrow = async (
     id: Entity.Mission['id']
   ): Promise<Entity.Mission> => {
