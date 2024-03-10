@@ -78,7 +78,7 @@ export namespace Entity {
     applicant?: Applicant;
   }
 
-  export interface Mission extends Identifiable, Nameable {
+  export interface Mission extends Identifiable<ID.Mission>, Nameable {
     client: Client;
     status: 'active' | 'concluded' | 'cancelled';
     roles: Role[];
