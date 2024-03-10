@@ -3,7 +3,6 @@ export * from './assignment-context';
 export * from './assignment-id';
 export * from './assignments';
 export * from './authenticated-user';
-export * from './client';
 export * from './client-context';
 export * from './client-id';
 export * from './client-resource';
