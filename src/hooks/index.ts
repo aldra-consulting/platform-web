@@ -7,7 +7,6 @@ export * from './client';
 export * from './client-id';
 export * from './client-resource';
 export * from './client-task';
-export * from './clients';
 export * from './defined-param';
 export * from './is-first-render';
 export * from './reloadable';
