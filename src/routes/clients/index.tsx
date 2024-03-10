@@ -1,4 +1,4 @@
-import { $, component$ } from '@builder.io/qwik';
+import { $, component$, useStylesScoped$ } from '@builder.io/qwik';
 import { type DocumentHead } from '@builder.io/qwik-city';
 
 import Animated from '@project/components/animated';
@@ -11,8 +11,11 @@ import { NumberUtil, CSSUtil, service } from '@project/utils';
 
 import Breadcrumbs from './components/breadcrumbs';
 import Client from './components/client';
+import styles from './styles.css?inline';
 
 export default component$(() => {
+  useStylesScoped$(styles);
+
   const resource = useClientResource(
     $(() => service().entity().client().findMany())
   );
