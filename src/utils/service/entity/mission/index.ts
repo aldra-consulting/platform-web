@@ -1,3 +1,32 @@
+import { createClient } from '@sanity/client';
+
+import {
+  SanityClientDocumentToClientEntityConverter,
+  SanityMissionDocumentToMissionEntityConverter,
+} from '@project/converters';
+import env from '@project/env';
+import { MissionSanityRepository } from '@project/repository';
 import { MissionEntityService } from '@project/services';
 
-export default () => new MissionEntityService();
+export default () => {
+  const {
+    SANITY_STUDIO_PROJECT_ID,
+    SANITY_STUDIO_DATASET,
+    SANITY_API_VERSION,
+  } = env();
+
+  return new MissionEntityService(
+    new MissionSanityRepository(
+      createClient({
+        projectId: SANITY_STUDIO_PROJECT_ID,
+        dataset: SANITY_STUDIO_DATASET,
+        apiVersion: SANITY_API_VERSION,
+        perspective: 'published',
+        useCdn: true,
+      })
+    ),
+    new SanityMissionDocumentToMissionEntityConverter(
+      new SanityClientDocumentToClientEntityConverter()
+    )
+  );
+};

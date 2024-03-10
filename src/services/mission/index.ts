@@ -1,32 +1,29 @@
-import { type Entity, type Nullable } from '@project/types';
-
-import { MissionNotFoundError } from './errors';
-import missions from './missions.json';
+import {
+  type Sanity,
+  type Entity,
+  type Repository,
+  type Converter,
+  type Nullable,
+} from '@project/types';
 
 export default class MissionEnityService {
-  // TODO: change implementation
-  findMany = async (): Promise<Entity.Mission[]> => {
-    try {
-      return await Promise.resolve(missions as Entity.Mission[]);
-    } catch (error) {
-      throw new Error('Unable to list missions', { cause: error });
-    }
-  };
+  #repository: Repository<Sanity.Document.Mission>;
 
-  // TODO: change implementation
-  findByIdOrThrow = async (
-    id: Entity.Mission['id']
-  ): Promise<Entity.Mission> => {
-    const mission = (missions as Entity.Mission[]).find(
-      ({ id: missionId }) => missionId === id
-    );
+  #converter: Converter<Sanity.Document.Mission, Entity.Mission>;
 
-    if (!mission) {
-      throw new MissionNotFoundError(id);
-    }
+  constructor(
+    repository: Repository<Sanity.Document.Mission>,
+    converter: Converter<Sanity.Document.Mission, Entity.Mission>
+  ) {
+    this.#repository = repository;
+    this.#converter = converter;
+  }
 
-    return Promise.resolve(mission);
-  };
+  findMany = async (): Promise<Entity.Mission[]> =>
+    (await this.#repository.findMany()).map(this.#converter.convert);
+
+  findByIdOrThrow = async (id: Entity.Mission['id']): Promise<Entity.Mission> =>
+    this.#repository.findByIdOrThrow(id).then(this.#converter.convert);
 
   // TODO: change implementation
   toggleBookmark = async (
