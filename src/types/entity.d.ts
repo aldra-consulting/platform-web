@@ -78,12 +78,14 @@ export namespace Entity {
     applicant?: Applicant;
   }
 
-  export interface Mission extends Identifiable<ID.Mission>, Labelled {
+  export interface Mission
+    extends Identifiable<ID.Mission>,
+      Labelled,
+      Described {
     client: Client;
     status: 'active' | 'concluded' | 'cancelled';
     roles: Role[];
     brief?: string;
-    description?: string;
     details?: (
       | DeadlineDetail
       | CommencementDetail
