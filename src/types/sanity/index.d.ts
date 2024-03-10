@@ -29,6 +29,7 @@ export namespace Sanity {
     export interface Mission extends Document<ID.Mission, 'mission'> {
       label: Translated[];
       description: Translated[];
+      client: Client;
     }
   }
 }
