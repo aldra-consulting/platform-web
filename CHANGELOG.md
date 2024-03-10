@@ -1,3 +1,15 @@
+# [1.5.0](https://github.com/aldra-consulting/platform-web/compare/1.4.0...1.5.0) (2024-03-10)
+
+
+### Bug Fixes
+
+* add styles for the case where no clients exist ([c05f67a](https://github.com/aldra-consulting/platform-web/commit/c05f67a0eae38ea1d2e956e93d61805737558b0a))
+
+
+### Features
+
+* load data client-side ([789949c](https://github.com/aldra-consulting/platform-web/commit/789949c18bacef3f84bcfa13210d5925cafa6128))
+
 # [1.4.0](https://github.com/aldra-consulting/platform-web/compare/1.3.0...1.4.0) (2024-03-10)
 
 
