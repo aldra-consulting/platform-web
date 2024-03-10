@@ -1,11 +1,13 @@
-import { $, component$, Resource } from '@builder.io/qwik';
+import { $, component$ } from '@builder.io/qwik';
 import {
   type DocumentHead,
   type StaticGenerateHandler,
 } from '@builder.io/qwik-city';
 
+import ClientResource from '@project/components/client-resource';
 import Page from '@project/components/page';
-import { useClient, useClientId } from '@project/hooks';
+import Redirect from '@project/components/redirect';
+import { useClientId, useClientResource } from '@project/hooks';
 import { ClientProvider } from '@project/providers';
 import { service } from '@project/utils';
 
@@ -15,23 +17,23 @@ import Client from './components/client';
 export default component$(() => {
   const id = useClientId();
 
-  const { resource } = useClient(
+  const resource = useClientResource(
     $(() => service().entity().client().findByIdOrThrow(id))
   );
 
   return (
-    <Resource
-      value={resource}
-      onResolved={(client) =>
-        client ? (
+    <ClientResource
+      resource={resource}
+      onPending={() => null}
+      onRejected={() => <Redirect to='/assignments' />}
+      onResolved={(client) => (
+        <ClientProvider client={client}>
           <Page>
             <Breadcrumbs q:slot='breadcrumbs' />
-            <ClientProvider client={client}>
-              <Client />
-            </ClientProvider>
+            <Client />
           </Page>
-        ) : null
-      }
+        </ClientProvider>
+      )}
     />
   );
 });
