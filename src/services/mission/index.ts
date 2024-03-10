@@ -1,9 +1,9 @@
-import { type Service, type Entity, type Nullable } from '@project/types';
+import { type Entity, type Nullable } from '@project/types';
 
 import { MissionNotFoundError } from './errors';
 import missions from './missions.json';
 
-export default class MissionEnityService implements Service.Mission {
+export default class MissionEnityService {
   // TODO: change implementation
   list = async (): Promise<Entity.Mission[]> => {
     try {
