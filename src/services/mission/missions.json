@@ -1,0 +1,286 @@
+[
+  {
+    "id": "mission-1",
+    "name": "Oppdrag 1",
+    "client": {
+      "id": "c27cf68d-a8c6-436d-a8e9-5563e305b071",
+      "name": "Brønnøysundregistrene"
+    },
+    "roles": [
+      {
+        "id": "role-1",
+        "name": "Rolle 1",
+        "status": "filled",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda.",
+        "qualificationRequirements": [
+          {
+            "id": "qr-1",
+            "level": "MUST",
+            "description": "Minimum 4 års dokumentert erfaring som prosessleder/controller"
+          },
+          {
+            "id": "qr-2",
+            "level": "SHOULD",
+            "description": "Dokumentert erfaring med økonomisk oppfølging av prosjekter, inkludert kostnadskontroll, budsjettoppfølging og risikovurdering",
+            "weight": 57
+          },
+          {
+            "id": "qr-3",
+            "level": "SHOULD",
+            "description": "Dokumentert erfaring med planlegging og rapportering i større teknologiske prosjekter/program",
+            "weight": 29
+          },
+          {
+            "id": "qr-4",
+            "level": "SHOULD",
+            "description": "Dokumentert erfaring fra prosjekt/programarbeid i offentlig sektor og samarbeid på tvers av virksomheter",
+            "weight": 14
+          }
+        ],
+        "skills": [
+          {
+            "id": "skill-1",
+            "name": "Skill 1"
+          },
+          {
+            "id": "skill-2",
+            "name": "Skill 2"
+          },
+          {
+            "id": "skill-3",
+            "name": "Skill 3"
+          },
+          {
+            "id": "skill-4",
+            "name": "Skill 4"
+          },
+          {
+            "id": "skill-5",
+            "name": "Skill 5"
+          },
+          {
+            "id": "skill-6",
+            "name": "Skill 6"
+          },
+          {
+            "id": "skill-7",
+            "name": "Skill 7"
+          },
+          {
+            "id": "skill-8",
+            "name": "Skill 8"
+          },
+          {
+            "id": "skill-9",
+            "name": "Skill 9"
+          },
+          {
+            "id": "skill-10",
+            "name": "Skill 10"
+          }
+        ],
+        "applicant": {
+          "id": "c275b4f4-00e1-70d5-2407-c411af7ff905"
+        }
+      },
+      {
+        "id": "role-2",
+        "name": "Rolle 2",
+        "status": "open",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda.",
+        "qualificationRequirements": [],
+        "skills": []
+      }
+    ],
+    "status": "active",
+    "brief": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda.",
+    "description": "<p>Digitaliseringsdirektoratet har behov for en person med spisskompetanse på økonomi- og budsjettoppfølging i større teknologiske prosjekter. Personen må ha minimum 4 års dokumentert erfaring.</p><p>Ressursen skal bistå Digitaliseringsdirektoratet i deres nye program Nye Altinn. Lenker til litt mer informasjon: Programmet &apos;Nye Altinn&apos; og Modernisering av Altinn.</p><p>Altinn er en tjenesteplattform, en viktig nasjonal fellesløsning og en forutsetning for digital dialog mellom næringslivet, innbyggere og offentlige etater.</p><p>Digitaliseringsdirektoratet leder et program (Nye Altinn) som skal modernisere plattformen (Altinn 3) og flytte/ reetablere tjenester hos store tjenesteeiere på ny plattform. Programmet har dermed avhengigheter mot alle virksomhetene som har tjenester i Altinn. Per februar 2023 omfattet dette 67 tjenesteeiere, der Statistisk Sentralbyrå, Skatteetaten og Brønnøysundregistrene er blant de største.</p><p>Det skal etableres et programkontor i program Nye Altinn, der det er behov for en ressurs som dekker controller- og PMO-funksjonen i programmet.</p><p>Programkontoret skal ivareta fellesfunksjoner for hele programmet og koordinere informasjon, plandokumenter, rapportering og kontrollaktiviteter.</p><p>Programkontoret skal blant annet:</p><ul><li>Utvikle og følge opp plandokumentasjon, prosesser, rutiner og maler</li><li>Følge opp programmet på økonomi, fremdrift, risiko, planlegging og rapportering</li><li>Koordinere prosesser for risikostyring</li><li>Koordinere arbeidet i halvårlige planrevisjoner</li></ul>",
+    "details": [
+      {
+        "type": "deadline",
+        "name": "Frist",
+        "value": "2024-02-18T14:23:17.160Z"
+      },
+      {
+        "type": "commencement",
+        "name": "Oppstart",
+        "value": "Snarest mulig i januar 2024"
+      },
+      {
+        "type": "duration",
+        "name": "Varighet",
+        "value": "30 måneder med 6+6 måneders opsjon"
+      },
+      {
+        "type": "scope",
+        "name": "Omfang",
+        "value": 100
+      },
+      {
+        "type": "location",
+        "name": "Arbeidssted",
+        "value": "Digitaliseringsdirektoratet sine lokaler i Oslo (Økern Portal)"
+      }
+    ],
+    "languages": [
+      {
+        "id": "no",
+        "name": "Norsk",
+        "level": "B2"
+      }
+    ],
+    "awardCriteria": [
+      {
+        "id": "quality",
+        "name": "Kvalitet",
+        "weight": 60
+      },
+      {
+        "id": "price",
+        "name": "Pris",
+        "weight": 40
+      }
+    ],
+    "representative": {
+      "id": "c275b4f4-00e1-70d5-2407-c411af7ff905",
+      "name": "Alexander Zakharov",
+      "phone": "+47 93 66 06 18",
+      "email": "alexander.zakharov@aldra.no",
+      "imageUrl": "http://localhost:8004"
+    }
+  },
+  {
+    "id": "mission-2",
+    "name": "Oppdrag 2",
+    "client": {
+      "id": "c27cf68d-a8c6-436d-a8e9-5563e305b071",
+      "name": "Brønnøysundregistrene"
+    },
+    "roles": [
+      {
+        "id": "role-1",
+        "name": "Rolle 1",
+        "status": "filled",
+        "qualificationRequirements": [],
+        "skills": []
+      },
+      {
+        "id": "role-2",
+        "name": "Rolle 2",
+        "status": "filled",
+        "qualificationRequirements": [],
+        "skills": []
+      }
+    ],
+    "status": "concluded",
+    "brief": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda.",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda."
+  },
+  {
+    "id": "mission-3",
+    "name": "Oppdrag 3",
+    "client": {
+      "id": "c27cf68d-a8c6-436d-a8e9-5563e305b071",
+      "name": "Brønnøysundregistrene"
+    },
+    "roles": [
+      {
+        "id": "role-1",
+        "name": "Rolle 1",
+        "status": "review",
+        "qualificationRequirements": [],
+        "skills": []
+      },
+      {
+        "id": "role-2",
+        "name": "Rolle 2",
+        "status": "filled",
+        "qualificationRequirements": [],
+        "skills": []
+      }
+    ],
+    "status": "active",
+    "brief": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda.",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda."
+  },
+  {
+    "id": "mission-4",
+    "name": "Oppdrag 4",
+    "client": {
+      "id": "c27cf68d-a8c6-436d-a8e9-5563e305b071",
+      "name": "Brønnøysundregistrene"
+    },
+    "roles": [
+      {
+        "id": "role-1",
+        "name": "Rolle 1",
+        "status": "open",
+        "qualificationRequirements": [],
+        "skills": []
+      }
+    ],
+    "status": "cancelled",
+    "brief": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda.",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda."
+  },
+  {
+    "id": "mission-5",
+    "name": "Oppdrag 5",
+    "client": {
+      "id": "client-5",
+      "name": "Client 5"
+    },
+    "roles": [
+      {
+        "id": "role-1",
+        "name": "Rolle 1",
+        "status": "open",
+        "qualificationRequirements": [],
+        "skills": []
+      }
+    ],
+    "status": "cancelled",
+    "brief": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda.",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda."
+  },
+  {
+    "id": "mission-6",
+    "name": "Oppdrag 6",
+    "client": {
+      "id": "client-6",
+      "name": "Client 6"
+    },
+    "roles": [
+      {
+        "id": "role-1",
+        "name": "Rolle 1",
+        "status": "open",
+        "qualificationRequirements": [],
+        "skills": []
+      }
+    ],
+    "status": "cancelled",
+    "brief": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda.",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda."
+  },
+  {
+    "id": "mission-7",
+    "name": "Oppdrag 7",
+    "client": {
+      "id": "client-7",
+      "name": "Client 7"
+    },
+    "roles": [
+      {
+        "id": "role-1",
+        "name": "Rolle 1",
+        "status": "open",
+        "qualificationRequirements": [],
+        "skills": []
+      }
+    ],
+    "status": "cancelled",
+    "brief": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda.",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur quidem cum rerum reprehenderit numquam assumenda, qui similique aut ad, eius, quae debitis in est aperiam. A est incidunt assumenda."
+  }
+]

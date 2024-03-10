@@ -6,17 +6,15 @@ export namespace Service {
     findMany: () => Promise<T[]>;
   }
 
-  export interface Assignment {
-    list: () => Promise<Entity.Assignment[]>;
+  export interface Mission {
+    list: () => Promise<Entity.Mission[]>;
 
-    get: (id: Entity.Assignment['id']) => Promise<Nullable<Entity.Assignment>>;
+    get: (id: Entity.Mission['id']) => Promise<Nullable<Entity.Mission>>;
 
-    findByIdOrThrow: (
-      id: Entity.Assignment['id']
-    ) => Promise<Entity.Assignment>;
+    findByIdOrThrow: (id: Entity.Mission['id']) => Promise<Entity.Mission>;
 
     toggleBookmark: (
-      id: Entity.Assignment['id']
+      id: Entity.Mission['id']
     ) => Promise<Nullable<Entity.Bookmark>>;
   }
 

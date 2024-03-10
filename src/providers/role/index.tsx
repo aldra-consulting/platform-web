@@ -8,7 +8,7 @@ import {
 import { useNavigate } from '@builder.io/qwik-city';
 
 import { RoleContext, type RoleStore } from '@project/context';
-import { useAssignmentContext } from '@project/hooks';
+import { useMissionContext } from '@project/hooks';
 import { RoleService } from '@project/services';
 import { type Entity } from '@project/types';
 
@@ -21,7 +21,7 @@ const service = new RoleService();
 export default component$<Props>(({ role }) => {
   const navigate = useNavigate();
 
-  const { assignment } = useAssignmentContext();
+  const { mission } = useMissionContext();
 
   useContextProvider(
     RoleContext,
@@ -33,9 +33,7 @@ export default component$<Props>(({ role }) => {
         } catch (error) {
           // TODO: handle errors
         } finally {
-          await navigate(
-            `/assignments/${assignment.id}/roles/${this.role.id}/apply`
-          );
+          await navigate(`/missions/${mission.id}/roles/${this.role.id}/apply`);
         }
       }),
       withdraw: $(async function run(this: RoleStore) {

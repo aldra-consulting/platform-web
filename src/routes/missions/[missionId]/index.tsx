@@ -7,18 +7,18 @@ import {
 import ClientResource from '@project/components/client-resource';
 import Page from '@project/components/page';
 import Redirect from '@project/components/redirect';
-import { useClientId, useClientResource } from '@project/hooks';
-import { ClientProvider } from '@project/providers';
-import { service } from '@project/utils';
+import { useMissionId, useClientResource } from '@project/hooks';
+import { MissionProvider } from '@project/providers';
+import { MissionEntityService } from '@project/services';
 
 import Breadcrumbs from './components/breadcrumbs';
-import Client from './components/client';
+import Mission from './components/mission';
 
 export default component$(() => {
-  const id = useClientId();
+  const id = useMissionId();
 
   const resource = useClientResource(
-    $(() => service().entity().client().findByIdOrThrow(id))
+    $(() => new MissionEntityService().findByIdOrThrow(id))
   );
 
   return (
@@ -26,28 +26,26 @@ export default component$(() => {
       resource={resource}
       onPending={() => null}
       onRejected={() => <Redirect to='/missions' />}
-      onResolved={(client) => (
-        <ClientProvider client={client}>
+      onResolved={(mission) => (
+        <MissionProvider mission={mission}>
           <Page>
             <Breadcrumbs q:slot='breadcrumbs' />
-            <Client />
+            <Mission />
           </Page>
-        </ClientProvider>
+        </MissionProvider>
       )}
     />
   );
 });
 
 export const onStaticGenerate: StaticGenerateHandler = async () => ({
-  params: (await service().entity().client().findMany()).map(
-    ({ id: clientId }) => ({
-      clientId,
-    })
+  params: (await new MissionEntityService().list()).map(
+    ({ id: missionId }) => ({ missionId })
   ),
 });
 
 export const head: DocumentHead = {
-  title: 'Oppdragsgivere | Platform | Aldra | IT-spesialister i verdensklasse',
+  title: 'Oppdrag | Platform | Aldra | IT-spesialister i verdensklasse',
   meta: [
     {
       name: 'description',

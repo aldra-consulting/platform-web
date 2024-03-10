@@ -5,8 +5,8 @@ import Card from '@project/components/card';
 import { useClientContext } from '@project/hooks';
 import { NumberUtil, CSSUtil } from '@project/utils';
 
-import AssignmentsSection from './components/assignments-section';
 import DescriptionSection from './components/description-section';
+import MissionsSection from './components/missions-section';
 import styles from './styles.css?inline';
 
 export default component$(() => {
@@ -31,7 +31,7 @@ export default component$(() => {
             <Card.Body q:slot='body'>
               <div data-slot='body'>
                 <DescriptionSection />
-                <AssignmentsSection />
+                <MissionsSection />
               </div>
             </Card.Body>
           </Card>

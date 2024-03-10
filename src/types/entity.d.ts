@@ -79,7 +79,7 @@ export namespace Entity {
     applicant?: Applicant;
   }
 
-  export interface Assignment extends Identifiable, Nameable {
+  export interface Mission extends Identifiable, Nameable {
     client: Client;
     status: 'active' | 'concluded' | 'cancelled';
     roles: Role[];
