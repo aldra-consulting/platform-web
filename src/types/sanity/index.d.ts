@@ -19,9 +19,14 @@ export namespace Sanity {
   }
 
   export namespace Document {
-    export type Type = 'client';
+    export type Type = 'client' | 'mission';
 
     export interface Client extends Document<ID.Client, 'client'> {
+      label: Translated[];
+      description: Translated[];
+    }
+
+    export interface Mission extends Document<ID.Mission, 'mission'> {
       label: Translated[];
       description: Translated[];
     }
