@@ -6,6 +6,7 @@ export namespace Sanity {
     Identifier extends string = string,
     Type extends string = unknown,
   > extends Identifiable<Identifier> {
+    _id: Identifier;
     _type: Type;
     _rev: string;
     _createdAt: string;
