@@ -12,7 +12,6 @@ export namespace Entity {
 
   export interface Client
     extends Identifiable<ID.Client>,
-      Nameable,
       Labelled,
       Described {}
 

@@ -14,7 +14,7 @@ export default component$(() => {
   const {
     mission: {
       name,
-      client: { id: clientId, name: clientName },
+      client: { id: clientId, label: clientLabel },
     },
   } = useMissionContext();
 
@@ -31,7 +31,7 @@ export default component$(() => {
       </Card.Header.Title>
       <Card.Header.Subtitle>
         <Link href={`/clients/${clientId}`} color='blue'>
-          {clientName}
+          {clientLabel}
         </Link>
       </Card.Header.Subtitle>
     </>

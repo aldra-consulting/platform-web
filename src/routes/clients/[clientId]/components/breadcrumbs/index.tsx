@@ -6,7 +6,7 @@ import { useClientContext } from '@project/hooks';
 
 export default component$(() => {
   const {
-    client: { name },
+    client: { label },
   } = useClientContext();
 
   return (
@@ -29,7 +29,7 @@ export default component$(() => {
         </Link>
       </Breadcrumbs.Breadcrumb>
       <Breadcrumbs.Separator>/</Breadcrumbs.Separator>
-      <Breadcrumbs.Breadcrumb active>{name}</Breadcrumbs.Breadcrumb>
+      <Breadcrumbs.Breadcrumb active>{label}</Breadcrumbs.Breadcrumb>
     </Breadcrumbs>
   );
 });

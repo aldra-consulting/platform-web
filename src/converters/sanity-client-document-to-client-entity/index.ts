@@ -10,7 +10,6 @@ export default class SanityClientDocumentToClientEntityConverter
     description,
   }: Sanity.Document.Client): Entity.Client => ({
     id,
-    name: label.find(({ _key }) => _key === 'no')?.value ?? '',
     label: label.find(({ _key }) => _key === 'no')?.value ?? '',
     description: description.find(({ _key }) => _key === 'no')?.value ?? '',
   });

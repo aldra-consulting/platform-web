@@ -13,7 +13,7 @@ export default component$(() => {
   useStylesScoped$(styles);
 
   const {
-    client: { name },
+    client: { label },
   } = useClientContext();
 
   return (
@@ -26,7 +26,7 @@ export default component$(() => {
         >
           <Card>
             <Card.Header q:slot='header'>
-              <Card.Header.Title>{name}</Card.Header.Title>
+              <Card.Header.Title>{label}</Card.Header.Title>
             </Card.Header>
             <Card.Body q:slot='body'>
               <div data-slot='body'>

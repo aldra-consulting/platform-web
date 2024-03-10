@@ -4,7 +4,7 @@
     "name": "Oppdrag 1",
     "client": {
       "id": "c27cf68d-a8c6-436d-a8e9-5563e305b071",
-      "name": "Brønnøysundregistrene"
+      "label": "Brønnøysundregistrene"
     },
     "roles": [
       {
@@ -154,7 +154,7 @@
     "name": "Oppdrag 2",
     "client": {
       "id": "c27cf68d-a8c6-436d-a8e9-5563e305b071",
-      "name": "Brønnøysundregistrene"
+      "label": "Brønnøysundregistrene"
     },
     "roles": [
       {
@@ -181,7 +181,7 @@
     "name": "Oppdrag 3",
     "client": {
       "id": "c27cf68d-a8c6-436d-a8e9-5563e305b071",
-      "name": "Brønnøysundregistrene"
+      "label": "Brønnøysundregistrene"
     },
     "roles": [
       {
@@ -208,7 +208,7 @@
     "name": "Oppdrag 4",
     "client": {
       "id": "c27cf68d-a8c6-436d-a8e9-5563e305b071",
-      "name": "Brønnøysundregistrene"
+      "label": "Brønnøysundregistrene"
     },
     "roles": [
       {
@@ -228,7 +228,7 @@
     "name": "Oppdrag 5",
     "client": {
       "id": "client-5",
-      "name": "Client 5"
+      "label": "Client 5"
     },
     "roles": [
       {
@@ -248,7 +248,7 @@
     "name": "Oppdrag 6",
     "client": {
       "id": "client-6",
-      "name": "Client 6"
+      "label": "Client 6"
     },
     "roles": [
       {
@@ -268,7 +268,7 @@
     "name": "Oppdrag 7",
     "client": {
       "id": "client-7",
-      "name": "Client 7"
+      "label": "Client 7"
     },
     "roles": [
       {

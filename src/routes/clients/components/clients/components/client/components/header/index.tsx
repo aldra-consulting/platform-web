@@ -9,13 +9,13 @@ export default component$(() => {
   useStylesScoped$(styles);
 
   const {
-    client: { name },
+    client: { label },
   } = useClientContext();
 
   return (
     <Card.Header.Title>
       <div data-slot='title'>
-        <span>{name}</span>
+        <span>{label}</span>
       </div>
     </Card.Header.Title>
   );
