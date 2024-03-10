@@ -14,7 +14,7 @@ export default component$(() => {
   useStylesScoped$(styles);
 
   const resource = useClientResource(
-    $(() => service().entity().mission().list())
+    $(() => service().entity().mission().findMany())
   );
 
   return (

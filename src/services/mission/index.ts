@@ -5,7 +5,7 @@ import missions from './missions.json';
 
 export default class MissionEnityService {
   // TODO: change implementation
-  list = async (): Promise<Entity.Mission[]> => {
+  findMany = async (): Promise<Entity.Mission[]> => {
     try {
       return await Promise.resolve(missions as Entity.Mission[]);
     } catch (error) {

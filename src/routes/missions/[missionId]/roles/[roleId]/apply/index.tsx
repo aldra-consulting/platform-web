@@ -87,7 +87,7 @@ export default component$(() => {
 });
 
 export const onStaticGenerate: StaticGenerateHandler = async () => ({
-  params: (await service().entity().mission().list()).flatMap(
+  params: (await service().entity().mission().findMany()).flatMap(
     ({ id: missionId, roles }) =>
       roles.map(({ id: roleId }) => ({ missionId, roleId }))
   ),

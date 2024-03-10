@@ -12,7 +12,7 @@ export default component$(() => {
 });
 
 export const onStaticGenerate: StaticGenerateHandler = async () => ({
-  params: (await service().entity().mission().list()).map(
+  params: (await service().entity().mission().findMany()).map(
     ({ id: missionId }) => ({ missionId })
   ),
 });
