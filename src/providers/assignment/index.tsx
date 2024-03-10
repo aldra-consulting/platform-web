@@ -10,14 +10,14 @@ import {
   AssignmentContext,
   type AssignmentStore as Store,
 } from '@project/context';
-import { AssignmentService } from '@project/services';
+import { AssignmentEntityService } from '@project/services';
 import { type Entity } from '@project/types';
 
 export interface Props {
   assignment: Entity.Assignment;
 }
 
-const service = new AssignmentService();
+const service = new AssignmentEntityService();
 
 export default component$<Props>(({ assignment }) => {
   const store = useStore<Store>({

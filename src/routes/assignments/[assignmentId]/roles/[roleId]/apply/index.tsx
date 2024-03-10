@@ -11,7 +11,7 @@ import Page from '@project/components/page';
 import Redirect from '@project/components/redirect';
 import { useAssignmentId, useClientResource, useRoleId } from '@project/hooks';
 import { AssignmentProvider } from '@project/providers';
-import { AssignmentService } from '@project/services';
+import { AssignmentEntityService } from '@project/services';
 
 export default component$(() => {
   const assignmentId = useAssignmentId();
@@ -19,7 +19,7 @@ export default component$(() => {
 
   const resource = useClientResource(
     $(() =>
-      new AssignmentService()
+      new AssignmentEntityService()
         .findByIdOrThrow(assignmentId)
         .then((assignment) => {
           const role = assignment.roles.find(({ id }) => id === roleId);
@@ -88,7 +88,7 @@ export default component$(() => {
 });
 
 export const onStaticGenerate: StaticGenerateHandler = async () => ({
-  params: (await new AssignmentService().list()).flatMap(
+  params: (await new AssignmentEntityService().list()).flatMap(
     ({ id: assignmentId, roles }) =>
       roles.map(({ id: roleId }) => ({ assignmentId, roleId }))
   ),

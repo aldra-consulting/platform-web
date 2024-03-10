@@ -3,7 +3,7 @@ import { type Service, type Entity, type Nullable } from '@project/types';
 import assignments from './assignments.json';
 import { AssignmentNotFoundError } from './errors';
 
-export default class AssignmentService implements Service.Assignment {
+export default class AssignmentEnityService implements Service.Assignment {
   // TODO: change implementation
   list = async (): Promise<Entity.Assignment[]> => {
     try {

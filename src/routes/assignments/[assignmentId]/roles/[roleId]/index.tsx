@@ -6,7 +6,7 @@ import {
 
 import Redirect from '@project/components/redirect';
 import { useAssignmentId, useRoleId } from '@project/hooks';
-import { AssignmentService } from '@project/services';
+import { AssignmentEntityService } from '@project/services';
 
 export default component$(() => {
   const assignmentId = useAssignmentId();
@@ -16,7 +16,7 @@ export default component$(() => {
 });
 
 export const onStaticGenerate: StaticGenerateHandler = async () => ({
-  params: (await new AssignmentService().list()).flatMap(
+  params: (await new AssignmentEntityService().list()).flatMap(
     ({ id: assignmentId, roles }) =>
       roles.map(({ id: roleId }) => ({ assignmentId, roleId }))
   ),

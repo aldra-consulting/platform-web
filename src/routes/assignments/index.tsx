@@ -4,7 +4,7 @@ import { type DocumentHead } from '@builder.io/qwik-city';
 import ClientResource from '@project/components/client-resource';
 import Page from '@project/components/page';
 import { useClientResource } from '@project/hooks';
-import { AssignmentService } from '@project/services';
+import { AssignmentEntityService } from '@project/services';
 
 import Assignments from './components/assignments';
 import Breadcrumbs from './components/breadcrumbs';
@@ -13,7 +13,9 @@ import styles from './styles.css?inline';
 export default component$(() => {
   useStylesScoped$(styles);
 
-  const resource = useClientResource($(() => new AssignmentService().list()));
+  const resource = useClientResource(
+    $(() => new AssignmentEntityService().list())
+  );
 
   return (
     <Page>

@@ -3,7 +3,7 @@ import { $, component$, useStylesScoped$, Resource } from '@builder.io/qwik';
 import Animated from '@project/components/animated';
 import { useClientContext, useAssignments } from '@project/hooks';
 import { AssignmentProvider } from '@project/providers';
-import { AssignmentService } from '@project/services';
+import { AssignmentEntityService } from '@project/services';
 import { NumberUtil, CSSUtil } from '@project/utils';
 
 import Section from '../section';
@@ -21,7 +21,7 @@ export default component$(() => {
 
   const { resource } = useAssignments(
     $(() =>
-      new AssignmentService()
+      new AssignmentEntityService()
         .list()
         .then((assignments) =>
           assignments.filter(({ client }) => client.id === id)
