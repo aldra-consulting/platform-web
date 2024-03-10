@@ -1,6 +1,6 @@
-import { component$, useStylesScoped$, useContext } from '@builder.io/qwik';
+import { component$, useStylesScoped$ } from '@builder.io/qwik';
 
-import { ClientContext } from '@project/context';
+import { useClientContext } from '@project/hooks';
 
 import styles from './styles.css?inline';
 
@@ -9,7 +9,7 @@ export default component$(() => {
 
   const {
     client: { description },
-  } = useContext(ClientContext);
+  } = useClientContext();
 
   return (
     <div data-root>

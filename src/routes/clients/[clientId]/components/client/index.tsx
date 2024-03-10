@@ -1,8 +1,8 @@
-import { component$, useContext, useStylesScoped$ } from '@builder.io/qwik';
+import { component$, useStylesScoped$ } from '@builder.io/qwik';
 
 import Animated from '@project/components/animated';
 import Card from '@project/components/card';
-import { ClientContext } from '@project/context';
+import { useClientContext } from '@project/hooks';
 import { NumberUtil, CSSUtil } from '@project/utils';
 
 import AssignmentsSection from './components/assignments-section';
@@ -14,7 +14,7 @@ export default component$(() => {
 
   const {
     client: { name },
-  } = useContext(ClientContext);
+  } = useClientContext();
 
   return (
     <div data-root>

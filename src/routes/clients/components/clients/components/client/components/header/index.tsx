@@ -1,7 +1,7 @@
-import { component$, useStylesScoped$, useContext } from '@builder.io/qwik';
+import { component$, useStylesScoped$ } from '@builder.io/qwik';
 
 import Card from '@project/components/card';
-import { ClientContext } from '@project/context';
+import { useClientContext } from '@project/hooks';
 
 import styles from './styles.css?inline';
 
@@ -10,7 +10,7 @@ export default component$(() => {
 
   const {
     client: { name },
-  } = useContext(ClientContext);
+  } = useClientContext();
 
   return (
     <Card.Header.Title>

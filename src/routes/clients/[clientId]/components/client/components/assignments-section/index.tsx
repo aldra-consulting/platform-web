@@ -1,14 +1,7 @@
-import {
-  $,
-  component$,
-  useContext,
-  useStylesScoped$,
-  Resource,
-} from '@builder.io/qwik';
+import { $, component$, useStylesScoped$, Resource } from '@builder.io/qwik';
 
 import Animated from '@project/components/animated';
-import { ClientContext } from '@project/context';
-import { useAssignments } from '@project/hooks';
+import { useClientContext, useAssignments } from '@project/hooks';
 import { AssignmentProvider } from '@project/providers';
 import { AssignmentService } from '@project/services';
 import { NumberUtil, CSSUtil } from '@project/utils';
@@ -24,7 +17,7 @@ export default component$(() => {
 
   const {
     client: { id },
-  } = useContext(ClientContext);
+  } = useClientContext();
 
   const { resource } = useAssignments(
     $(() =>

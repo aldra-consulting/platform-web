@@ -1,6 +1,6 @@
-import { component$, useContext, useStylesScoped$ } from '@builder.io/qwik';
+import { component$, useStylesScoped$ } from '@builder.io/qwik';
 
-import { ClientContext } from '@project/context';
+import { useClientContext } from '@project/hooks';
 
 import Section from '../section';
 
@@ -11,7 +11,7 @@ export default component$(() => {
 
   const {
     client: { description },
-  } = useContext(ClientContext);
+  } = useClientContext();
 
   return description ? (
     <Section>

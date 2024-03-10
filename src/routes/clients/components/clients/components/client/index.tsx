@@ -1,6 +1,6 @@
-import { component$, useContext } from '@builder.io/qwik';
+import { component$ } from '@builder.io/qwik';
 
-import { ClientContext } from '@project/context';
+import { useClientContext } from '@project/hooks';
 
 import Card from '../../../../../../components/card';
 
@@ -10,7 +10,7 @@ import Header from './components/header';
 export default component$(() => {
   const {
     client: { id, description },
-  } = useContext(ClientContext);
+  } = useClientContext();
 
   return (
     <Card>
