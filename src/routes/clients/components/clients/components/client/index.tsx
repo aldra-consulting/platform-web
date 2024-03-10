@@ -2,7 +2,7 @@ import { component$, useContext } from '@builder.io/qwik';
 
 import { ClientContext } from '@project/context';
 
-import Card from '../../../../components/card';
+import Card from '../../../../../../components/card';
 
 import Body from './components/body';
 import Header from './components/header';

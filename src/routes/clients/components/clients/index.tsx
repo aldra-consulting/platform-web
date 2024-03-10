@@ -6,7 +6,7 @@ import { ClientProvider } from '@project/providers';
 import { type Entity } from '@project/types';
 import { NumberUtil, CSSUtil } from '@project/utils';
 
-import Client from '../client';
+import Client from './components/client';
 
 export interface Props {
   clients: Entity.Client[];
