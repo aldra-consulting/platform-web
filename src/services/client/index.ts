@@ -1,34 +1,22 @@
-import { type Service, type Entity, type Nullable } from '@project/types';
+import { type Repository, type Entity, type Converter } from '@project/types';
+import { type Sanity } from '@project/types/sanity';
 
-import EntityService from '../entity';
+export default class ClientEntityService {
+  #repository: Repository<Sanity.Document.Client>;
 
-import clients from './clients.json';
+  #converter: Converter<Sanity.Document.Client, Entity.Client>;
 
-export default class ClientEntityService
-  extends EntityService<Entity.Client>
-  implements Service.Client
-{
-  protected entity = 'client' as const;
+  constructor(
+    repository: Repository<Sanity.Document.Client>,
+    converter: Converter<Sanity.Document.Client, Entity.Client>
+  ) {
+    this.#repository = repository;
+    this.#converter = converter;
+  }
 
-  // TODO: change implementation
-  findMany = async (): Promise<Entity.Client[]> => {
-    try {
-      return Promise.resolve(clients as Entity.Client[]);
-    } catch (error) {
-      throw new Error(`Unable to list entities of type '${this.entity}'`, {
-        cause: error,
-      });
-    }
-  };
+  findMany = async (): Promise<Entity.Client[]> =>
+    (await this.#repository.findMany()).map(this.#converter.convert);
 
-  // TODO: change implementation
-  get = async (id: Entity.Client['id']): Promise<Nullable<Entity.Client>> => {
-    try {
-      return await Promise.resolve(
-        (clients as Entity.Client[]).find((client) => client.id === id)
-      );
-    } catch (error) {
-      throw new Error('Unable to find client', { cause: error });
-    }
-  };
+  findByIdOrThrow = async (id: Entity.Client['id']): Promise<Entity.Client> =>
+    this.#repository.findByIdOrThrow(id).then(this.#converter.convert);
 }

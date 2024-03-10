@@ -8,14 +8,13 @@ import MasonryGrid from '@project/components/masonry-grid';
 import Page from '@project/components/page';
 import { useClients } from '@project/hooks';
 import { ClientProvider } from '@project/providers';
-import { ClientEntityService } from '@project/services';
-import { NumberUtil, CSSUtil } from '@project/utils';
+import { NumberUtil, CSSUtil, service } from '@project/utils';
 
 import Client from './components/client';
 
 export default component$(() => {
   const { resource } = useClients(
-    $(() => new ClientEntityService().findMany())
+    $(() => service().entity().client().findMany())
   );
 
   return (
