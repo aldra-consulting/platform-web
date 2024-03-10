@@ -31,8 +31,8 @@ jobs:
       - name: Audit dependencies
         run: npm audit --omit=dev --audit-level=moderate
 
-      - name: Build project
-        run: npm run build
+      - name: Compile project
+        run: npm run compile
 
       - name: Lint project
         run: npm run lint
