@@ -30,6 +30,7 @@ export namespace Sanity {
       label: Translated[];
       description: Translated[];
       client: Client;
+      status: 'active' | 'concluded' | 'cancelled';
     }
   }
 }
