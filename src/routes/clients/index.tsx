@@ -2,14 +2,13 @@ import { $, component$, Resource } from '@builder.io/qwik';
 import { type DocumentHead } from '@builder.io/qwik-city';
 
 import Animated from '@project/components/animated';
-import Breadcrumbs from '@project/components/breadcrumbs';
-import Link from '@project/components/link';
 import MasonryGrid from '@project/components/masonry-grid';
 import Page from '@project/components/page';
 import { useClients } from '@project/hooks';
 import { ClientProvider } from '@project/providers';
 import { NumberUtil, CSSUtil, service } from '@project/utils';
 
+import Breadcrumbs from './components/breadcrumbs';
 import Client from './components/client';
 
 export default component$(() => {
@@ -19,21 +18,7 @@ export default component$(() => {
 
   return (
     <Page>
-      <Breadcrumbs q:slot='breadcrumbs'>
-        <Breadcrumbs.Breadcrumb>
-          <Link href='https://www.aldra.no' color='neutral'>
-            Aldra
-          </Link>
-        </Breadcrumbs.Breadcrumb>
-        <Breadcrumbs.Separator>/</Breadcrumbs.Separator>
-        <Breadcrumbs.Breadcrumb>
-          <Link href='/' color='neutral'>
-            Plattform
-          </Link>
-        </Breadcrumbs.Breadcrumb>
-        <Breadcrumbs.Separator>/</Breadcrumbs.Separator>
-        <Breadcrumbs.Breadcrumb active>Oppdragsgivere</Breadcrumbs.Breadcrumb>
-      </Breadcrumbs>
+      <Breadcrumbs q:slot='breadcrumbs' />
       <Resource
         value={resource}
         onResolved={(clients) =>
