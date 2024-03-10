@@ -1,5 +1,9 @@
-import { type Repository, type Entity, type Converter } from '@project/types';
-import { type Sanity } from '@project/types/sanity';
+import {
+  type Sanity,
+  type Entity,
+  type Repository,
+  type Converter,
+} from '@project/types';
 
 export default class ClientEntityService {
   #repository: Repository<Sanity.Document.Client>;
