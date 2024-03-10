@@ -3,7 +3,7 @@ import { type StaticGenerateHandler } from '@builder.io/qwik-city';
 
 import Redirect from '@project/components/redirect';
 import { useMissionId } from '@project/hooks';
-import { MissionEntityService } from '@project/services';
+import { service } from '@project/utils';
 
 export default component$(() => {
   const id = useMissionId();
@@ -12,7 +12,7 @@ export default component$(() => {
 });
 
 export const onStaticGenerate: StaticGenerateHandler = async () => ({
-  params: (await new MissionEntityService().list()).map(
+  params: (await service().entity().mission().list()).map(
     ({ id: missionId }) => ({ missionId })
   ),
 });

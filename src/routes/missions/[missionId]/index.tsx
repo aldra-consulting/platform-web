@@ -9,7 +9,7 @@ import Page from '@project/components/page';
 import Redirect from '@project/components/redirect';
 import { useMissionId, useClientResource } from '@project/hooks';
 import { MissionProvider } from '@project/providers';
-import { MissionEntityService } from '@project/services';
+import { service } from '@project/utils';
 
 import Breadcrumbs from './components/breadcrumbs';
 import Mission from './components/mission';
@@ -18,7 +18,7 @@ export default component$(() => {
   const id = useMissionId();
 
   const resource = useClientResource(
-    $(() => new MissionEntityService().findByIdOrThrow(id))
+    $(() => service().entity().mission().findByIdOrThrow(id))
   );
 
   return (
@@ -39,7 +39,7 @@ export default component$(() => {
 });
 
 export const onStaticGenerate: StaticGenerateHandler = async () => ({
-  params: (await new MissionEntityService().list()).map(
+  params: (await service().entity().mission().list()).map(
     ({ id: missionId }) => ({ missionId })
   ),
 });

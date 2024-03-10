@@ -6,7 +6,7 @@ import {
 
 import Redirect from '@project/components/redirect';
 import { useMissionId, useRoleId } from '@project/hooks';
-import { MissionEntityService } from '@project/services';
+import { service } from '@project/utils';
 
 export default component$(() => {
   const missionId = useMissionId();
@@ -16,7 +16,7 @@ export default component$(() => {
 });
 
 export const onStaticGenerate: StaticGenerateHandler = async () => ({
-  params: (await new MissionEntityService().list()).flatMap(
+  params: (await service().entity().mission().list()).flatMap(
     ({ id: missionId, roles }) =>
       roles.map(({ id: roleId }) => ({ missionId, roleId }))
   ),

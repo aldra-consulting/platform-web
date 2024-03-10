@@ -11,7 +11,7 @@ import Page from '@project/components/page';
 import Redirect from '@project/components/redirect';
 import { useMissionId, useClientResource, useRoleId } from '@project/hooks';
 import { MissionProvider } from '@project/providers';
-import { MissionEntityService } from '@project/services';
+import { service } from '@project/utils';
 
 export default component$(() => {
   const missionId = useMissionId();
@@ -19,15 +19,19 @@ export default component$(() => {
 
   const resource = useClientResource(
     $(() =>
-      new MissionEntityService().findByIdOrThrow(missionId).then((mission) => {
-        const role = mission.roles.find(({ id }) => id === roleId);
+      service()
+        .entity()
+        .mission()
+        .findByIdOrThrow(missionId)
+        .then((mission) => {
+          const role = mission.roles.find(({ id }) => id === roleId);
 
-        if (!role) {
-          throw new Error('Role not found');
-        }
+          if (!role) {
+            throw new Error('Role not found');
+          }
 
-        return { mission, role };
-      })
+          return { mission, role };
+        })
     )
   );
 
@@ -83,7 +87,7 @@ export default component$(() => {
 });
 
 export const onStaticGenerate: StaticGenerateHandler = async () => ({
-  params: (await new MissionEntityService().list()).flatMap(
+  params: (await service().entity().mission().list()).flatMap(
     ({ id: missionId, roles }) =>
       roles.map(({ id: roleId }) => ({ missionId, roleId }))
   ),

@@ -3,8 +3,7 @@ import { $, component$, useStylesScoped$, Resource } from '@builder.io/qwik';
 import Animated from '@project/components/animated';
 import { useClientContext, useMissions } from '@project/hooks';
 import { MissionProvider } from '@project/providers';
-import { MissionEntityService } from '@project/services';
-import { NumberUtil, CSSUtil } from '@project/utils';
+import { NumberUtil, CSSUtil, service } from '@project/utils';
 
 import Section from '../section';
 
@@ -21,7 +20,9 @@ export default component$(() => {
 
   const { resource } = useMissions(
     $(() =>
-      new MissionEntityService()
+      service()
+        .entity()
+        .mission()
         .list()
         .then((missions) => missions.filter(({ client }) => client.id === id))
         .then((missions) =>

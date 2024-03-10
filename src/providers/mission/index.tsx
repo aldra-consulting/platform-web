@@ -7,14 +7,12 @@ import {
 } from '@builder.io/qwik';
 
 import { MissionContext, type MissionStore as Store } from '@project/context';
-import { MissionEntityService } from '@project/services';
 import { type Entity } from '@project/types';
+import { service } from '@project/utils';
 
 export interface Props {
   mission: Entity.Mission;
 }
-
-const service = new MissionEntityService();
 
 export default component$<Props>(({ mission }) => {
   const store = useStore<Store>({
@@ -23,7 +21,10 @@ export default component$<Props>(({ mission }) => {
     toggleBookmark: $(async function run(this: Store) {
       try {
         this.mission.bookmark =
-          (await service.toggleBookmark(this.mission.id)) ?? undefined;
+          (await service()
+            .entity()
+            .mission()
+            .toggleBookmark(this.mission.id)) ?? undefined;
       } catch (error) {
         // TODO: handle errors
       }

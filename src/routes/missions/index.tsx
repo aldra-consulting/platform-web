@@ -4,7 +4,7 @@ import { type DocumentHead } from '@builder.io/qwik-city';
 import ClientResource from '@project/components/client-resource';
 import Page from '@project/components/page';
 import { useClientResource } from '@project/hooks';
-import { MissionEntityService } from '@project/services';
+import { service } from '@project/utils';
 
 import Breadcrumbs from './components/breadcrumbs';
 import Missions from './components/missions';
@@ -14,7 +14,7 @@ export default component$(() => {
   useStylesScoped$(styles);
 
   const resource = useClientResource(
-    $(() => new MissionEntityService().list())
+    $(() => service().entity().mission().list())
   );
 
   return (
