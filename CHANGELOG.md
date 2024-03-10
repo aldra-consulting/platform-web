@@ -1,3 +1,21 @@
+# [1.4.0](https://github.com/aldra-consulting/platform-web/compare/1.3.0...1.4.0) (2024-03-10)
+
+
+### Features
+
+* add Client Sanity document type ([f12d5a3](https://github.com/aldra-consulting/platform-web/commit/f12d5a3646e6e2a493944ec0c7c792d08e37b371))
+* add Sanity Client document to Client entity converter ([ff22837](https://github.com/aldra-consulting/platform-web/commit/ff22837bdce2774698e3eaa59ee56d515336a78c))
+* add Sanity Client repository implementation ([005126c](https://github.com/aldra-consulting/platform-web/commit/005126c59aa9e85aa6c4ee903c3fff6ab8c850ac))
+* add useClientId hook ([73b8058](https://github.com/aldra-consulting/platform-web/commit/73b80583e5546bb932bad16c1bfca60fef50cb02))
+* add Vite environment plugin ([009523d](https://github.com/aldra-consulting/platform-web/commit/009523dccbcf2e025885a6747d45ea40e92344e7))
+* change ID type of Client entity ([18f5642](https://github.com/aldra-consulting/platform-web/commit/18f56426fe20aabfe12b7cd37a2016cf48432184))
+* connect Client entity service to Sanity API ([a097fa1](https://github.com/aldra-consulting/platform-web/commit/a097fa185c2d34d90279a1242e553a9ec423359c))
+* ensure environment is configured correctly ([82fb66b](https://github.com/aldra-consulting/platform-web/commit/82fb66bdba11e586349478aa7429b04dfa435ead))
+* extend EntityService in ClientService ([14ce6cc](https://github.com/aldra-consulting/platform-web/commit/14ce6cc61041785d62a7faf03130c65d370173a6))
+* implement a function to get a global object ([c77795c](https://github.com/aldra-consulting/platform-web/commit/c77795cf931c3fa8647decc3e5e04d0308e52542))
+* implement generic entity service ([4b32f8a](https://github.com/aldra-consulting/platform-web/commit/4b32f8abd658b609beb5a0f2ccd5f75897528f9e))
+* parametrise output type of useDefinedParam hook ([5083d23](https://github.com/aldra-consulting/platform-web/commit/5083d2332794386631b1a4b9b997d758ec85f214))
+
 # [1.3.0](https://github.com/aldra-consulting/platform-web/compare/1.2.1...1.3.0) (2024-03-01)
 
 
