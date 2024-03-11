@@ -11,6 +11,10 @@ export type Hashable = NonNullable<Primitive>;
 
 export type Nullable<T = never> = T | null | undefined;
 
+export type DeepPartial<T> = {
+  [K in keyof T]?: T[K] extends object ? DeepPartial<T[K]> : T[K];
+};
+
 export interface Identifiable<ID extends Hashable = string> {
   id: ID;
 }
