@@ -1,9 +1,11 @@
+import { MissionSanityRepository } from '@project/repository';
 import {
   type Sanity,
   type Entity,
   type Repository,
   type Converter,
   type Nullable,
+  type ID,
 } from '@project/types';
 
 export default class MissionEnityService {
@@ -24,6 +26,13 @@ export default class MissionEnityService {
 
   findByIdOrThrow = async (id: Entity.Mission['id']): Promise<Entity.Mission> =>
     this.#repository.findByIdOrThrow(id).then(this.#converter.convert);
+
+  findManyForClient = async (id: ID.Client): Promise<Entity.Mission[]> =>
+    this.#repository instanceof MissionSanityRepository
+      ? (await this.#repository.findManyForClient(id)).map(
+          this.#converter.convert
+        )
+      : [];
 
   // TODO: change implementation
   toggleBookmark = async (
