@@ -23,8 +23,7 @@ export default component$(() => {
       service()
         .entity()
         .mission()
-        .findMany()
-        .then((missions) => missions.filter(({ client }) => client.id === id))
+        .findManyForClient(id)
         .then((missions) =>
           missions.length > 0
             ? missions
