@@ -1,15 +1,12 @@
-import { $, component$, Resource } from '@builder.io/qwik';
+import { $, component$ } from '@builder.io/qwik';
 
 import Animated from '@project/components/animated';
 import Button from '@project/components/button';
+import ClientTask from '@project/components/client-task';
 import Loader from '@project/components/loader';
 import StarIcon from '@project/components/star-icon';
 import StarOutlineIcon from '@project/components/star-outline-icon';
-import {
-  useMissionContext,
-  useIsFirstRender,
-  useReloadableResource,
-} from '@project/hooks';
+import { useMissionContext, useClientTask } from '@project/hooks';
 import { NumberUtil, CSSUtil } from '@project/utils';
 
 export default component$(() => {
@@ -17,37 +14,28 @@ export default component$(() => {
 
   const { bookmark } = context.mission;
 
-  const isFirstRender = useIsFirstRender();
-
-  const { resource, isLoading, reload } = useReloadableResource(
-    $(async () => {
-      if (!isFirstRender.value) {
-        await context.toggleBookmark();
-      }
-    })
-  );
+  const { task, perform } = useClientTask($(() => context.toggleBookmark()));
 
   return (
-    <Resource
-      value={resource}
-      onPending={() =>
-        isLoading.value ? (
-          <Button variant='icon' startIcon disabled>
-            <Loader q:slot='start-icon' />
-          </Button>
-        ) : null
-      }
-      onResolved={() => (
+    <ClientTask
+      task={task}
+      onPending={() => (
+        <Button variant='icon' startIcon disabled>
+          <Loader q:slot='start-icon' />
+        </Button>
+      )}
+      onRejected={() => null}
+      onIdle={() => (
         <Button
           variant='icon'
           startIcon
           colour={bookmark ? 'green' : 'yellow'}
-          onClick$={reload}
-          disabled={isLoading.value}
+          onClick$={perform}
         >
           <Animated
             animation='zoom-pop-in'
             duration={CSSUtil.time.s(NumberUtil.positive(0.3))}
+            delay={CSSUtil.time.ms(NumberUtil.positive(1))}
             q:slot='start-icon'
           >
             {bookmark ? (
