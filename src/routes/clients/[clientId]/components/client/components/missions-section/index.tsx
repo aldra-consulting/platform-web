@@ -1,7 +1,8 @@
-import { $, component$, useStylesScoped$, Resource } from '@builder.io/qwik';
+import { $, component$, useStylesScoped$ } from '@builder.io/qwik';
 
 import Animated from '@project/components/animated';
-import { useClientContext, useMissions } from '@project/hooks';
+import ClientResource from '@project/components/client-resource';
+import { useClientContext, useClientResource } from '@project/hooks';
 import { MissionProvider } from '@project/providers';
 import { NumberUtil, CSSUtil, service } from '@project/utils';
 
@@ -18,7 +19,7 @@ export default component$(() => {
     client: { id },
   } = useClientContext();
 
-  const { resource } = useMissions(
+  const resource = useClientResource(
     $(() =>
       service()
         .entity()
@@ -33,9 +34,10 @@ export default component$(() => {
   );
 
   return (
-    <Resource
-      value={resource}
+    <ClientResource
+      resource={resource}
       onPending={() => null}
+      onRejected={() => null}
       onResolved={(missions) => (
         <Section>
           <h1 q:slot='title'>Oppdrag</h1>
@@ -54,7 +56,6 @@ export default component$(() => {
           </div>
         </Section>
       )}
-      onRejected={() => null}
     />
   );
 });
