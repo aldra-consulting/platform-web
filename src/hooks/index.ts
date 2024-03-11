@@ -7,7 +7,6 @@ export * from './defined-param';
 export * from './is-first-render';
 export * from './mission-context';
 export * from './mission-id';
-export * from './missions';
 export * from './reloadable';
 export * from './reloadable-resource';
 export * from './role-context';
