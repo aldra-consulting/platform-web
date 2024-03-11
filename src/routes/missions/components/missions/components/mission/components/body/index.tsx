@@ -16,13 +16,15 @@ export default component$(() => {
   return (
     <div data-root>
       {brief ? <p>{brief}</p> : null}
-      <div data-slot='roles'>
-        {roles.map((role) => (
-          <RoleProvider key={role.id} role={role}>
-            <Role />
-          </RoleProvider>
-        ))}
-      </div>
+      {roles.length > 0 ? (
+        <div data-slot='roles'>
+          {roles.map((role) => (
+            <RoleProvider key={role.id} role={role}>
+              <Role />
+            </RoleProvider>
+          ))}
+        </div>
+      ) : null}
     </div>
   );
 });
