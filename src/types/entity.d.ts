@@ -84,8 +84,8 @@ export namespace Entity {
       Described {
     client: Client;
     status: 'active' | 'concluded' | 'cancelled';
+    brief: string;
     roles: Role[];
-    brief?: string;
     details?: (
       | DeadlineDetail
       | CommencementDetail

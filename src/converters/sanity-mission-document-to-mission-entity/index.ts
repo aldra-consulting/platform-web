@@ -24,6 +24,7 @@ export default class
     description: description.find(({ _key }) => _key === 'no')?.value ?? '',
     client: this.#clientConverter.convert(client),
     status,
+    brief: '',
     roles: [],
   });
 }
