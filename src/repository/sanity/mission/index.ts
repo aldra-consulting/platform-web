@@ -1,6 +1,6 @@
 import groq from 'groq';
 
-import { type Sanity } from '@project/types';
+import { type ID, type Sanity } from '@project/types';
 import { isDefined } from '@project/utils/common';
 
 import SanityRepository from '..';
@@ -29,6 +29,35 @@ export default class MissionSanityRepository extends SanityRepository<Sanity.Doc
       throw new Error(`Unable to find documents of type '${this.type}'`, {
         cause: error,
       });
+    }
+  };
+
+  findManyForClient = async (
+    clientId: ID.Client
+  ): Promise<Sanity.Document.Mission[]> => {
+    try {
+      const query = groq`
+        *[_type == $type && references(*[_type == "client" && _id == $clientId]._id)] {
+          ...,
+          "id": _id,
+          client-> {
+            ...,
+            "id": _id
+          }
+        }
+      `;
+
+      return await this.client.fetch<Sanity.Document.Mission[]>(query, {
+        type: this.type,
+        clientId,
+      });
+    } catch (error) {
+      throw new Error(
+        `Unable to find documents of type '${this.type}' for client with ID '${clientId}'`,
+        {
+          cause: error,
+        }
+      );
     }
   };
 
