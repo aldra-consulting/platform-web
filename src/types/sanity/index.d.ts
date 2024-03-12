@@ -4,7 +4,7 @@ import { type ID } from '../id';
 export namespace Sanity {
   export interface Document<
     Identifier extends string = string,
-    Type extends string = unknown,
+    Type extends Document.Type = unknown,
   > extends Identifiable<Identifier> {
     _id: Identifier;
     _type: Type;
