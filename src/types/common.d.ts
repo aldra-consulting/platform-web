@@ -46,3 +46,5 @@ export interface Formatter<Source, Target = string> {
 }
 
 export type LanguageCode = 'no' | 'en';
+
+export type CommonReferenceLevel = 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2';
