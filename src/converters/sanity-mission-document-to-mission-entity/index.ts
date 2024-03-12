@@ -6,10 +6,20 @@ export default class
 {
   #clientConverter: Converter<Sanity.Document.Client, Entity.Client>;
 
+  #languageRequirementConverter: Converter<
+    Sanity.Object.LanguageRequirement,
+    Entity.LanguageRequirement
+  >;
+
   constructor(
-    clientConverter: Converter<Sanity.Document.Client, Entity.Client>
+    clientConverter: Converter<Sanity.Document.Client, Entity.Client>,
+    languageRequirementConverter: Converter<
+      Sanity.Object.LanguageRequirement,
+      Entity.LanguageRequirement
+    >
   ) {
     this.#clientConverter = clientConverter;
+    this.#languageRequirementConverter = languageRequirementConverter;
   }
 
   convert = ({
@@ -19,6 +29,7 @@ export default class
     client,
     status,
     brief,
+    languageRequirements,
   }: Sanity.Document.Mission): Entity.Mission => ({
     id,
     label: label.find(({ _key }) => _key === 'no')?.value ?? '',
@@ -27,5 +38,8 @@ export default class
     status,
     brief: brief.find(({ _key }) => _key === 'no')?.value ?? '',
     roles: [],
+    languageRequirements: languageRequirements.map(
+      this.#languageRequirementConverter.convert
+    ),
   });
 }

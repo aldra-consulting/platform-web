@@ -12,21 +12,21 @@ export default component$(() => {
   useStylesScoped$(styles);
 
   const {
-    mission: { languages = [] },
+    mission: { languageRequirements },
   } = useMissionContext();
 
-  return languages.length > 0 ? (
+  return languageRequirements.length > 0 ? (
     <Section>
       <h1 q:slot='title'>Språk</h1>
       <div q:slot='body'>
         <div data-slot='languages'>
-          {languages.map(({ id, name, level }) => (
-            <Chip key={`${id}-${level}`} variant='outlined'>
+          {languageRequirements.map(({ language, proficiency }) => (
+            <Chip key={`${language.id}-${proficiency}`} variant='outlined'>
               <i>
-                <Flag code={id} />
+                <Flag code={language.id} />
               </i>
               <span>
-                {name} ({level})
+                {language.label} ({proficiency})
               </span>
             </Chip>
           ))}

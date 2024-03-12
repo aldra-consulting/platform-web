@@ -4,6 +4,7 @@ import {
   type Labelled,
   type Described,
   type LanguageCode,
+  type CommonReferenceLevel,
 } from './common';
 import { type ID } from './id';
 
@@ -36,8 +37,11 @@ export namespace Entity {
 
   export type LocationDetail = Detail<'location', 'string'>;
 
-  export interface Language extends Identifiable<LanguageCode>, Nameable {
-    level: 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2';
+  export interface Language extends Identifiable<LanguageCode>, Labelled {}
+
+  export interface LanguageRequirement {
+    language: Language;
+    proficiency: CommonReferenceLevel;
   }
 
   export interface AwardCriterion
@@ -93,7 +97,7 @@ export namespace Entity {
       | ScopeDetail
       | LocationDetail
     )[];
-    languages?: Language[];
+    languageRequirements: LanguageRequirement[];
     awardCriteria?: AwardCriterion[];
     bookmark?: Bookmark;
     representative?: Representative;

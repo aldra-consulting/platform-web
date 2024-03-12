@@ -2,6 +2,8 @@ import { createClient } from '@sanity/client';
 
 import {
   SanityClientDocumentToClientEntityConverter,
+  SanityLanguageDocumentToLanguageEntityConverter,
+  SanityLanguageRequirementObjectToLanguageRequirementEntityConverter,
   SanityMissionDocumentToMissionEntityConverter,
 } from '@project/converters';
 import env from '@project/env';
@@ -26,7 +28,10 @@ export default () => {
       })
     ),
     new SanityMissionDocumentToMissionEntityConverter(
-      new SanityClientDocumentToClientEntityConverter()
+      new SanityClientDocumentToClientEntityConverter(),
+      new SanityLanguageRequirementObjectToLanguageRequirementEntityConverter(
+        new SanityLanguageDocumentToLanguageEntityConverter()
+      )
     )
   );
 };
