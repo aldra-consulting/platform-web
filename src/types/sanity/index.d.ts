@@ -48,4 +48,11 @@ export namespace Sanity {
       brief: Translated[];
     }
   }
+
+  export namespace Object {
+    export interface LanguageRequirement {
+      language: Document.Language;
+      proficiency: Document.CommonReferenceLevel;
+    }
+  }
 }
