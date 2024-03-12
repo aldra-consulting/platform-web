@@ -19,11 +19,20 @@ export namespace Sanity {
   }
 
   export namespace Document {
-    export type Type = 'client' | 'mission' | 'language';
+    export type Type =
+      | 'client'
+      | 'mission'
+      | 'language'
+      | 'commonReferenceLevel';
 
     export interface Language extends Document<ID.Language, 'language'> {
       code: 'no' | 'en';
       label: Translated[];
+    }
+
+    export interface CommonReferenceLevel
+      extends Document<ID.CommonReferenceLevel, 'commonReferenceLevel'> {
+      value: 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2';
     }
 
     export interface Client extends Document<ID.Client, 'client'> {

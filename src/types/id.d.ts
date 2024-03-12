@@ -4,4 +4,5 @@ export namespace ID {
   export type Client = Brand<string, 'client.id'>;
   export type Mission = Brand<string, 'mission.id'>;
   export type Language = Brand<string, 'language.id'>;
+  export type CommonReferenceLevel = Brand<string, 'commonReferenceLevel.id'>;
 }
