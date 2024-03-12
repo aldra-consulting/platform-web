@@ -18,6 +18,16 @@ export default class MissionSanityRepository extends SanityRepository<Sanity.Doc
           client-> {
             ...,
             "id": _id
+          },
+          "languageRequirements": coalesce(languageRequirements, [])[] {
+            language-> {
+              ...,
+              "id": _id
+            },
+            proficiency-> {
+              ...,
+              "id": _id
+            }
           }
         }
       `;
@@ -43,6 +53,16 @@ export default class MissionSanityRepository extends SanityRepository<Sanity.Doc
           client-> {
             ...,
             "id": _id
+          },
+          "languageRequirements": coalesce(languageRequirements, [])[] {
+            language-> {
+              ...,
+              "id": _id
+            },
+            proficiency-> {
+              ...,
+              "id": _id
+            }
           }
         }
       `;
@@ -71,6 +91,16 @@ export default class MissionSanityRepository extends SanityRepository<Sanity.Doc
         client-> {
           ...,
           "id": _id
+        },
+        "languageRequirements": coalesce(languageRequirements, [])[] {
+          language-> {
+            ...,
+            "id": _id
+          },
+          proficiency-> {
+            ...,
+            "id": _id
+          }
         }
       }
     `;

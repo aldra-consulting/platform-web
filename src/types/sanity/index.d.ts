@@ -46,6 +46,7 @@ export namespace Sanity {
       client: Client;
       status: 'active' | 'concluded' | 'cancelled';
       brief: Translated[];
+      languageRequirements: Object.LanguageRequirement[];
     }
   }
 
