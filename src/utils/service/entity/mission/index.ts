@@ -1,7 +1,9 @@
 import { createClient } from '@sanity/client';
 
 import {
+  SanityAwardCriterionObjectToAwardCriterionEntityConverter,
   SanityClientDocumentToClientEntityConverter,
+  SanityCriterionDocumentToCriterionEntityConverter,
   SanityLanguageDocumentToLanguageEntityConverter,
   SanityLanguageRequirementObjectToLanguageRequirementEntityConverter,
   SanityMissionDocumentToMissionEntityConverter,
@@ -31,6 +33,9 @@ export default () => {
       new SanityClientDocumentToClientEntityConverter(),
       new SanityLanguageRequirementObjectToLanguageRequirementEntityConverter(
         new SanityLanguageDocumentToLanguageEntityConverter()
+      ),
+      new SanityAwardCriterionObjectToAwardCriterionEntityConverter(
+        new SanityCriterionDocumentToCriterionEntityConverter()
       )
     )
   );

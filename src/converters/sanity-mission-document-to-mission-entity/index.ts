@@ -11,15 +11,25 @@ export default class
     Entity.LanguageRequirement
   >;
 
+  #awardCriterionConverter: Converter<
+    Sanity.Object.AwardCriterion,
+    Entity.AwardCriterion
+  >;
+
   constructor(
     clientConverter: Converter<Sanity.Document.Client, Entity.Client>,
     languageRequirementConverter: Converter<
       Sanity.Object.LanguageRequirement,
       Entity.LanguageRequirement
+    >,
+    awardCriterionConverter: Converter<
+      Sanity.Object.AwardCriterion,
+      Entity.AwardCriterion
     >
   ) {
     this.#clientConverter = clientConverter;
     this.#languageRequirementConverter = languageRequirementConverter;
+    this.#awardCriterionConverter = awardCriterionConverter;
   }
 
   convert = ({
@@ -30,6 +40,7 @@ export default class
     status,
     brief,
     languageRequirements,
+    awardCriteria,
   }: Sanity.Document.Mission): Entity.Mission => ({
     id,
     label: label.find(({ _key }) => _key === 'no')?.value ?? '',
@@ -41,5 +52,6 @@ export default class
     languageRequirements: languageRequirements.map(
       this.#languageRequirementConverter.convert
     ),
+    awardCriteria: awardCriteria.map(this.#awardCriterionConverter.convert),
   });
 }
