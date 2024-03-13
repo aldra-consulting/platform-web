@@ -29,7 +29,13 @@ export default class MissionSanityRepository extends SanityRepository<Sanity.Doc
               "id": _id
             }
           },
-          "awardCriteria": coalesce(awardCriteria, [])[]
+          "awardCriteria": coalesce(awardCriteria, [])[] {
+            ...,
+            criterion-> {
+              ...,
+              "id": _id
+            }
+          }
         }
       `;
 
@@ -65,7 +71,13 @@ export default class MissionSanityRepository extends SanityRepository<Sanity.Doc
               "id": _id
             }
           },
-          "awardCriteria": coalesce(awardCriteria, [])[]
+          "awardCriteria": coalesce(awardCriteria, [])[] {
+            ...,
+            criterion-> {
+              ...,
+              "id": _id
+            }
+          }
         }
       `;
 
@@ -104,7 +116,13 @@ export default class MissionSanityRepository extends SanityRepository<Sanity.Doc
             "id": _id
           }
         },
-        "awardCriteria": coalesce(awardCriteria, [])[]
+        "awardCriteria": coalesce(awardCriteria, [])[] {
+          ...,
+          criterion-> {
+            ...,
+            "id": _id
+          }
+        }
       }
     `;
 

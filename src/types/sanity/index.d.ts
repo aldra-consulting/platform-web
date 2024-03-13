@@ -23,7 +23,8 @@ export namespace Sanity {
       | 'client'
       | 'mission'
       | 'language'
-      | 'commonReferenceLevel';
+      | 'commonReferenceLevel'
+      | 'criterion';
 
     export interface Language
       extends Document<ID.Language, 'language'>,
@@ -34,6 +35,12 @@ export namespace Sanity {
     export interface CommonReferenceLevel
       extends Document<ID.CommonReferenceLevel, 'commonReferenceLevel'> {
       value: 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2';
+    }
+
+    export interface Criterion
+      extends Document<ID.Criterion, 'criteion'>,
+        Labelled<Translated[]> {
+      type: 'quality' | 'price';
     }
 
     export interface Client
@@ -60,7 +67,7 @@ export namespace Sanity {
     }
 
     export interface AwardCriterion {
-      criterion: 'quality' | 'price';
+      criterion: Document.Criterion;
       weight: number;
     }
   }
