@@ -43,7 +43,7 @@ export default component$(() => {
                     <div>
                       <PhoneIcon height={24} />
                       <span>
-                        <Link href={`mailto:${phoneNumber}`} color='blue'>
+                        <Link href={`tel:${phoneNumber}`} color='blue'>
                           {phoneNumber}
                         </Link>
                       </span>
