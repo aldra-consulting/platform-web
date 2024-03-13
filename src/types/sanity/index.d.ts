@@ -1,4 +1,4 @@
-import { type Identifiable } from '../common';
+import { type Identifiable, type Labelled, type Described } from '../common';
 import { type ID } from '../id';
 
 export namespace Sanity {
@@ -25,9 +25,10 @@ export namespace Sanity {
       | 'language'
       | 'commonReferenceLevel';
 
-    export interface Language extends Document<ID.Language, 'language'> {
+    export interface Language
+      extends Document<ID.Language, 'language'>,
+        Labelled<Translated[]> {
       code: 'no' | 'en';
-      label: Translated[];
     }
 
     export interface CommonReferenceLevel
@@ -35,14 +36,15 @@ export namespace Sanity {
       value: 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2';
     }
 
-    export interface Client extends Document<ID.Client, 'client'> {
-      label: Translated[];
-      description: Translated[];
-    }
+    export interface Client
+      extends Document<ID.Client, 'client'>,
+        Labelled<Translated[]>,
+        Described<Translated[]> {}
 
-    export interface Mission extends Document<ID.Mission, 'mission'> {
-      label: Translated[];
-      description: Translated[];
+    export interface Mission
+      extends Document<ID.Mission, 'mission'>,
+        Labelled<Translated[]>,
+        Described<Translated[]> {
       client: Client;
       status: 'active' | 'concluded' | 'cancelled';
       brief: Translated[];
