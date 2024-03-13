@@ -68,10 +68,13 @@ export namespace Entity {
     weight?: number;
   }
 
-  export interface Representative extends Identifiable, Nameable {
-    phone?: string;
-    email?: string;
-    imageUrl?: string;
+  export interface Person extends Identifiable<ID.Person> {
+    givenName: string;
+    familyName: string;
+    fullName: string;
+    emailAddress: string;
+    phoneNumber: string;
+    profilePhoto?: string;
   }
 
   export interface Role extends Identifiable, Nameable {
@@ -103,6 +106,6 @@ export namespace Entity {
     languageRequirements: LanguageRequirement[];
     awardCriteria: AwardCriterion[];
     bookmark?: Bookmark;
-    representative?: Representative;
+    representative?: Person;
   }
 }

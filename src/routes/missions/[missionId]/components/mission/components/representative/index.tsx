@@ -27,38 +27,41 @@ export default component$(() => {
             <Card.Body q:slot='body'>
               <div data-slot='representative'>
                 <Avatar
-                  title={representative.name}
-                  image={representative.imageUrl}
+                  title={representative.fullName}
+                  image={representative.profilePhoto}
                 />
-                <p>{representative.name}</p>
+                <p>{representative.fullName}</p>
               </div>
             </Card.Body>
           </Card>
         </section>
-        {representative.phone ?? representative.email ? (
+        {representative.phoneNumber || representative.emailAddress ? (
           <section>
             <Card>
               <Card.Body q:slot='body'>
                 <div data-slot='contact-information'>
-                  {representative.phone ? (
+                  {representative.phoneNumber ? (
                     <div>
                       <PhoneIcon height={24} />
                       <span>
-                        <Link href='mailto:+4793660618' color='blue'>
-                          {representative.phone}
+                        <Link
+                          href={`mailto:${representative.phoneNumber}`}
+                          color='blue'
+                        >
+                          {representative.phoneNumber}
                         </Link>
                       </span>
                     </div>
                   ) : null}
-                  {representative.email ? (
+                  {representative.emailAddress ? (
                     <div>
                       <EmailIcon height={24} />
                       <span>
                         <Link
-                          href='mailto:alexander.zakharov@aldra.no'
+                          href={`mailto:${representative.emailAddress}`}
                           color='blue'
                         >
-                          {representative.email}
+                          {representative.emailAddress}
                         </Link>
                       </span>
                     </div>
