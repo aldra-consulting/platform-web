@@ -47,6 +47,7 @@ export namespace Sanity {
       status: 'active' | 'concluded' | 'cancelled';
       brief: Translated[];
       languageRequirements: Object.LanguageRequirement[];
+      awardCriteria: Object.AwardCriterion[];
     }
   }
 
@@ -54,6 +55,11 @@ export namespace Sanity {
     export interface LanguageRequirement {
       language: Document.Language;
       proficiency: Document.CommonReferenceLevel;
+    }
+
+    export interface AwardCriterion {
+      criterion: 'quality' | 'price';
+      weight: number;
     }
   }
 }

@@ -28,7 +28,8 @@ export default class MissionSanityRepository extends SanityRepository<Sanity.Doc
               ...,
               "id": _id
             }
-          }
+          },
+          "awardCriteria": coalesce(awardCriteria, [])[]
         }
       `;
 
@@ -63,7 +64,8 @@ export default class MissionSanityRepository extends SanityRepository<Sanity.Doc
               ...,
               "id": _id
             }
-          }
+          },
+          "awardCriteria": coalesce(awardCriteria, [])[]
         }
       `;
 
@@ -101,7 +103,8 @@ export default class MissionSanityRepository extends SanityRepository<Sanity.Doc
             ...,
             "id": _id
           }
-        }
+        },
+        "awardCriteria": coalesce(awardCriteria, [])[]
       }
     `;
 
