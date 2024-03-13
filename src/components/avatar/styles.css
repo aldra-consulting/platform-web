@@ -11,6 +11,7 @@ abbr {
   font-weight: bold;
   user-select: none;
   cursor: pointer;
+  overflow: hidden;
 }
 
 abbr[title] {
