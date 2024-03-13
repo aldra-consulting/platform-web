@@ -106,6 +106,6 @@ export namespace Entity {
     languageRequirements: LanguageRequirement[];
     awardCriteria: AwardCriterion[];
     bookmark?: Bookmark;
-    representative?: Person;
+    representative: Person;
   }
 }

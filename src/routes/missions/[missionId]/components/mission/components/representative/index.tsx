@@ -13,10 +13,12 @@ export default component$(() => {
   useStylesScoped$(styles);
 
   const {
-    mission: { representative },
+    mission: {
+      representative: { fullName, emailAddress, phoneNumber, profilePhoto },
+    },
   } = useMissionContext();
 
-  return representative ? (
+  return (
     <Card>
       <Card.Header q:slot='header'>
         <Card.Header.Title>Din kontaktperson</Card.Header.Title>
@@ -26,42 +28,33 @@ export default component$(() => {
           <Card>
             <Card.Body q:slot='body'>
               <div data-slot='representative'>
-                <Avatar
-                  title={representative.fullName}
-                  image={representative.profilePhoto}
-                />
-                <p>{representative.fullName}</p>
+                <Avatar title={fullName} image={profilePhoto} />
+                <p>{fullName}</p>
               </div>
             </Card.Body>
           </Card>
         </section>
-        {representative.phoneNumber || representative.emailAddress ? (
+        {phoneNumber || emailAddress ? (
           <section>
             <Card>
               <Card.Body q:slot='body'>
                 <div data-slot='contact-information'>
-                  {representative.phoneNumber ? (
+                  {phoneNumber ? (
                     <div>
                       <PhoneIcon height={24} />
                       <span>
-                        <Link
-                          href={`mailto:${representative.phoneNumber}`}
-                          color='blue'
-                        >
-                          {representative.phoneNumber}
+                        <Link href={`mailto:${phoneNumber}`} color='blue'>
+                          {phoneNumber}
                         </Link>
                       </span>
                     </div>
                   ) : null}
-                  {representative.emailAddress ? (
+                  {emailAddress ? (
                     <div>
                       <EmailIcon height={24} />
                       <span>
-                        <Link
-                          href={`mailto:${representative.emailAddress}`}
-                          color='blue'
-                        >
-                          {representative.emailAddress}
+                        <Link href={`mailto:${emailAddress}`} color='blue'>
+                          {emailAddress}
                         </Link>
                       </span>
                     </div>
@@ -73,5 +66,5 @@ export default component$(() => {
         ) : null}
       </Card.Body>
     </Card>
-  ) : null;
+  );
 });
