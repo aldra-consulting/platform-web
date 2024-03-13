@@ -4,3 +4,4 @@ export { default as SanityCriterionDocumentToCriterionEntityConverter } from './
 export { default as SanityLanguageDocumentToLanguageEntityConverter } from './sanity-language-document-to-language-entity';
 export { default as SanityLanguageRequirementObjectToLanguageRequirementEntityConverter } from './sanity-language-requirement-object-to-language-requirement-entity';
 export { default as SanityMissionDocumentToMissionEntityConverter } from './sanity-mission-document-to-mission-entity';
+export { default as SanityPersonDocumentToPersonEntityConverter } from './sanity-person-document-to-person-entity';
