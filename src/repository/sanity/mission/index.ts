@@ -35,6 +35,11 @@ export default class MissionSanityRepository extends SanityRepository<Sanity.Doc
               ...,
               "id": _id
             }
+          },
+          representative-> {
+            ...,
+            "id": _id,
+            "profilePhoto": profilePhoto.asset->.url
           }
         }
       `;
@@ -77,6 +82,11 @@ export default class MissionSanityRepository extends SanityRepository<Sanity.Doc
               ...,
               "id": _id
             }
+          },
+          representative-> {
+            ...,
+            "id": _id,
+            "profilePhoto": profilePhoto.asset->.url
           }
         }
       `;
@@ -122,6 +132,11 @@ export default class MissionSanityRepository extends SanityRepository<Sanity.Doc
             ...,
             "id": _id
           }
+        },
+        representative-> {
+          ...,
+          "id": _id,
+          "profilePhoto": profilePhoto.asset->.url
         }
       }
     `;

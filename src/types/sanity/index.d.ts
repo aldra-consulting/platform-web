@@ -24,7 +24,8 @@ export namespace Sanity {
       | 'mission'
       | 'language'
       | 'commonReferenceLevel'
-      | 'criterion';
+      | 'criterion'
+      | 'person';
 
     export interface Language
       extends Document<ID.Language, 'language'>,
@@ -43,6 +44,14 @@ export namespace Sanity {
       type: 'quality' | 'price';
     }
 
+    export interface Person extends Document<ID.Person, 'person'> {
+      givenName: string;
+      familyName: string;
+      emailAddress: string;
+      phoneNumber: string;
+      profilePhoto?: string;
+    }
+
     export interface Client
       extends Document<ID.Client, 'client'>,
         Labelled<Translated[]>,
@@ -57,6 +66,7 @@ export namespace Sanity {
       brief: Translated[];
       languageRequirements: Object.LanguageRequirement[];
       awardCriteria: Object.AwardCriterion[];
+      representative: Person;
     }
   }
 

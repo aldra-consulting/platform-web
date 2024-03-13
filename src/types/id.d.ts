@@ -6,4 +6,5 @@ export namespace ID {
   export type Language = Brand<string, 'language.id'>;
   export type CommonReferenceLevel = Brand<string, 'commonReferenceLevel.id'>;
   export type Criterion = Brand<string, 'criterion.id'>;
+  export type Person = Brand<string, 'person.id'>;
 }
