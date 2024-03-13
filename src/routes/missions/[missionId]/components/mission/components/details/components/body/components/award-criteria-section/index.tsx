@@ -12,7 +12,7 @@ export default component$(() => {
   useStylesScoped$(styles);
 
   const {
-    mission: { awardCriteria = [] },
+    mission: { awardCriteria },
   } = useMissionContext();
 
   return awardCriteria.length > 0 ? (

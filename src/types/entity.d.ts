@@ -101,7 +101,7 @@ export namespace Entity {
       | LocationDetail
     )[];
     languageRequirements: LanguageRequirement[];
-    awardCriteria?: AwardCriterion[];
+    awardCriteria: AwardCriterion[];
     bookmark?: Bookmark;
     representative?: Representative;
   }
