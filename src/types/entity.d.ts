@@ -44,6 +44,10 @@ export namespace Entity {
     proficiency: CommonReferenceLevel;
   }
 
+  export interface Criterion extends Identifiable<ID.Criterion>, Labelled {
+    type: 'quality' | 'price';
+  }
+
   export interface AwardCriterion
     extends Identifiable<'quality' | 'price'>,
       Nameable {
