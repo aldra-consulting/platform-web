@@ -48,9 +48,8 @@ export namespace Entity {
     type: 'quality' | 'price';
   }
 
-  export interface AwardCriterion
-    extends Identifiable<'quality' | 'price'>,
-      Nameable {
+  export interface AwardCriterion {
+    criterion: Criterion;
     weight: number;
   }
 

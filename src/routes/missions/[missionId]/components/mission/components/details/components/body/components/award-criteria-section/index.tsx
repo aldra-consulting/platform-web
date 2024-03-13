@@ -22,8 +22,11 @@ export default component$(() => {
         <Card>
           <Card.Body q:slot='body'>
             <div data-slot='award-criteria'>
-              {awardCriteria.map((criterion) => (
-                <Criterion key={criterion.id} criterion={criterion} />
+              {awardCriteria.map((awardCriterion) => (
+                <Criterion
+                  key={awardCriterion.criterion.id}
+                  awardCriterion={awardCriterion}
+                />
               ))}
             </div>
           </Card.Body>
