@@ -4,6 +4,7 @@ import {
   SanityAwardCriterionObjectToAwardCriterionEntityConverter,
   SanityClientDocumentToClientEntityConverter,
   SanityCriterionDocumentToCriterionEntityConverter,
+  SanityDetailObjectToDetailEntityConverter,
   SanityLanguageDocumentToLanguageEntityConverter,
   SanityLanguageRequirementObjectToLanguageRequirementEntityConverter,
   SanityMissionDocumentToMissionEntityConverter,
@@ -32,6 +33,7 @@ export default () => {
     ),
     new SanityMissionDocumentToMissionEntityConverter(
       new SanityClientDocumentToClientEntityConverter(),
+      new SanityDetailObjectToDetailEntityConverter(),
       new SanityLanguageRequirementObjectToLanguageRequirementEntityConverter(
         new SanityLanguageDocumentToLanguageEntityConverter()
       ),

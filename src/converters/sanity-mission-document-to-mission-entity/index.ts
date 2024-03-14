@@ -6,6 +6,8 @@ export default class
 {
   #clientConverter: Converter<Sanity.Document.Client, Entity.Client>;
 
+  #detailConverter: Converter<Sanity.Object.Detail, Entity.Detail>;
+
   #languageRequirementConverter: Converter<
     Sanity.Object.LanguageRequirement,
     Entity.LanguageRequirement
@@ -20,6 +22,7 @@ export default class
 
   constructor(
     clientConverter: Converter<Sanity.Document.Client, Entity.Client>,
+    detailConverter: Converter<Sanity.Object.Detail, Entity.Detail>,
     languageRequirementConverter: Converter<
       Sanity.Object.LanguageRequirement,
       Entity.LanguageRequirement
@@ -31,6 +34,7 @@ export default class
     personConverter: Converter<Sanity.Document.Person, Entity.Person>
   ) {
     this.#clientConverter = clientConverter;
+    this.#detailConverter = detailConverter;
     this.#languageRequirementConverter = languageRequirementConverter;
     this.#awardCriterionConverter = awardCriterionConverter;
     this.#personConverter = personConverter;
@@ -43,6 +47,7 @@ export default class
     client,
     status,
     brief,
+    details,
     languageRequirements,
     awardCriteria,
     representative,
@@ -54,6 +59,7 @@ export default class
     status,
     brief: brief.find(({ _key }) => _key === 'no')?.value ?? '',
     roles: [],
+    details: details.map(this.#detailConverter.convert),
     languageRequirements: languageRequirements.map(
       this.#languageRequirementConverter.convert
     ),
