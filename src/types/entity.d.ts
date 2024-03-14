@@ -88,7 +88,7 @@ export namespace Entity {
     status: 'active' | 'concluded' | 'cancelled';
     brief: string;
     roles: Role[];
-    details?: Detail[];
+    details: Detail[];
     languageRequirements: LanguageRequirement[];
     awardCriteria: AwardCriterion[];
     bookmark?: Bookmark;
