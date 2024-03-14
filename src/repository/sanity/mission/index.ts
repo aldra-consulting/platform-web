@@ -19,6 +19,7 @@ export default class MissionSanityRepository extends SanityRepository<Sanity.Doc
             ...,
             "id": _id
           },
+          "details": coalesce(details, []),
           "languageRequirements": coalesce(languageRequirements, [])[] {
             language-> {
               ...,
@@ -66,6 +67,7 @@ export default class MissionSanityRepository extends SanityRepository<Sanity.Doc
             ...,
             "id": _id
           },
+          "details": coalesce(details, []),
           "languageRequirements": coalesce(languageRequirements, [])[] {
             language-> {
               ...,
@@ -116,6 +118,7 @@ export default class MissionSanityRepository extends SanityRepository<Sanity.Doc
           ...,
           "id": _id
         },
+        "details": coalesce(details, []),
         "languageRequirements": coalesce(languageRequirements, [])[] {
           language-> {
             ...,

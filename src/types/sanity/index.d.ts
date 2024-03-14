@@ -64,6 +64,7 @@ export namespace Sanity {
       client: Client;
       status: 'active' | 'concluded' | 'cancelled';
       brief: Translated[];
+      details: Object.Detail[];
       languageRequirements: Object.LanguageRequirement[];
       awardCriteria: Object.AwardCriterion[];
       representative: Person;
@@ -80,5 +81,12 @@ export namespace Sanity {
       criterion: Document.Criterion;
       weight: number;
     }
+
+    export type Detail =
+      | { type: 'deadline'; value: string }
+      | { type: 'commencement'; value: string }
+      | { type: 'duration'; value: Translated[] }
+      | { type: 'scope'; value: number }
+      | { type: 'location'; value: Translated[] };
   }
 }
