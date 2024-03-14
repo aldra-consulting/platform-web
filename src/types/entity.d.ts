@@ -22,20 +22,12 @@ export namespace Entity {
 
   export interface Skill extends Identifiable, Nameable {}
 
-  export interface Detail<Type extends string, Value> extends Nameable {
-    type: Type;
-    value: Value;
-  }
-
-  export type DeadlineDetail = Detail<'deadline', 'string'>;
-
-  export type CommencementDetail = Detail<'commencement', 'string'>;
-
-  export type DurationDetail = Detail<'duration', 'string'>;
-
-  export type ScopeDetail = Detail<'scope', 'string'>;
-
-  export type LocationDetail = Detail<'location', 'string'>;
+  export type Detail =
+    | { type: 'deadline'; value: Date }
+    | { type: 'commencement'; value: Date }
+    | { type: 'duration'; value: string }
+    | { type: 'scope'; value: number }
+    | { type: 'location'; value: string };
 
   export interface Language extends Identifiable<LanguageCode>, Labelled {}
 
@@ -96,13 +88,7 @@ export namespace Entity {
     status: 'active' | 'concluded' | 'cancelled';
     brief: string;
     roles: Role[];
-    details?: (
-      | DeadlineDetail
-      | CommencementDetail
-      | DurationDetail
-      | ScopeDetail
-      | LocationDetail
-    )[];
+    details?: Detail[];
     languageRequirements: LanguageRequirement[];
     awardCriteria: AwardCriterion[];
     bookmark?: Bookmark;

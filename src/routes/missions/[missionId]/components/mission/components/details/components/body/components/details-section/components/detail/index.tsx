@@ -8,47 +8,52 @@ interface Props {
   detail: NonNullable<Flatten<Entity.Mission['details']>>;
 }
 
-export default component$<Props>(({ detail: { type, name, value } }) => {
+export default component$<Props>(({ detail }) => {
   useStylesScoped$(styles);
 
-  switch (type) {
+  switch (detail.type) {
     case 'deadline':
       return (
         <div data-root>
-          <p>{name}</p>
+          <p>Frist</p>
           <span>
-            {new Intl.DateTimeFormat('no', { dateStyle: 'short' }).format(
-              Date.parse(value)
-            )}
+            {new Intl.DateTimeFormat('no', {
+              dateStyle: 'short',
+              timeStyle: 'short',
+            }).format(detail.value)}
           </span>
         </div>
       );
     case 'commencement':
       return (
         <div data-root>
-          <p>{name}</p>
-          <span>{value}</span>
+          <p>Oppstart</p>
+          <span>
+            {new Intl.DateTimeFormat('no', {
+              dateStyle: 'short',
+            }).format(detail.value)}
+          </span>
         </div>
       );
     case 'duration':
       return (
         <div data-root>
-          <p>{name}</p>
-          <span>{value}</span>
+          <p>Varighet</p>
+          <span>{detail.value}</span>
         </div>
       );
     case 'scope':
       return (
         <div data-root>
-          <p>{name}</p>
-          <span>{`${value}% stilling`}</span>
+          <p>Omfang</p>
+          <span>{`${detail.value}% stilling`}</span>
         </div>
       );
     case 'location':
       return (
         <div data-root>
-          <p>{name}</p>
-          <span>{value}</span>
+          <p>Arbeidssted</p>
+          <span>{detail.value}</span>
         </div>
       );
     default:
