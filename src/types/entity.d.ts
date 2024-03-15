@@ -45,9 +45,7 @@ export namespace Entity {
     weight: number;
   }
 
-  export interface QualificationRequirement extends Identifiable {
-    description: string;
-  }
+  export interface QualificationRequirement extends Identifiable, Described {}
 
   export interface MustQualificationRequirement
     extends QualificationRequirement {
