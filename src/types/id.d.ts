@@ -7,4 +7,9 @@ export namespace ID {
   export type CommonReferenceLevel = Brand<string, 'commonReferenceLevel.id'>;
   export type Criterion = Brand<string, 'criterion.id'>;
   export type Person = Brand<string, 'person.id'>;
+  export type Role = Brand<string, 'role.id'>;
+  export type QualificationRequirement = Brand<
+    string,
+    'qualificationRequirement.id'
+  >;
 }

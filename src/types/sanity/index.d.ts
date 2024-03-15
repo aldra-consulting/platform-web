@@ -64,6 +64,7 @@ export namespace Sanity {
       client: Client;
       status: 'active' | 'concluded' | 'cancelled';
       brief: Translated[];
+      roles: Object.Role[];
       details: Object.Detail[];
       languageRequirements: Object.LanguageRequirement[];
       awardCriteria: Object.AwardCriterion[];
@@ -88,5 +89,19 @@ export namespace Sanity {
       | { type: 'duration'; value: Translated[] }
       | { type: 'scope'; value: number }
       | { type: 'location'; value: Translated[] };
+
+    export type QualificationRequirement =
+      Identifiable<ID.QualificationRequirement> &
+        Labelled &
+        Described<Translated[]> &
+        ({ level: 'must' } | { level: 'should'; weight?: number });
+
+    export interface Role
+      extends Identifiable<ID.Role>,
+        Labelled<Translated[]>,
+        Described<Translated[]> {
+      status: 'open' | 'review' | 'filled';
+      qualificationRequirements: QualificationRequirement[];
+    }
   }
 }

@@ -19,6 +19,14 @@ export default class MissionSanityRepository extends SanityRepository<Sanity.Doc
             ...,
             "id": _id
           },
+          "roles": coalesce(roles, [])[] {
+            ...,
+            "id": _key,
+            "qualificationRequirements": coalesce(qualificationRequirements, [])[] {
+              ...,
+              "id": _key
+            }
+          },
           "details": coalesce(details, []),
           "languageRequirements": coalesce(languageRequirements, [])[] {
             language-> {
@@ -66,6 +74,14 @@ export default class MissionSanityRepository extends SanityRepository<Sanity.Doc
           client-> {
             ...,
             "id": _id
+          },
+          "roles": coalesce(roles, [])[] {
+            ...,
+            "id": _key,
+            "qualificationRequirements": coalesce(qualificationRequirements, [])[] {
+              ...,
+              "id": _key
+            }
           },
           "details": coalesce(details, []),
           "languageRequirements": coalesce(languageRequirements, [])[] {
@@ -117,6 +133,14 @@ export default class MissionSanityRepository extends SanityRepository<Sanity.Doc
         client-> {
           ...,
           "id": _id
+        },
+        "roles": coalesce(roles, [])[] {
+          ...,
+          "id": _key,
+          "qualificationRequirements": coalesce(qualificationRequirements, [])[] {
+            ...,
+            "id": _key
+          }
         },
         "details": coalesce(details, []),
         "languageRequirements": coalesce(languageRequirements, [])[] {
