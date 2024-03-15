@@ -13,7 +13,7 @@ export default component$<Props>(({ requirement }) => {
   useStylesScoped$(styles);
 
   switch (requirement.level) {
-    case 'MUST':
+    case 'must':
       return (
         <Card>
           <Card.Body q:slot='body'>
@@ -26,7 +26,7 @@ export default component$<Props>(({ requirement }) => {
           </Card.Body>
         </Card>
       );
-    case 'SHOULD':
+    case 'should':
       return (
         <Card>
           <Card.Body q:slot='body'>

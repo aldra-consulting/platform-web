@@ -13,10 +13,10 @@ export default component$(() => {
   } = useRoleContext();
 
   const mustRequirements = qualificationRequirements.filter(
-    ({ level }) => level === 'MUST'
+    ({ level }) => level === 'must'
   );
   const shouldRequirements = qualificationRequirements.filter(
-    ({ level }) => level === 'SHOULD'
+    ({ level }) => level === 'should'
   );
 
   return qualificationRequirements.length > 0 ? (

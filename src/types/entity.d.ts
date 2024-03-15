@@ -51,12 +51,12 @@ export namespace Entity {
 
   export interface MustQualificationRequirement
     extends QualificationRequirement {
-    level: 'MUST';
+    level: 'must';
   }
 
   export interface ShouldQualificationRequirement
     extends QualificationRequirement {
-    level: 'SHOULD';
+    level: 'should';
     weight?: number;
   }
 
