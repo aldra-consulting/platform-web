@@ -45,18 +45,9 @@ export namespace Entity {
     weight: number;
   }
 
-  export interface QualificationRequirement extends Identifiable, Described {}
-
-  export interface MustQualificationRequirement
-    extends QualificationRequirement {
-    level: 'must';
-  }
-
-  export interface ShouldQualificationRequirement
-    extends QualificationRequirement {
-    level: 'should';
-    weight?: number;
-  }
+  export type QualificationRequirement = Identifiable &
+    Described &
+    ({ level: 'must' } | { level: 'should'; weight?: number });
 
   export interface Person extends Identifiable<ID.Person> {
     givenName: string;
@@ -70,10 +61,7 @@ export namespace Entity {
   export interface Role extends Identifiable, Nameable {
     status: 'open' | 'review' | 'filled';
     description?: string;
-    qualificationRequirements: (
-      | MustQualificationRequirement
-      | ShouldQualificationRequirement
-    )[];
+    qualificationRequirements: QualificationRequirement[];
     skills?: Skill[];
     applicant?: Applicant;
   }
