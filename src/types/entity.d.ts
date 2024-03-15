@@ -46,6 +46,7 @@ export namespace Entity {
   }
 
   export type QualificationRequirement = Identifiable &
+    Labelled &
     Described &
     ({ level: 'must' } | { level: 'should'; weight?: number });
 
