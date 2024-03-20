@@ -4,6 +4,7 @@ import { extendConfig } from '@builder.io/qwik-city/vite';
 import baseConfig from '../../vite.config';
 
 export default extendConfig(baseConfig, () => ({
+  ssr: { external: ['node:async_hooks'] },
   build: {
     ssr: true,
     rollupOptions: {
