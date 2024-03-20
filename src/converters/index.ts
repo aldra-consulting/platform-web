@@ -7,3 +7,4 @@ export { default as SanityLanguageRequirementObjectToLanguageRequirementEntityCo
 export { default as SanityMissionDocumentToMissionEntityConverter } from './sanity-mission-document-to-mission-entity';
 export { default as SanityPersonDocumentToPersonEntityConverter } from './sanity-person-document-to-person-entity';
 export { default as SanityQualificationRequirementObjectToQualificationRequirementEntityConverter } from './sanity-qualification-requirement-object-to-qualification-requirement-entity';
+export { default as SanityRoleObjectToRoleEntityConverter } from './sanity-role-object-to-role-entity';
