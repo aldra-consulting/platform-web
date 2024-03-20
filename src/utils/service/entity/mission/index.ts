@@ -9,6 +9,8 @@ import {
   SanityLanguageRequirementObjectToLanguageRequirementEntityConverter,
   SanityMissionDocumentToMissionEntityConverter,
   SanityPersonDocumentToPersonEntityConverter,
+  SanityQualificationRequirementObjectToQualificationRequirementEntityConverter,
+  SanityRoleObjectToRoleEntityConverter,
 } from '@project/converters';
 import env from '@project/env';
 import { MissionSanityRepository } from '@project/repository';
@@ -33,6 +35,9 @@ export default () => {
     ),
     new SanityMissionDocumentToMissionEntityConverter(
       new SanityClientDocumentToClientEntityConverter(),
+      new SanityRoleObjectToRoleEntityConverter(
+        new SanityQualificationRequirementObjectToQualificationRequirementEntityConverter()
+      ),
       new SanityDetailObjectToDetailEntityConverter(),
       new SanityLanguageRequirementObjectToLanguageRequirementEntityConverter(
         new SanityLanguageDocumentToLanguageEntityConverter()
