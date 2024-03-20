@@ -38,7 +38,7 @@
     "lint:stylelint": "stylelint ./src/**/*.css",
     "lint:stylelint:fix": "stylelint ./src/**/*.css --fix",
     "lint:stylelint:staged:fix": "stylelint --fix",
-    "prepare": "husky",
+    "prepare": "node .husky/install.mjs",
     "serve:debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
     "serve:dev": "vite --mode ssr",
     "start": "run-s serve:dev",
