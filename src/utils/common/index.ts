@@ -17,12 +17,17 @@ export function isDefined<T>(value: T): value is NonNullable<T> {
 export const isBrowser = () =>
   isDefined(globalThis.window) && isDefined(globalThis.window.document);
 
+export const isNode = () =>
+  isDefined(globalThis.process) &&
+  isDefined(globalThis.process.versions) &&
+  isDefined(globalThis.process.versions.node);
+
 export const globalObject = () => {
   if (isBrowser()) {
     return globalThis.window;
   }
 
-  if (isDefined(globalThis.process)) {
+  if (isNode()) {
     return globalThis.process;
   }
 
