@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/aldra-consulting/platform-web/compare/1.7.0...1.8.0) (2024-03-21)
+
+
+### Features
+
+* order missions by descending creation date ([ea6b789](https://github.com/aldra-consulting/platform-web/commit/ea6b78911b058d2ce058b5b36381fd100820a2b8))
+
 # [1.7.0](https://github.com/aldra-consulting/platform-web/compare/1.6.0...1.7.0) (2024-03-21)
 
 
