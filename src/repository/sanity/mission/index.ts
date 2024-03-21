@@ -12,7 +12,7 @@ export default class MissionSanityRepository extends SanityRepository<Sanity.Doc
   findMany = async (): Promise<Sanity.Document.Mission[]> => {
     try {
       const query = groq`
-        *[_type == $type] {
+        *[_type == $type] | order(_createdAt desc) {
           ...,
           "id": _id,
           client-> {
@@ -68,7 +68,7 @@ export default class MissionSanityRepository extends SanityRepository<Sanity.Doc
   ): Promise<Sanity.Document.Mission[]> => {
     try {
       const query = groq`
-        *[_type == $type && references(*[_type == "client" && _id == $clientId]._id)] {
+        *[_type == $type && references(*[_type == "client" && _id == $clientId]._id)] | order(_createdAt desc) {
           ...,
           "id": _id,
           client-> {
