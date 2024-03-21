@@ -5,22 +5,24 @@ import {
   useSignal,
 } from '@builder.io/qwik';
 
+import { image } from '@project/utils';
+
 import styles from './styles.css?inline';
 
 interface Props extends HTMLAttributes<HTMLElement> {
   image?: string;
 }
 
-export default component$<Props>(({ title, image, ...props }) => {
+export default component$<Props>(({ title, image: imageUrl, ...props }) => {
   useStylesScoped$(styles);
 
   const showImage = useSignal(true);
 
   return (
     <abbr title={title} {...props}>
-      {image && showImage.value ? (
+      {imageUrl && showImage.value ? (
         <img
-          src={image}
+          src={image().sanity().image(imageUrl).height(40).width(40).url()}
           alt={title}
           height={40}
           width={40}
