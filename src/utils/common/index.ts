@@ -14,8 +14,11 @@ export function isDefined<T>(value: T): value is NonNullable<T> {
   return value !== null && value !== undefined;
 }
 
+export const isBrowser = () =>
+  isDefined(globalThis.window) && isDefined(globalThis.window.document);
+
 export const globalObject = () => {
-  if (isDefined(globalThis.window)) {
+  if (isBrowser()) {
     return globalThis.window;
   }
 
