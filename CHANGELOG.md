@@ -1,3 +1,19 @@
+# [1.7.0](https://github.com/aldra-consulting/platform-web/compare/1.6.0...1.7.0) (2024-03-21)
+
+
+### Bug Fixes
+
+* only show call to action for active missions ([2334b86](https://github.com/aldra-consulting/platform-web/commit/2334b86d405299d927f75d8905c8cbfb10f51ad0))
+* use correct image size when fetching it from Sanity CDN ([38a8d41](https://github.com/aldra-consulting/platform-web/commit/38a8d41632cdaade3f5ef4d17355e60713d63c9d))
+
+
+### Features
+
+* add 'client' util ([a223d1b](https://github.com/aldra-consulting/platform-web/commit/a223d1b01ece1c30cbc0920903d20c2af65c1537))
+* add 'image' util ([e23ef67](https://github.com/aldra-consulting/platform-web/commit/e23ef6744f9a27db8ed0eb5eb61aaa0fe143f0e4))
+* implement 'isBrowser' utility function ([6ab8a5a](https://github.com/aldra-consulting/platform-web/commit/6ab8a5a3ad11ee72865a8007b24b30d1c04080f0))
+* implement 'isNode' utility function ([cf66ddf](https://github.com/aldra-consulting/platform-web/commit/cf66ddf40e716d17ad3c50c2ebb5f2b325c492f5))
+
 # [1.6.0](https://github.com/aldra-consulting/platform-web/compare/1.5.0...1.6.0) (2024-03-20)
 
 
