@@ -1,6 +1,9 @@
 name: Deploy
 
 on:
+  repository_dispatch:
+    types:
+      - content_changed
   workflow_call:
     inputs:
       environment:
