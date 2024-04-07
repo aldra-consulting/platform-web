@@ -27,7 +27,7 @@ export default component$(() => {
         .findManyForClient(id)
         .then((missions) =>
           missions.length > 0
-            ? missions
+            ? missions.sort(byStatus)
             : Promise.reject(new Error('No missions found'))
         )
     )
@@ -42,7 +42,7 @@ export default component$(() => {
         <Section>
           <h1 q:slot='title'>Oppdrag</h1>
           <div q:slot='body' data-root>
-            {missions.sort(byStatus).map((mission, index) => (
+            {missions.map((mission, index) => (
               <MissionProvider key={mission.id} mission={mission}>
                 <Animated
                   animation='fade-in-up'
