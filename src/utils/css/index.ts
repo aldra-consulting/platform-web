@@ -1,24 +1,9 @@
-import { NumberUtil } from '../number';
-
-import { type TimeFunctions } from './types';
+import { generators } from './generators';
+import { units } from './units';
 
 const CSSUtil = {
-  time: {
-    ms: (value) =>
-      NumberUtil.isPositive(value)
-        ? {
-            value,
-            unit: 'ms',
-          }
-        : { value },
-    s: (value) =>
-      NumberUtil.isPositive(value)
-        ? {
-            value,
-            unit: 's',
-          }
-        : { value },
-  } satisfies TimeFunctions,
+  length: () => generators().length(() => units().length()),
+  time: () => generators().time(() => units().time()),
 } as const;
 
 export { CSSUtil };

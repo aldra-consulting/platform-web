@@ -46,8 +46,10 @@ export default component$(() => {
               <MissionProvider key={mission.id} mission={mission}>
                 <Animated
                   animation='fade-in-up'
-                  duration={CSSUtil.time.s(NumberUtil.positive(0.5))}
-                  delay={CSSUtil.time.s(NumberUtil.positive(index / 10 + 0.25))}
+                  duration={CSSUtil.time().s(NumberUtil.positive(0.5))}
+                  delay={CSSUtil.time().s(
+                    NumberUtil.positive(index / 10 + 0.25)
+                  )}
                 >
                   <Mission />
                 </Animated>

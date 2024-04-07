@@ -1,17 +1,16 @@
-import { type Positive, type Negative } from './nominal';
+import { type Nullable } from './common';
+import { type NonZero, type Positive } from './nominal';
 
 export namespace CSS {
-  interface Dimension<Value, Unit> {
+  interface Dimension<
+    Value extends number = number,
+    Unit extends Nullable<string> = Nullable<string>,
+  > {
     value: Value;
     unit: Unit;
   }
 
-  type UnitValue<Unit> =
-    | Dimension<Positive, Unit>
-    | Dimension<Negative, Unit>
-    | Dimension<0, undefined>;
-
-  namespace Unit {
+  export namespace Unit {
     export type Length =
       | 'cap'
       | 'ch'
@@ -68,14 +67,35 @@ export namespace CSS {
     export type Time = 'ms' | 's';
   }
 
-  export type Length = UnitValue<Unit.Length>;
+  export namespace DataType {
+    export type Length<Unit extends Unit.Length = Unit.Length> =
+      | Dimension<0>
+      | Dimension<NonZero, Unit>;
 
-  export type LengthPercentage = Length | Percentage;
+    export type Time<Unit extends Unit.Time = Unit.Time> =
+      | Dimension<0>
+      | Dimension<Positive, Unit>;
+  }
 
-  export type Percentage = UnitValue<Unit.Percentage>;
+  export namespace Generators {
+    export type Length = {
+      [Unit in Unit.Length]: <Value extends 0 | NonZero>(
+        value: Value
+      ) => Value extends 0 | NonZero
+        ? Value extends 0
+          ? Dimension<0>
+          : Dimension<NonZero, Unit>
+        : never;
+    };
 
-  export type Time<Unit extends Unit.Time = Unit.Time> = Exclude<
-    UnitValue<Unit>,
-    { value: Negative }
-  >;
+    export type Time = {
+      [Unit in Unit.Time]: <Value extends 0 | Positive>(
+        value: Value
+      ) => Value extends 0 | Positive
+        ? Value extends 0
+          ? Dimension<0>
+          : Dimension<Positive, Unit>
+        : never;
+    };
+  }
 }

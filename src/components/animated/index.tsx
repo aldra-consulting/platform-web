@@ -7,8 +7,8 @@ import { CssTimeToStringConverter } from './utils';
 
 interface Props {
   animation: 'fade-in-up' | 'zoom-pop-in';
-  duration?: CSS.Time;
-  delay?: CSS.Time;
+  duration?: CSS.DataType.Time;
+  delay?: CSS.DataType.Time;
 }
 
 const converter = new CssTimeToStringConverter();

@@ -34,8 +34,8 @@ export default component$(() => {
         >
           <Animated
             animation='zoom-pop-in'
-            duration={CSSUtil.time.s(NumberUtil.positive(0.3))}
-            delay={CSSUtil.time.ms(NumberUtil.positive(1))}
+            duration={CSSUtil.time().s(NumberUtil.positive(0.3))}
+            delay={CSSUtil.time().ms(NumberUtil.positive(1))}
             q:slot='start-icon'
           >
             {bookmark ? (

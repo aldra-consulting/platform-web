@@ -19,8 +19,8 @@ export default component$(() => {
       <main>
         <Animated
           animation='fade-in-up'
-          duration={CSSUtil.time.s(NumberUtil.positive(0.5))}
-          delay={CSSUtil.time.s(NumberUtil.positive(0.3))}
+          duration={CSSUtil.time().s(NumberUtil.positive(0.5))}
+          delay={CSSUtil.time().s(NumberUtil.positive(0.3))}
         >
           <Details />
         </Animated>
@@ -29,16 +29,16 @@ export default component$(() => {
         {isActive ? (
           <Animated
             animation='fade-in-up'
-            duration={CSSUtil.time.s(NumberUtil.positive(0.5))}
-            delay={CSSUtil.time.s(NumberUtil.positive(0.3))}
+            duration={CSSUtil.time().s(NumberUtil.positive(0.5))}
+            delay={CSSUtil.time().s(NumberUtil.positive(0.3))}
           >
             <CallToAction />
           </Animated>
         ) : null}
         <Animated
           animation='fade-in-up'
-          duration={CSSUtil.time.s(NumberUtil.positive(0.5))}
-          delay={CSSUtil.time.s(NumberUtil.positive(0.3))}
+          duration={CSSUtil.time().s(NumberUtil.positive(0.5))}
+          delay={CSSUtil.time().s(NumberUtil.positive(0.3))}
         >
           <Representative />
         </Animated>

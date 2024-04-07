@@ -35,8 +35,8 @@ export default component$<Props>(({ clients }) => (
       <ClientProvider key={client.id} client={client}>
         <Animated
           animation='fade-in-up'
-          duration={CSSUtil.time.s(NumberUtil.positive(0.5))}
-          delay={CSSUtil.time.s(NumberUtil.positive(index / 10 + 0.3))}
+          duration={CSSUtil.time().s(NumberUtil.positive(0.5))}
+          delay={CSSUtil.time().s(NumberUtil.positive(index / 10 + 0.3))}
         >
           <Client />
         </Animated>
