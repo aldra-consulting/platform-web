@@ -46,3 +46,17 @@ export function assertDefined<T extends Hashable>(
     );
   }
 }
+
+export const assertRequired = <T extends Partial<object>>(
+  object: T,
+  keys: (keyof T)[]
+): Required<T> => {
+  keys.forEach((key) => assertDefined(object[key] as Hashable, String(key)));
+
+  Object.entries(object).forEach(([key, value]) => {
+    assertDefined(key, key);
+    assertDefined(value, `object['${key}']`);
+  });
+
+  return object as Required<T>;
+};
