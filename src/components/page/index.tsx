@@ -38,7 +38,7 @@ export default component$<Props>(({ ...props }) => {
           data-slot='avatar'
           q:slot='avatar'
         >
-          <Avatar alt={user?.name} title={user?.name} />
+          <Avatar alt={user?.name} title={user?.name} src={user?.picture} />
         </button>
       </Header>
       <div data-slot='breadcrumbs'>
