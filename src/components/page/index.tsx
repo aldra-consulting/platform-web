@@ -32,7 +32,14 @@ export default component$<Props>(({ ...props }) => {
     <main {...props}>
       <Header>
         <Logo theme={Theme.LIGHT} height='100%' q:slot='logo' />
-        <Avatar title={user?.name} onClick$={signOut} q:slot='avatar' />
+        <button
+          type='button'
+          onClick$={signOut}
+          data-slot='avatar'
+          q:slot='avatar'
+        >
+          <Avatar alt={user?.name} title={user?.name} />
+        </button>
       </Header>
       <div data-slot='breadcrumbs'>
         <Slot name='breadcrumbs' />

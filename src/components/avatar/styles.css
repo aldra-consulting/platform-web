@@ -1,28 +1,28 @@
-abbr {
+[data-root] {
+  height: max(var(--size, 40px), 40px);
+  width: max(var(--size, 40px), 40px);
+  overflow: hidden;
+  user-select: none;
+}
+
+[data-root] > * {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40px;
-  width: 40px;
-  border-radius: 100%;
-  background: #439ef8;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  user-select: none;
-  cursor: pointer;
-  overflow: hidden;
+  height: 100%;
+  width: 100%;
 }
 
-abbr[title] {
+abbr {
+  font-size: 16px;
+  font-weight: bold;
   text-decoration: none;
 }
 
-abbr:hover {
-  background: #007dd3;
+[data-shape="circle"] {
+  border-radius: 9999px;
 }
 
-img {
-  height: 100%;
-  width: 100%;
+[data-shape="square"] {
+  border-radius: 4px;
 }

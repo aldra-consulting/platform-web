@@ -1,42 +1,48 @@
 import {
-  type HTMLAttributes,
   component$,
   useStylesScoped$,
-  useSignal,
+  type ImgHTMLAttributes,
+  Slot,
 } from '@builder.io/qwik';
 
-import { image } from '@project/utils';
+import { CssDimensionToStringConverter } from '@project/converters';
+import { type CSS } from '@project/types';
+
+import Image from '../image';
 
 import styles from './styles.css?inline';
 
-interface Props extends HTMLAttributes<HTMLElement> {
-  image?: string;
+interface Props extends Omit<ImgHTMLAttributes<HTMLImageElement>, 'children'> {
+  shape?: 'circle' | 'square';
+  size?: CSS.DataType.Length;
 }
 
-export default component$<Props>(({ title, image: imageUrl, ...props }) => {
-  useStylesScoped$(styles);
+const converter = new CssDimensionToStringConverter();
 
-  const showImage = useSignal(true);
+export default component$<Props>(
+  ({ alt = '', title = '', shape = 'circle', ...props }) => {
+    useStylesScoped$(styles);
 
-  return (
-    <abbr title={title} {...props}>
-      {imageUrl && showImage.value ? (
-        <img
-          src={image().sanity().image(imageUrl).height(40).width(40).url()}
-          alt={title}
-          height={40}
-          width={40}
-          onError$={() => {
-            showImage.value = false;
-          }}
-        />
-      ) : (
-        title
-          ?.match(/\b(\w)/g)
-          ?.join('')
-          .toUpperCase()
-          .substring(0, 2)
-      )}
-    </abbr>
-  );
-});
+    const size = props.size ? converter.convert(props.size) : undefined;
+
+    return (
+      <div
+        data-root
+        data-shape={shape}
+        style={{ '--size': size }}
+        title={title || alt}
+        role='presentation'
+      >
+        <Image {...props} alt={alt || title}>
+          <abbr title={title || alt}>
+            {(alt || title)
+              .match(/\b(\w)/g)
+              ?.join('')
+              .toUpperCase()
+              .substring(0, 2) ?? <Slot />}
+          </abbr>
+        </Image>
+      </div>
+    );
+  }
+);

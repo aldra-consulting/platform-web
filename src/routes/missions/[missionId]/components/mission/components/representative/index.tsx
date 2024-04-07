@@ -6,6 +6,7 @@ import EmailIcon from '@project/components/email-icon';
 import Link from '@project/components/link';
 import PhoneIcon from '@project/components/phone-icon';
 import { useMissionContext } from '@project/hooks';
+import { CSSUtil, NumberUtil, image } from '@project/utils';
 
 import styles from './styles.css?inline';
 
@@ -28,7 +29,24 @@ export default component$(() => {
           <Card>
             <Card.Body q:slot='body'>
               <div data-slot='representative'>
-                <Avatar title={fullName} image={profilePhoto} />
+                <Avatar
+                  alt={fullName}
+                  title={fullName}
+                  src={
+                    profilePhoto
+                      ? image()
+                          .sanity()
+                          .image(profilePhoto)
+                          .height(120)
+                          .width(120)
+                          .url()
+                      : undefined
+                  }
+                  size={CSSUtil.length().px(NumberUtil.nonZero(40))}
+                  height={40}
+                  width={40}
+                  shape='square'
+                />
                 <p>{fullName}</p>
               </div>
             </Card.Body>
