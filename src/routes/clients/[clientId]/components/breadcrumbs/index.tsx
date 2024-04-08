@@ -10,7 +10,7 @@ export default component$(() => {
   } = useClientContext();
 
   return (
-    <Breadcrumbs q:slot='breadcrumbs'>
+    <Breadcrumbs>
       <Breadcrumbs.Breadcrumb>
         <Link href='https://www.aldra.no' color='neutral'>
           Aldra
