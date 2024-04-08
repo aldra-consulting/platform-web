@@ -1,7 +1,7 @@
 header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 16px;
   position: fixed;
   top: 0;
   left: 0;
@@ -17,4 +17,8 @@ header {
   display: flex;
   align-items: center;
   height: 70%;
+}
+
+[data-slot="avatar"] {
+  margin-left: auto;
 }

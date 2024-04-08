@@ -1,0 +1,23 @@
+[data-root] {
+  display: inline-flex;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+[data-root] > :global(*) {
+  padding: 8px 12px;
+  color: #2d3741;
+}
+
+[data-root]:not([data-active]) > :global(*) {
+  color: #505b66;
+}
+
+[data-root]:not([data-active]):hover {
+  background: #f6f6f6;
+}
+
+[data-active] {
+  background: #f3f3f3;
+}

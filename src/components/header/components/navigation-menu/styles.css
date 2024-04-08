@@ -1,0 +1,7 @@
+[data-root] {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+  list-style: none;
+}
