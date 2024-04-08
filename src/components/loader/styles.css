@@ -2,10 +2,30 @@
   display: block;
   height: 100%;
   width: 100%;
-  border: 2px solid transparent;
+  border: var(--thickness, 2px) solid transparent;
   border-bottom-color: currentcolor;
   border-radius: 50%;
   animation: rotation 0.8s linear infinite;
+}
+
+[data-color="neutral"] {
+  border-bottom-color: #2d3741;
+}
+
+[data-color="blue"] {
+  border-bottom-color: #439ef8;
+}
+
+[data-color="red"] {
+  border-bottom-color: #ff524f;
+}
+
+[data-color="yellow"] {
+  border-bottom-color: #cd983a;
+}
+
+[data-color="green"] {
+  border-bottom-color: #4fc970;
 }
 
 @keyframes rotation {
