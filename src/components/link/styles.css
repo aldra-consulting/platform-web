@@ -5,14 +5,17 @@ a {
   cursor: pointer;
 }
 
-[data-slot="content"] [data-slot="underlined"] {
+[data-slot="content"]{
   display: inline-flex;
-  padding-bottom: 1px;
-  border-bottom: 1px solid transparent;
   color: inherit;
 }
 
-[data-slot="content"]:hover > [data-slot="underlined"] {
+[data-slot="content"] [data-variant="underlined"] {
+  padding-bottom: 1px;
+  border-bottom: 1px solid transparent;
+}
+
+[data-slot="content"]:hover > [data-variant="underlined"] {
   border-bottom-color: inherit !important;
 }
 
