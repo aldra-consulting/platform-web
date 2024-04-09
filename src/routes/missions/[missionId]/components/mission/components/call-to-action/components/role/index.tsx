@@ -4,7 +4,6 @@ import Card from '@project/components/card';
 import { useMissionContext, useRoleContext } from '@project/hooks';
 
 import Action from './components/action';
-import Status from './components/status';
 import styles from './styles.css?inline';
 
 export default component$(() => {
@@ -17,7 +16,6 @@ export default component$(() => {
     <Card>
       <Card.Body q:slot='body'>
         <div data-slot='role'>
-          <Status />
           <p>{role.name}</p>
           {isActive ? <Action /> : null}
         </div>

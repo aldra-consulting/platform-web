@@ -10,6 +10,9 @@ import {
   useRoleContext,
 } from '@project/hooks';
 
+/**
+ * @deprecated
+ */
 export default component$(() => {
   const {
     store: { user },
