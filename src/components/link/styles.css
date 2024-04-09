@@ -11,6 +11,7 @@ a {
 }
 
 [data-slot="content"] [data-variant="underlined"] {
+  margin-bottom: -2px;
   padding-bottom: 1px;
   border-bottom: 1px solid transparent;
 }
