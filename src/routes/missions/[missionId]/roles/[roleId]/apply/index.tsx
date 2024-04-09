@@ -1,19 +1,24 @@
-import { $, component$ } from '@builder.io/qwik';
+import { $, component$, useStylesScoped$ } from '@builder.io/qwik';
 import {
   type StaticGenerateHandler,
   type DocumentHead,
 } from '@builder.io/qwik-city';
 
-import Breadcrumbs from '@project/components/breadcrumbs';
 import ClientResource from '@project/components/client-resource';
-import Link from '@project/components/link';
+import Loader from '@project/components/loader';
 import Page from '@project/components/page';
 import Redirect from '@project/components/redirect';
 import { useMissionId, useClientResource, useRoleId } from '@project/hooks';
-import { MissionProvider } from '@project/providers';
-import { service } from '@project/utils';
+import { MissionProvider, RoleProvider } from '@project/providers';
+import { service, CSSUtil, NumberUtil } from '@project/utils';
+
+import Breadcrumbs from './components/breadcrumbs';
+import BreadcrumbsSkeleton from './components/breadcrumbs-skeleton';
+import styles from './styles.css?inline';
 
 export default component$(() => {
+  useStylesScoped$(styles);
+
   const missionId = useMissionId();
   const roleId = useRoleId();
 
@@ -38,48 +43,28 @@ export default component$(() => {
   return (
     <ClientResource
       resource={resource}
-      onPending={() => null}
+      onPending={() => (
+        <Page>
+          <BreadcrumbsSkeleton q:slot='breadcrumbs' />
+          <div data-slot='loading-screen'>
+            <div data-slot='loader'>
+              <Loader
+                color='blue'
+                thickness={CSSUtil.length().px(NumberUtil.nonZero(4))}
+              />
+            </div>
+          </div>
+        </Page>
+      )}
       onRejected={() => <Redirect to={`/missions/${missionId}`} />}
       onResolved={({ mission, role }) => (
         <MissionProvider mission={mission}>
-          <Page>
-            <Breadcrumbs q:slot='breadcrumbs'>
-              <Breadcrumbs.Breadcrumb>
-                <Link href='https://www.aldra.no' color='neutral'>
-                  Aldra
-                </Link>
-              </Breadcrumbs.Breadcrumb>
-              <Breadcrumbs.Separator>/</Breadcrumbs.Separator>
-              <Breadcrumbs.Breadcrumb>
-                <Link href='/' color='neutral'>
-                  Plattform
-                </Link>
-              </Breadcrumbs.Breadcrumb>
-              <Breadcrumbs.Separator>/</Breadcrumbs.Separator>
-              <Breadcrumbs.Breadcrumb>
-                <Link href='/missions' color='neutral'>
-                  Oppdrag
-                </Link>
-              </Breadcrumbs.Breadcrumb>
-              <Breadcrumbs.Separator>/</Breadcrumbs.Separator>
-              <Breadcrumbs.Breadcrumb>
-                <Link href={`/missions/${mission.id}`} color='neutral'>
-                  {mission.label}
-                </Link>
-              </Breadcrumbs.Breadcrumb>
-              <Breadcrumbs.Separator>/</Breadcrumbs.Separator>
-              <Breadcrumbs.Breadcrumb>
-                <Link href={`/missions/${mission.id}/roles`} color='neutral'>
-                  Roller
-                </Link>
-              </Breadcrumbs.Breadcrumb>
-              <Breadcrumbs.Separator>/</Breadcrumbs.Separator>
-              <Breadcrumbs.Breadcrumb active>
-                {role.name}
-              </Breadcrumbs.Breadcrumb>
-            </Breadcrumbs>
-            <pre>{JSON.stringify(role, null, 2)}</pre>
-          </Page>
+          <RoleProvider role={role}>
+            <Page>
+              <Breadcrumbs q:slot='breadcrumbs' />
+              <pre>{JSON.stringify(role, null, 2)}</pre>
+            </Page>
+          </RoleProvider>
         </MissionProvider>
       )}
     />
