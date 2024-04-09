@@ -12,6 +12,7 @@ import { auth } from '@project/utils/auth';
 
 import Avatar from '../avatar';
 import Header from '../header';
+import Link from '../link';
 import Logo from '../logo';
 
 import styles from './styles.css?inline';
@@ -31,7 +32,9 @@ export default component$<Props>(({ ...props }) => {
   return (
     <main {...props}>
       <Header>
-        <Logo theme={Theme.LIGHT} height='100%' q:slot='logo' />
+        <Link href='https://www.aldra.no' variant='plain' q:slot='logo'>
+          <Logo theme={Theme.LIGHT} height={28} />
+        </Link>
         <button
           type='button'
           onClick$={signOut}
