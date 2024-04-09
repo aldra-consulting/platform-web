@@ -39,6 +39,7 @@ export default component$(() => {
                           .image(profilePhoto)
                           .height(120)
                           .width(120)
+                          .auto('format')
                           .url()
                       : undefined
                   }
