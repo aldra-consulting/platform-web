@@ -42,7 +42,7 @@ export default component$(() => {
           </div>
         </Page>
       )}
-      onRejected={() => <Redirect to='/missions' />}
+      onRejected={() => <Redirect to='/clients' />}
       onResolved={(client) => (
         <ClientProvider client={client}>
           <Page>
