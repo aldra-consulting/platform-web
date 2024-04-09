@@ -1,3 +1,35 @@
+# [1.9.0](https://github.com/aldra-consulting/platform-web/compare/1.8.0...1.9.0) (2024-04-09)
+
+
+### Bug Fixes
+
+* apply correct bottom margin to avoid text misalignment ([17d0df7](https://github.com/aldra-consulting/platform-web/commit/17d0df7cc7c9652f7fbb1e4e8e0a374435b6ea94))
+* only show breadcrumbs if they exist ([3585664](https://github.com/aldra-consulting/platform-web/commit/35856648b42fc00a318990417944eca0f52fd795))
+* remove fallback color for loader ([09261be](https://github.com/aldra-consulting/platform-web/commit/09261bed90643ed512ed2222a0f742c73c0de5e3))
+* remove line height restriction in 'Skeleton' component ([6f555ab](https://github.com/aldra-consulting/platform-web/commit/6f555aba9d2028078723bd231fa1bdb7c8951d84))
+* set correct top margin for page content if breadcrums are empty ([4bb6c3f](https://github.com/aldra-consulting/platform-web/commit/4bb6c3f4aba775cbd432ccabdcfd3a02acae805a))
+* sort right after data fetching to prevent an infinite loop ([f5554d6](https://github.com/aldra-consulting/platform-web/commit/f5554d62c2e067a1c4b8408c08097f275356db05))
+* use correct redirect pathname ([b56e8a8](https://github.com/aldra-consulting/platform-web/commit/b56e8a8c113f4c99c1c82f46405bae133616bce9))
+
+
+### Features
+
+* add 'Image' component ([5ccf8e2](https://github.com/aldra-consulting/platform-web/commit/5ccf8e26bd90fb0c433bf8360abaf2bff4c5cca6))
+* add 'picture' attribute to 'User' entity ([bc8617d](https://github.com/aldra-consulting/platform-web/commit/bc8617d979a2fb816018d38cb8d2367f8ca820c5))
+* add 'variant' prop to 'Link' component ([d2b8815](https://github.com/aldra-consulting/platform-web/commit/d2b88155a3983ea81eeefd26ec4c0aab67b1e94c))
+* add CSS 'Dimension' to 'string' converter ([4d81a51](https://github.com/aldra-consulting/platform-web/commit/4d81a515fe3c8804900c51a3752ecd7af3eec238))
+* add loading state to client page ([dc5714e](https://github.com/aldra-consulting/platform-web/commit/dc5714e89abd3a08c7fdaa924a55f3514b7e3624))
+* add loading state to clients page ([4ccef4d](https://github.com/aldra-consulting/platform-web/commit/4ccef4d3a1af07ef32de5a7baf6060cc87bfd0af))
+* add loading state to mission page ([1f0b6cc](https://github.com/aldra-consulting/platform-web/commit/1f0b6cc5e2c54bf50012e95ddcae43b6ff86404f))
+* add loading state to missions page ([88e11b4](https://github.com/aldra-consulting/platform-web/commit/88e11b476d936c3ecaa2bfdd00e69ae5dd143009))
+* add loading state to role application page ([1ecb9cd](https://github.com/aldra-consulting/platform-web/commit/1ecb9cd2da4ab172ab3eecb0cb86fa8692f1dcb1))
+* add navigation menu to header ([6482fa0](https://github.com/aldra-consulting/platform-web/commit/6482fa00e277664a1b72f19c3793553eb6252d40))
+* improve 'Loader' component ([b62b271](https://github.com/aldra-consulting/platform-web/commit/b62b271e4d219a36842fdc8b3218e89001e681e5))
+* refactor 'Avatar' component ([725dc7f](https://github.com/aldra-consulting/platform-web/commit/725dc7fe74acf19a5d37f498c5ec102fe03653e9))
+* rewrite CSS utilities ([cc6d2a2](https://github.com/aldra-consulting/platform-web/commit/cc6d2a250178a8e00e1ae7634d2aac7188ac2457))
+* use new 'CssDimensionToStringConverter' ([49fb84d](https://github.com/aldra-consulting/platform-web/commit/49fb84da1f276872e0264f021a11c9e4f4084a1f))
+* wrap logo in a link ([166be5f](https://github.com/aldra-consulting/platform-web/commit/166be5f06b7fe066bad7bde8b0468ff1e01bdacc))
+
 # [1.8.0](https://github.com/aldra-consulting/platform-web/compare/1.7.0...1.8.0) (2024-03-21)
 
 
