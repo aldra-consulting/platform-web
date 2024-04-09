@@ -3,6 +3,7 @@
   height: 100%;
   width: 100%;
   border: var(--thickness, 2px) solid transparent;
+  color: inherit;
   border-bottom-color: currentcolor;
   border-radius: 50%;
   animation: rotation 0.8s linear infinite;

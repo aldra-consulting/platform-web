@@ -16,19 +16,17 @@ interface Props extends HTMLAttributes<HTMLElement> {
 
 const converter = new CssDimensionToStringConverter();
 
-export default component$<Props>(
-  ({ color = 'neutral', thickness, ...props }) => {
-    useStylesScoped$(styles);
+export default component$<Props>(({ color, thickness, ...props }) => {
+  useStylesScoped$(styles);
 
-    return (
-      <span
-        {...props}
-        data-root
-        data-color={color}
-        style={{
-          '--thickness': thickness ? converter.convert(thickness) : undefined,
-        }}
-      />
-    );
-  }
-);
+  return (
+    <span
+      {...props}
+      data-root
+      data-color={color}
+      style={{
+        '--thickness': thickness ? converter.convert(thickness) : undefined,
+      }}
+    />
+  );
+});
