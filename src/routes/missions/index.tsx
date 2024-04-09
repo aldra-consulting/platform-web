@@ -2,9 +2,10 @@ import { $, component$, useStylesScoped$ } from '@builder.io/qwik';
 import { type DocumentHead } from '@builder.io/qwik-city';
 
 import ClientResource from '@project/components/client-resource';
+import Loader from '@project/components/loader';
 import Page from '@project/components/page';
 import { useClientResource } from '@project/hooks';
-import { service } from '@project/utils';
+import { service, CSSUtil, NumberUtil } from '@project/utils';
 
 import Breadcrumbs from './components/breadcrumbs';
 import Missions from './components/missions';
@@ -22,7 +23,16 @@ export default component$(() => {
       <Breadcrumbs q:slot='breadcrumbs' />
       <ClientResource
         resource={resource}
-        onPending={() => null}
+        onPending={() => (
+          <div data-slot='loading-screen'>
+            <div data-slot='loader'>
+              <Loader
+                color='blue'
+                thickness={CSSUtil.length().px(NumberUtil.nonZero(4))}
+              />
+            </div>
+          </div>
+        )}
         onResolved={(missions) =>
           missions.length > 0 ? (
             <Missions missions={missions} />
