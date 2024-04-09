@@ -20,6 +20,10 @@ on:
       ALDRA_GITHUB_BOT_TOKEN:
         required: true
 
+concurrency:
+  group: ${{ github.workflow }}-${{ inputs.environment || github.event.client_payload.environment }}-${{ github.ref }}
+  cancel-in-progress: true
+
 env:
   HUSKY: 0
 
