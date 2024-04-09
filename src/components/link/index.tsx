@@ -10,15 +10,17 @@ export interface Props extends LinkProps {
 
 export default component$<Props>(
   ({ color = 'inherit', variant = 'underlined', ...props }) => {
-    useStylesScoped$(styles);
+    const { scopeId } = useStylesScoped$(styles);
 
     return (
-      <Link {...props}>
-        <span data-slot='content' data-color={color}>
-          <span data-variant={variant}>
-            <Slot />
-          </span>
-        </span>
+      <Link
+        {...props}
+        class={[scopeId, props.class]}
+        data-root
+        data-color={color}
+        data-variant={variant}
+      >
+        <Slot />
       </Link>
     );
   }

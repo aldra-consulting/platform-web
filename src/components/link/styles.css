@@ -1,45 +1,41 @@
-a {
+[data-root] {
   display: inline-flex;
   align-items: center;
   text-decoration: none !important;
   cursor: pointer;
-}
-
-[data-slot="content"]{
-  display: inline-flex;
   color: inherit;
 }
 
-[data-slot="content"] [data-variant="underlined"] {
+[data-variant="underlined"] {
   margin-bottom: -2px;
   padding-bottom: 1px;
   border-bottom: 1px solid transparent;
 }
 
-[data-slot="content"]:hover > [data-variant="underlined"] {
+[data-variant="underlined"]:hover {
   border-bottom-color: inherit !important;
 }
 
-[data-slot="content"][data-color="neutral"] {
+[data-color="neutral"] {
   color: #2d3741 !important;
 }
 
-[data-slot="content"][data-color="blue"] {
+[data-color="blue"] {
   color: #439ef8 !important;
 }
 
-[data-slot="content"][data-color="red"] {
+[data-color="red"] {
   color: #ff524f !important;
 }
 
-[data-slot="content"][data-color="yellow"] {
+[data-color="yellow"] {
   color: #cd983a !important;
 }
 
-[data-slot="content"][data-color="green"] {
+[data-color="green"] {
   color: #4fc970 !important;
 }
 
-[data-slot="content"][data-color="inherit"] {
+[data-color="inherit"] {
   color: currentcolor !important;
 }
