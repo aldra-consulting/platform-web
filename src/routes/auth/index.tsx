@@ -1,14 +1,14 @@
 import { $, component$, useOnWindow } from '@builder.io/qwik';
 
-import { auth } from '@project/utils/auth';
+import { service } from '@project/utils';
 
 export default component$(() => {
   useOnWindow(
     'load',
     $(() =>
-      auth()
+      service()
+        .auth()
         .completeSignIn()
-        .catch(() => {})
         .finally(() => {
           window.location.replace('/');
         })
