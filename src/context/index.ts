@@ -1,3 +1,4 @@
+export { default as AuthContext, type Store as AuthStore } from './auth';
 export { default as ClientContext, type Store as ClientStore } from './client';
 export {
   default as MissionContext,
