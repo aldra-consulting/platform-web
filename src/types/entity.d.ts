@@ -9,7 +9,7 @@ import {
 import { type ID } from './id';
 
 export namespace Entity {
-  export interface User extends Identifiable, Nameable {
+  export interface User extends Identifiable<ID.User>, Nameable {
     picture?: string;
   }
 

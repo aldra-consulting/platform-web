@@ -1,6 +1,7 @@
 import { type Brand } from './brand';
 
 export namespace ID {
+  export type User = Brand<string, 'user.id'>;
   export type Client = Brand<string, 'client.id'>;
   export type Mission = Brand<string, 'mission.id'>;
   export type Language = Brand<string, 'language.id'>;
