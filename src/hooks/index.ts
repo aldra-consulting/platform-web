@@ -1,3 +1,4 @@
+export * from './auth-context';
 export * from './authenticated-user';
 export * from './client-context';
 export * from './client-id';
