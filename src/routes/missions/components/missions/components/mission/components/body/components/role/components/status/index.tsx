@@ -2,15 +2,13 @@ import { component$ } from '@builder.io/qwik';
 
 import Chip from '@project/components/chip';
 import {
-  useAuthenticatedUser,
+  useAuthContext,
   useMissionContext,
   useRoleContext,
 } from '@project/hooks';
 
 export default component$(() => {
-  const {
-    store: { user },
-  } = useAuthenticatedUser();
+  const { user } = useAuthContext();
 
   const { isActive } = useMissionContext();
 

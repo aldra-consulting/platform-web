@@ -1,5 +1,4 @@
 import {
-  $,
   component$,
   useStylesScoped$,
   Slot,
@@ -7,8 +6,7 @@ import {
 } from '@builder.io/qwik';
 
 import { Theme } from '@project/enums';
-import { useAuthenticatedUser } from '@project/hooks';
-import { auth } from '@project/utils/auth';
+import { useAuthContext } from '@project/hooks';
 
 import Avatar from '../avatar';
 import Header from '../header';
@@ -22,12 +20,7 @@ interface Props extends HTMLAttributes<HTMLElement> {}
 export default component$<Props>(({ ...props }) => {
   useStylesScoped$(styles);
 
-  const signIn = $(() => auth().signIn());
-
-  const {
-    store: { user },
-    signOut,
-  } = useAuthenticatedUser(signIn);
+  const { user, signOut } = useAuthContext();
 
   return (
     <main {...props}>

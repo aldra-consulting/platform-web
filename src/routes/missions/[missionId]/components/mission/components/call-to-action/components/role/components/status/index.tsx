@@ -5,7 +5,7 @@ import InfoIcon from '@project/components/info-icon';
 import SuccessIcon from '@project/components/success-icon';
 import WarningIcon from '@project/components/warning-icon';
 import {
-  useAuthenticatedUser,
+  useAuthContext,
   useMissionContext,
   useRoleContext,
 } from '@project/hooks';
@@ -14,9 +14,7 @@ import {
  * @deprecated
  */
 export default component$(() => {
-  const {
-    store: { user },
-  } = useAuthenticatedUser();
+  const { user } = useAuthContext();
 
   const { isActive } = useMissionContext();
 

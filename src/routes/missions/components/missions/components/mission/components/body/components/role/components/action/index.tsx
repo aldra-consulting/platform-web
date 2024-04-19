@@ -3,16 +3,10 @@ import { $, component$ } from '@builder.io/qwik';
 import Button from '@project/components/button';
 import ClientTask from '@project/components/client-task';
 import Loader from '@project/components/loader';
-import {
-  useAuthenticatedUser,
-  useRoleContext,
-  useClientTask,
-} from '@project/hooks';
+import { useAuthContext, useRoleContext, useClientTask } from '@project/hooks';
 
 export default component$(() => {
-  const {
-    store: { user },
-  } = useAuthenticatedUser();
+  const { user } = useAuthContext();
 
   const context = useRoleContext();
 
