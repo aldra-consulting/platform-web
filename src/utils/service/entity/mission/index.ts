@@ -36,5 +36,6 @@ export default () =>
       auth()
         .getToken()
         .then((token) => token ?? '')
-        .catch(() => '')
+        .catch(() => ''),
+    client().graphql()
   );

@@ -1,3 +1,5 @@
+import { type GraphQLClient } from 'graphql-request';
+
 import { MissionSanityRepository } from '@project/repository';
 import {
   type Sanity,
@@ -16,14 +18,24 @@ export default class MissionEnityService {
 
   #tokenSupplier: Functional.Supplier<Promise<string>>;
 
+  #graphqlClientSupplier: Functional.Function<
+    Functional.Supplier<Promise<string>>,
+    GraphQLClient
+  >;
+
   constructor(
     repository: Repository<Sanity.Document.Mission>,
     converter: Converter<Sanity.Document.Mission, Entity.Mission>,
-    tokenSupplier: Functional.Supplier<Promise<string>>
+    tokenSupplier: Functional.Supplier<Promise<string>>,
+    graphqlClientSupplier: Functional.Function<
+      Functional.Supplier<Promise<string>>,
+      GraphQLClient
+    >
   ) {
     this.#repository = repository;
     this.#converter = converter;
     this.#tokenSupplier = tokenSupplier;
+    this.#graphqlClientSupplier = graphqlClientSupplier;
   }
 
   findMany = async (): Promise<Entity.Mission[]> =>
