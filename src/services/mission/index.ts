@@ -70,6 +70,15 @@ export default class MissionEnityService {
         )
       : [];
 
+  findManyWithBookmarks = async (): Promise<Entity.Mission[]> =>
+    Promise.all([this.#repository.findMany(), this.#listBookmarks()]).then(
+      ([missions, bookmarks]) =>
+        missions.map(this.#converter.convert).map((mission) => ({
+          ...mission,
+          isBookmarked: bookmarks.includes(mission.id),
+        }))
+    );
+
   // TODO: change implementation
   toggleBookmark = async (
     id: Entity.Mission['id']
