@@ -1,4 +1,4 @@
-import { type GraphQLClient } from 'graphql-request';
+import { type GraphQLClient, gql } from 'graphql-request';
 
 import { MissionSanityRepository } from '@project/repository';
 import {
@@ -67,4 +67,15 @@ export default class MissionEnityService {
       throw new Error('Unable to toggle mission bookmark', { cause: error });
     }
   };
+
+  #listBookmarks = async (): Promise<ID.Mission[]> =>
+    this.#graphqlClientSupplier(this.#tokenSupplier)
+      .request<{
+        bookmarks: ID.Mission[];
+      }>(gql`
+        query ListBookmarks {
+          bookmarks: listBookmarks
+        }
+      `)
+      .then(({ bookmarks }) => bookmarks);
 }
