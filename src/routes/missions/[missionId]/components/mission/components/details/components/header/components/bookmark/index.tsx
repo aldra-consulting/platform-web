@@ -12,7 +12,7 @@ import { NumberUtil, CSSUtil } from '@project/utils';
 export default component$(() => {
   const context = useMissionContext();
 
-  const { bookmark } = context.mission;
+  const { isBookmarked } = context.mission;
 
   const { task, perform } = useClientTask($(() => context.toggleBookmark()));
 
@@ -29,7 +29,7 @@ export default component$(() => {
         <Button
           variant='icon'
           startIcon
-          colour={bookmark ? 'green' : 'yellow'}
+          colour={isBookmarked ? 'green' : 'yellow'}
           onClick$={perform}
         >
           <Animated
@@ -38,7 +38,7 @@ export default component$(() => {
             delay={CSSUtil.time().ms(NumberUtil.positive(1))}
             q:slot='start-icon'
           >
-            {bookmark ? (
+            {isBookmarked ? (
               <StarIcon style={{ scale: 1.3 }} />
             ) : (
               <StarOutlineIcon style={{ scale: 1.3 }} />

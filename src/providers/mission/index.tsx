@@ -20,7 +20,7 @@ export default component$<Props>(({ mission }) => {
     isActive: mission.status === 'active',
     toggleBookmark: $(async function run(this: Store) {
       try {
-        this.mission.bookmark =
+        this.mission.isBookmarked =
           (await service()
             .entity()
             .mission()

@@ -18,8 +18,6 @@ export namespace Entity {
       Labelled,
       Described {}
 
-  export interface Bookmark extends Identifiable {}
-
   export interface Applicant extends Identifiable {}
 
   export interface Skill extends Identifiable, Nameable {}
@@ -80,7 +78,7 @@ export namespace Entity {
     details: Detail[];
     languageRequirements: LanguageRequirement[];
     awardCriteria: AwardCriterion[];
-    bookmark?: Bookmark;
+    isBookmarked?: boolean;
     representative: Person;
   }
 }

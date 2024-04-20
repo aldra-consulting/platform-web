@@ -37,15 +37,15 @@ export default class MissionEnityService {
   // TODO: change implementation
   toggleBookmark = async (
     id: Entity.Mission['id']
-  ): Promise<Nullable<Entity.Bookmark>> => {
+  ): Promise<Nullable<boolean>> => {
     try {
-      await new Promise<void>((resolve) => {
+      await new Promise<string>((resolve) => {
         setTimeout(() => {
-          resolve();
+          resolve(id);
         }, 500);
       });
 
-      return Math.random() > 0.5 ? await Promise.resolve({ id }) : undefined;
+      return Math.random() > 0.5;
     } catch (error) {
       throw new Error('Unable to toggle mission bookmark', { cause: error });
     }
