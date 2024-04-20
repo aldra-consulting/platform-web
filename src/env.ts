@@ -10,6 +10,7 @@ export default () => {
     SANITY_STUDIO_PROJECT_ID = '',
     SANITY_STUDIO_DATASET = '',
     SANITY_API_VERSION = '',
+    GRAPHQL_API_URL = '',
   } = globalObject()?.env ?? {};
 
   return checkEnvironmentVariables<Environment>(
@@ -20,6 +21,7 @@ export default () => {
       SANITY_STUDIO_PROJECT_ID,
       SANITY_STUDIO_DATASET,
       SANITY_API_VERSION,
+      GRAPHQL_API_URL,
     },
     [
       'OIDC_ISSUER',
@@ -28,6 +30,7 @@ export default () => {
       'SANITY_STUDIO_PROJECT_ID',
       'SANITY_STUDIO_DATASET',
       'SANITY_API_VERSION',
+      'GRAPHQL_API_URL',
     ]
   );
 };

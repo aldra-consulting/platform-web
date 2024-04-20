@@ -53,6 +53,8 @@
     "@sanity/client": "^6.15.7",
     "@sanity/image-url": "^1.0.2",
     "bricks.js": "^1.8.0",
+    "graphql": "^16.8.1",
+    "graphql-request": "^6.1.0",
     "groq": "^3.35.1",
     "oidc-client-ts": "^3.0.1",
     "sanitize-html": "^2.13.0",

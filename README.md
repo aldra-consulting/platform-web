@@ -29,6 +29,7 @@ An invite-only platform for independent contractors.
 - `SANITY_STUDIO_PROJECT_ID` - Sanity Studio project ID
 - `SANITY_STUDIO_DATASET` - Sanity Studio dataset
 - `SANITY_API_VERSION` - Sanity API version
+- `GRAPHQL_API_URL` - GraphQL API URL
 
 ## Contributing
 
