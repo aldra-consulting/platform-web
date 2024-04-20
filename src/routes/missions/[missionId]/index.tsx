@@ -23,7 +23,7 @@ export default component$(() => {
   const id = useMissionId();
 
   const resource = useClientResource(
-    $(() => service().entity().mission().findByIdOrThrow(id))
+    $(() => service().entity().mission().findWithBookmarkByIdOrThrow(id))
   );
 
   return (

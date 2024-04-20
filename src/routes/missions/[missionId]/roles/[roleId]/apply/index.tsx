@@ -27,7 +27,7 @@ export default component$(() => {
       service()
         .entity()
         .mission()
-        .findByIdOrThrow(missionId)
+        .findWithBookmarkByIdOrThrow(missionId)
         .then((mission) => {
           const role = mission.roles.find(({ id }) => id === roleId);
 
