@@ -55,10 +55,18 @@ export default class MissionEnityService {
       isBookmarked: bookmarks.includes(mission.id),
     }));
 
-  findManyForClient = async (id: ID.Client): Promise<Entity.Mission[]> =>
+  findManyForClientWithBookmarks = async (
+    id: ID.Client
+  ): Promise<Entity.Mission[]> =>
     this.#repository instanceof MissionSanityRepository
-      ? (await this.#repository.findManyForClient(id)).map(
-          this.#converter.convert
+      ? Promise.all([
+          this.#repository.findManyForClient(id),
+          this.#listBookmarks(),
+        ]).then(([missions, bookmarks]) =>
+          missions.map(this.#converter.convert).map((mission) => ({
+            ...mission,
+            isBookmarked: bookmarks.includes(mission.id),
+          }))
         )
       : [];
 

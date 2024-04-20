@@ -24,7 +24,7 @@ export default component$(() => {
       service()
         .entity()
         .mission()
-        .findManyForClient(id)
+        .findManyForClientWithBookmarks(id)
         .then((missions) =>
           missions.length > 0
             ? missions.sort(byStatus)
