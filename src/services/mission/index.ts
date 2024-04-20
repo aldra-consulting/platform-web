@@ -44,6 +44,17 @@ export default class MissionEnityService {
   findByIdOrThrow = async (id: Entity.Mission['id']): Promise<Entity.Mission> =>
     this.#repository.findByIdOrThrow(id).then(this.#converter.convert);
 
+  findWithBookmarkByIdOrThrow = async (
+    id: Entity.Mission['id']
+  ): Promise<Entity.Mission> =>
+    Promise.all([
+      this.#repository.findByIdOrThrow(id),
+      this.#listBookmarks(),
+    ]).then(([mission, bookmarks]) => ({
+      ...this.#converter.convert(mission),
+      isBookmarked: bookmarks.includes(mission.id),
+    }));
+
   findManyForClient = async (id: ID.Client): Promise<Entity.Mission[]> =>
     this.#repository instanceof MissionSanityRepository
       ? (await this.#repository.findManyForClient(id)).map(
