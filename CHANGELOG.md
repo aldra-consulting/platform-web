@@ -1,3 +1,19 @@
+# [1.10.0](https://github.com/aldra-consulting/platform-web/compare/1.9.0...1.10.0) (2024-04-20)
+
+
+### Bug Fixes
+
+* remove redundant authentication logic from root layout ([3e1cf1d](https://github.com/aldra-consulting/platform-web/commit/3e1cf1d7b0418f99098fb880eb4fb1fc8f3830bf))
+
+
+### Features
+
+* add OpendID Connect 'User' to 'User' entity converter ([7ff279f](https://github.com/aldra-consulting/platform-web/commit/7ff279f5cce8699f36008c0d3a937fe06ed5d0d7))
+* implement a mutation for toggling bookmark on a mission ([e615ffe](https://github.com/aldra-consulting/platform-web/commit/e615ffedb33ea3513f0a64a47c7e56a957785d8b))
+* refactor 'AuthService' with improvements ([e9d863e](https://github.com/aldra-consulting/platform-web/commit/e9d863e8c2fb8a40022df0f4e36de4b8d1ad5613))
+* use missions enriched with booksmarks ([b007aa7](https://github.com/aldra-consulting/platform-web/commit/b007aa7222949f5f1c3b33d448afeffe5913e69f))
+* use new 'AuthProvider' to wrap 'RouterOutlet' ([48cb90c](https://github.com/aldra-consulting/platform-web/commit/48cb90cf5a08a28c859bf61754bd211d4e055054))
+
 # [1.9.0](https://github.com/aldra-consulting/platform-web/compare/1.8.0...1.9.0) (2024-04-09)
 
 
