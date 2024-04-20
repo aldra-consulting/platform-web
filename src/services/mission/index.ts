@@ -79,18 +79,23 @@ export default class MissionEnityService {
         }))
     );
 
-  // TODO: change implementation
   toggleBookmark = async (
     id: Entity.Mission['id']
   ): Promise<Nullable<boolean>> => {
     try {
-      await new Promise<string>((resolve) => {
-        setTimeout(() => {
-          resolve(id);
-        }, 500);
-      });
+      const mutation = gql`
+        mutation ToggleBookmark($input: ToggleBookmarkInput!) {
+          isBookmarked: toggleBookmark(input: $input)
+        }
+      `;
 
-      return Math.random() > 0.5;
+      return await this.#graphqlClientSupplier(this.#tokenSupplier)
+        .request<{
+          isBookmarked: Nullable<boolean>;
+        }>(mutation, {
+          input: { missionId: id },
+        })
+        .then(({ isBookmarked }) => isBookmarked);
     } catch (error) {
       throw new Error('Unable to toggle mission bookmark', { cause: error });
     }
