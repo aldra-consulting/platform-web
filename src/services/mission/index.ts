@@ -6,6 +6,7 @@ import {
   type Converter,
   type Nullable,
   type ID,
+  type Functional,
 } from '@project/types';
 
 export default class MissionEnityService {
@@ -13,12 +14,16 @@ export default class MissionEnityService {
 
   #converter: Converter<Sanity.Document.Mission, Entity.Mission>;
 
+  #tokenSupplier: Functional.Supplier<Promise<string>>;
+
   constructor(
     repository: Repository<Sanity.Document.Mission>,
-    converter: Converter<Sanity.Document.Mission, Entity.Mission>
+    converter: Converter<Sanity.Document.Mission, Entity.Mission>,
+    tokenSupplier: Functional.Supplier<Promise<string>>
   ) {
     this.#repository = repository;
     this.#converter = converter;
+    this.#tokenSupplier = tokenSupplier;
   }
 
   findMany = async (): Promise<Entity.Mission[]> =>

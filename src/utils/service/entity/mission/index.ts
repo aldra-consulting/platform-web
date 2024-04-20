@@ -13,6 +13,7 @@ import {
 import { MissionSanityRepository } from '@project/repository';
 import { MissionEntityService } from '@project/services';
 import { client } from '@project/utils/client';
+import auth from '@project/utils/service/auth';
 
 export default () =>
   new MissionEntityService(
@@ -30,5 +31,10 @@ export default () =>
         new SanityCriterionDocumentToCriterionEntityConverter()
       ),
       new SanityPersonDocumentToPersonEntityConverter()
-    )
+    ),
+    () =>
+      auth()
+        .getToken()
+        .then((token) => token ?? '')
+        .catch(() => '')
   );
