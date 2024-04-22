@@ -22,6 +22,7 @@ export default component$<Props>(() => {
   const items = [
     { label: 'Oppdrag', path: '/missions' },
     { label: 'Oppdragsgivere', path: '/clients' },
+    { label: 'Bokmerker', path: '/bookmarks' },
   ];
 
   return (

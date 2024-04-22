@@ -1,0 +1,12 @@
+[data-slot="role"] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 24px;
+}
+
+[data-slot="role"] > p {
+  margin-right: auto;
+  font-weight: 500;
+}

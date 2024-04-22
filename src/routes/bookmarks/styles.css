@@ -1,0 +1,24 @@
+[data-slot="loading-screen"] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  gap: 20px;
+}
+
+[data-slot="loading-screen"] > [data-slot="loader"] {
+  height: 40px;
+  width: 40px;
+}
+
+[data-slot="no-bookmarks"] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+[data-slot="no-bookmarks"] > p {
+  font-size: 24px;
+  color: #76818d;
+}
