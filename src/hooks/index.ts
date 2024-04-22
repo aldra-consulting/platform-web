@@ -4,6 +4,7 @@ export * from './client-id';
 export * from './client-resource';
 export * from './client-task';
 export * from './defined-param';
+export * from './mission-bookmarks-context';
 export * from './mission-context';
 export * from './mission-id';
 export * from './reloadable';
