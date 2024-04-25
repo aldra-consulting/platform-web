@@ -1,3 +1,15 @@
+# [1.11.0](https://github.com/aldra-consulting/platform-web/compare/1.10.0...1.11.0) (2024-04-25)
+
+
+### Bug Fixes
+
+* add missing 'GRAPHQL_API_URL' environment variable ([4f881cd](https://github.com/aldra-consulting/platform-web/commit/4f881cdc9c8072f9277ea1a18f4564e6c76cb888))
+
+
+### Features
+
+* add 'bookmarks' route ([11aa55b](https://github.com/aldra-consulting/platform-web/commit/11aa55b577aa3ae971a640f0c74b042af8d41f2e))
+
 # [1.10.0](https://github.com/aldra-consulting/platform-web/compare/1.9.0...1.10.0) (2024-04-20)
 
 
