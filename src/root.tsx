@@ -1,5 +1,9 @@
 import { component$, useStyles$ } from '@builder.io/qwik';
-import { QwikCityProvider, RouterOutlet } from '@builder.io/qwik-city';
+import {
+  QwikCityProvider,
+  RouterOutlet,
+  ServiceWorkerRegister,
+} from '@builder.io/qwik-city';
 
 import { AuthProvider, MissionBookmarksProvider } from '@project/providers';
 
@@ -13,6 +17,7 @@ export default component$(() => {
     <QwikCityProvider>
       <head>
         <RouterHead />
+        <ServiceWorkerRegister />
       </head>
       <body>
         <AuthProvider>
