@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/aldra-consulting/platform-web/compare/1.11.0...1.12.0) (2024-05-06)
+
+
+### Features
+
+* add service worker ([628dbae](https://github.com/aldra-consulting/platform-web/commit/628dbae056eccaa3abed3ec83985170827ba6a59))
+
 # [1.11.0](https://github.com/aldra-consulting/platform-web/compare/1.10.0...1.11.0) (2024-04-25)
 
 
