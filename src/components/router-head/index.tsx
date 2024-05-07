@@ -63,7 +63,7 @@ export default component$(() => {
         <script key={key} {...props} dangerouslySetInnerHTML={script} />
       ))}
 
-      <script src='/config.js' />
+      <script src={`/config.js?v=${Date.now()}`} />
     </>
   );
 });
