@@ -1,3 +1,10 @@
+## [1.12.1](https://github.com/aldra-consulting/platform-web/compare/1.12.0...1.12.1) (2024-05-07)
+
+
+### Bug Fixes
+
+* prevent caching of config.js file ([9d71a84](https://github.com/aldra-consulting/platform-web/commit/9d71a846639a084f9ce5b12ee48b4ededf03cd49))
+
 # [1.12.0](https://github.com/aldra-consulting/platform-web/compare/1.11.0...1.12.0) (2024-05-06)
 
 
